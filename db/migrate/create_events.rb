@@ -7,7 +7,7 @@ class CreateEvents < ActiveRecord::Migration
       t.datetime :end_at
       t.string :venue_name
       t.string :venue_address
-      t.decimal :ticket_price
+      t.decimal :ticket_price, :precision => 8, :scale => 2
       t.string :ticket_link
       t.text :description
       t.integer :image_id
