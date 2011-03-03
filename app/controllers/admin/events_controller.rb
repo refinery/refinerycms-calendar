@@ -1,9 +1,7 @@
 module Admin
   class EventsController < Admin::BaseController
 
-    crudify :events,
-              :redirect_to_url => :admin_events_index_url
-
+    crudify :event
 
     def index
       search_all_events if searching?

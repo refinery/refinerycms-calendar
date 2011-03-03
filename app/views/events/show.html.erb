@@ -1,60 +1,60 @@
 <% content_for :body_content_title do %>
-  <%= @events.title %>
+  <%= @event.title %>
 <% end %>
 
 <% content_for :body_content_left do %>
   <section>
     <h1>Title</h1>
     <p>
-      <%=raw @events.title %>
+      <%=raw @event.title %>
     </p>
   </section>
   <section>
     <h1>Start At</h1>
     <p>
-      <%=raw @events.start_at %>
+      <%=raw @event.start_at %>
     </p>
   </section>
   <section>
     <h1>End At</h1>
     <p>
-      <%=raw @events.end_at %>
+      <%=raw @event.end_at %>
     </p>
   </section>
   <section>
     <h1>Venue Name</h1>
     <p>
-      <%=raw @events.venue_name %>
+      <%=raw @event.venue_name %>
     </p>
   </section>
   <section>
     <h1>Venue Address</h1>
     <p>
-      <%=raw @events.venue_address %>
+      <%=raw @event.venue_address %>
     </p>
   </section>
   <section>
     <h1>Ticket Price</h1>
     <p>
-      <%=raw @events.ticket_price %>
+      <%=raw @event.ticket_price %>
     </p>
   </section>
   <section>
     <h1>Ticket Link</h1>
     <p>
-      <%=raw @events.ticket_link %>
+      <%=raw @event.ticket_link %>
     </p>
   </section>
   <section>
     <h1>Description</h1>
     <p>
-      <%=raw @events.description %>
+      <%=raw @event.description %>
     </p>
   </section>
   <section>
     <h1>Image</h1>
     <p>
-      <%= image_fu @events.image, nil %>
+      <%= image_fu @event.image, nil %>
     </p>
   </section>
 <% end %>
@@ -63,9 +63,9 @@
   <aside>
     <h2><%= t('.other') %></h2>
     <ul id="events">
-      <% @all_events.each do |events| %>
+      <% @events.each do |event| %>
         <li>
-          <%= link_to events.title, events_url(events) %>
+          <%= link_to event.title, event_url(event) %>
         </li>
       <% end %>
     </ul>

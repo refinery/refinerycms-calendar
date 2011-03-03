@@ -5,22 +5,22 @@ class EventsController < ApplicationController
 
   def index
     # you can use meta fields from your model instead (e.g. browser_title)
-    # by swapping @page for @events in the line below:
+    # by swapping @page for @event in the line below:
     present(@page)
   end
 
   def show
-    @events = Events.find(params[:id])
+    @event = Event.find(params[:id])
 
     # you can use meta fields from your model instead (e.g. browser_title)
-    # by swapping @page for @events in the line below:
+    # by swapping @page for @event in the line below:
     present(@page)
   end
 
 protected
 
   def find_all_events
-    @all_events = Events.find(:all, :order => "position ASC")
+    @events = Event.find(:all, :order => "position ASC")
   end
 
   def find_page

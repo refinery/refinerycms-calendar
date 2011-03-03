@@ -10,15 +10,15 @@ en:
     events:
       index:
         title: Events
-        create_new: Add New Events
+        create_new: Add New Event
         reorder: Reorder Events
         reorder_done: Done Reordering Events
         sorry_no_results: Sorry! There are no results found.
-        no_items_yet: There are no Events yet. Click "Add New Events" to add your first events.
-      events:
-        view_live_html: View this events live <br/><em>(opens in a new window)</em>
-        edit: Edit this events
-        delete: Remove this events forever
+        no_items_yet: There are no Events yet. Click "Add New Event" to add your first event.
+      event:
+        view_live_html: View this event live <br/><em>(opens in a new window)</em>
+        edit: Edit this event
+        delete: Remove this event forever
   events:
     show:
       other: Other Events

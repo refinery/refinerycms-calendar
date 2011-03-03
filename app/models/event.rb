@@ -1,4 +1,4 @@
-class Events < ActiveRecord::Base
+class Event < ActiveRecord::Base
 
   acts_as_indexed :fields => [:title, :venue_name, :venue_address, :ticket_link, :description]
 

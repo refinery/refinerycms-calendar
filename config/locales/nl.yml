@@ -6,15 +6,15 @@ nl:
     events:
       index:
         title: Events
-        create_new: Maak een nieuwe Events
+        create_new: Maak een nieuwe Event
         reorder: Wijzig de volgorde van de Events
         reorder_done: Klaar met het wijzingen van de volgorde van de Events
         sorry_no_results: Helaas! Er zijn geen resultaten gevonden.
-        no_items_yet: Er zijn nog geen Events. Druk op 'Maak een nieuwe Events' om de eerste aan te maken.
-      events:
-        view_live_html: Bekijk deze events op de website <br/><em>(opent een nieuw venster)</em>
-        edit: Bewerk deze events
-        delete: Verwijder deze events voor eeuwig
+        no_items_yet: Er zijn nog geen Events. Druk op 'Maak een nieuwe Event' om de eerste aan te maken.
+      event:
+        view_live_html: Bekijk deze event op de website <br/><em>(opent een nieuw venster)</em>
+        edit: Bewerk deze event
+        delete: Verwijder deze event voor eeuwig
   events:
     show:
       other: Andere Events

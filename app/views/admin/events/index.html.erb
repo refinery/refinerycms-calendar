@@ -24,23 +24,23 @@
       <li>
         <%= render :partial => "/shared/admin/search",
                     :locals => {
-                      :url => admin_events_index_url
+                      :url => admin_events_url
                     } %>
       </li>
     <% end %>
     <li>
-      <%= link_to t('.create_new'), new_admin_events_url,
+      <%= link_to t('.create_new'), new_admin_event_url,
                    :class => "add_icon" %>
     </li>
-  <% if !searching? and Admin::EventsController.sortable? and Events.count > 1 %>
+  <% if !searching? and Admin::EventsController.sortable? and Event.count > 1 %>
     <li>
       <%= link_to t('.reorder', :what => "Events"),
-                   admin_events_index_url,
+                   admin_events_url,
                    :id => "reorder_action",
                    :class => "reorder_icon" %>
 
       <%= link_to t('.reorder_done', :what => "Events"),
-                   admin_events_index_url,
+                   admin_events_url,
                    :id => "reorder_action_done",
                    :style => "display: none;",
                    :class => "reorder_icon" %>
@@ -51,4 +51,4 @@
 <%= render :partial => "/shared/admin/make_sortable",
             :locals => {
               :tree => false
-            } if !searching? and Admin::EventsController.sortable? and Events.count > 1 %>
+            } if !searching? and Admin::EventsController.sortable? and Event.count > 1 %>

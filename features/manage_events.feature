@@ -16,27 +16,27 @@ Feature: Events
    And I should see "UniqueTitleTwo"
 
   @events-valid @valid
-  Scenario: Create Valid Events
+  Scenario: Create Valid Event
     When I go to the list of events
-    And I follow "Add New Events"
+    And I follow "Add New Event"
     And I fill in "Title" with "This is a test of the first string field"
     And I press "Save"
     Then I should see "'This is a test of the first string field' was successfully added."
-    And I should have 1 events
+    And I should have 1 event
 
   @events-invalid @invalid
-  Scenario: Create Invalid Events (without title)
+  Scenario: Create Invalid Event (without title)
     When I go to the list of events
-    And I follow "Add New Events"
+    And I follow "Add New Event"
     And I press "Save"
     Then I should see "Title can't be blank"
     And I should have 0 events
 
   @events-edit @edit
-  Scenario: Edit Existing Events
+  Scenario: Edit Existing Event
     Given I have events titled "A title"
     When I go to the list of events
-    And I follow "Edit this events" within ".actions"
+    And I follow "Edit this event" within ".actions"
     Then I fill in "Title" with "A different title"
     And I press "Save"
     Then I should see "'A different title' was successfully updated."
@@ -44,20 +44,20 @@ Feature: Events
     And I should not see "A title"
 
   @events-duplicate @duplicate
-  Scenario: Create Duplicate Events
+  Scenario: Create Duplicate Event
     Given I only have events titled UniqueTitleOne, UniqueTitleTwo
     When I go to the list of events
-    And I follow "Add New Events"
+    And I follow "Add New Event"
     And I fill in "Title" with "UniqueTitleTwo"
     And I press "Save"
     Then I should see "There were problems"
     And I should have 2 events
 
   @events-delete @delete
-  Scenario: Delete Events
+  Scenario: Delete Event
     Given I only have events titled UniqueTitleOne
     When I go to the list of events
-    And I follow "Remove this events forever"
+    And I follow "Remove this event forever"
     Then I should see "'UniqueTitleOne' was successfully removed."
     And I should have 0 events
  
