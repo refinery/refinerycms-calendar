@@ -1,0 +1,86 @@
+<%= form_for [:admin, @events] do |f| -%>
+  <%= render :partial => "/shared/admin/error_messages", :locals => {
+          :object => @events,
+          :include_object_name => true
+        } %>
+  
+  <div class='field'>
+    <%= f.label :title -%>
+    <%= f.text_field :title, :class => 'larger widest' -%>
+  </div>
+  
+  <div class='field'>
+    <%= f.label :start_at -%>
+    <%= f.datetime_select :start_at -%>
+  </div>
+  
+  <div class='field'>
+    <%= f.label :end_at -%>
+    <%= f.datetime_select :end_at -%>
+  </div>
+  
+  <div class='field'>
+    <%= f.label :venue_name -%>
+    <%= f.text_field :venue_name -%>
+  </div>
+  
+  <div class='field'>
+    <%= f.label :venue_address -%>
+    <%= f.text_field :venue_address -%>
+  </div>
+  
+  <div class='field'>
+    <%= f.label :ticket_price -%>
+    <%= f.text_field :ticket_price -%>
+  </div>
+  
+  <div class='field'>
+    <%= f.label :ticket_link -%>
+    <%= f.text_field :ticket_link -%>
+  </div>
+  
+  <div class='field'>
+    <div id='page-tabs' class='clearfix ui-tabs ui-widget ui-widget-content ui-corner-all'>
+      <ul id='page_parts'>
+        <% [:description].each_with_index do |part, part_index| %>
+          <li class='ui-state-default<%= ' ui-state-active' if part_index == 0 %>'>
+            <%= link_to part.to_s.titleize, "##{part}" %>
+          </li>
+        <% end %>
+      </ul>
+
+      <div id='page_part_editors'>
+        <% [:description].each do |part| %>
+          <div class='page_part' id='<%= part %>'>
+            <%= f.text_area part, :rows => 20, :class => 'wymeditor widest' -%>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+  
+  <div class='field'>
+    <%= f.label :image -%>
+    <%= render :partial => "/shared/admin/image_picker", :locals => {
+          :f => f,
+          :field => :image_id,
+          :image => @events.image,
+          :toggle_image_display => false
+        } %>
+  </div>
+  
+  <%= render :partial => "/shared/admin/form_actions",
+              :locals => {
+                :f => f,
+                :continue_editing => false,
+                :delete_title => t('delete', :scope => 'admin.events.events'),
+                :delete_confirmation => t('message', :scope => 'shared.admin.delete', :title => @events.title)
+              } %>
+<% end -%>
+<% content_for :javascripts do %>
+  <script>
+    $(document).ready(function(){
+      page_options.init(false, '', '');
+    });
+  </script>
+<% end %>

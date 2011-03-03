@@ -1,0 +1,11 @@
+<% content_for :body_content_left do %>
+  <ul id="events">
+    <% @all_events.each do |events| %>
+      <li>
+        <%= link_to events.title, events_url(events) %>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
+
+<%= render :partial => "/shared/content_page" %>

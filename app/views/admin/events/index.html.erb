@@ -1,0 +1,54 @@
+<div id='records'>
+  <% if searching? %>
+    <h2><%= t('results_for', :scope => 'shared.admin.search', :query => params[:search]) %></h2>
+  <% end %>
+  <% if @events.any? %>
+    <div class='pagination_container'>
+      <%= render :partial => 'events' %>
+    </div>
+  <% else %>
+    <p>
+      <% unless searching? %>
+        <strong>
+          <%= t('.no_items_yet') %>
+        </strong>
+      <% else %>
+        <%= t('no_results', :scope => 'shared.admin.search') %>
+      <% end %>
+    </p>
+  <% end %>
+</div>
+<div id='actions'>
+  <ul>
+    <% if Admin::EventsController.searchable? %>
+      <li>
+        <%= render :partial => "/shared/admin/search",
+                    :locals => {
+                      :url => admin_events_index_url
+                    } %>
+      </li>
+    <% end %>
+    <li>
+      <%= link_to t('.create_new'), new_admin_events_url,
+                   :class => "add_icon" %>
+    </li>
+  <% if !searching? and Admin::EventsController.sortable? and Events.count > 1 %>
+    <li>
+      <%= link_to t('.reorder', :what => "Events"),
+                   admin_events_index_url,
+                   :id => "reorder_action",
+                   :class => "reorder_icon" %>
+
+      <%= link_to t('.reorder_done', :what => "Events"),
+                   admin_events_index_url,
+                   :id => "reorder_action_done",
+                   :style => "display: none;",
+                   :class => "reorder_icon" %>
+    </li>
+  <% end %>
+  </ul>
+</div>
+<%= render :partial => "/shared/admin/make_sortable",
+            :locals => {
+              :tree => false
+            } if !searching? and Admin::EventsController.sortable? and Events.count > 1 %>

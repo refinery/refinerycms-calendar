@@ -1,0 +1,24 @@
+en:
+  shared:
+    admin:
+      image_picker:
+        image: image
+  plugins:
+    events:
+      title: Events
+  admin:
+    events:
+      index:
+        title: Events
+        create_new: Add New Events
+        reorder: Reorder Events
+        reorder_done: Done Reordering Events
+        sorry_no_results: Sorry! There are no results found.
+        no_items_yet: There are no Events yet. Click "Add New Events" to add your first events.
+      events:
+        view_live_html: View this events live <br/><em>(opens in a new window)</em>
+        edit: Edit this events
+        delete: Remove this events forever
+  events:
+    show:
+      other: Other Events

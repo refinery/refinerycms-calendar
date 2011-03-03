@@ -1,0 +1,20 @@
+nl:
+  plugins:
+    events:
+      title: Events
+  admin:
+    events:
+      index:
+        title: Events
+        create_new: Maak een nieuwe Events
+        reorder: Wijzig de volgorde van de Events
+        reorder_done: Klaar met het wijzingen van de volgorde van de Events
+        sorry_no_results: Helaas! Er zijn geen resultaten gevonden.
+        no_items_yet: Er zijn nog geen Events. Druk op 'Maak een nieuwe Events' om de eerste aan te maken.
+      events:
+        view_live_html: Bekijk deze events op de website <br/><em>(opent een nieuw venster)</em>
+        edit: Bewerk deze events
+        delete: Verwijder deze events voor eeuwig
+  events:
+    show:
+      other: Andere Events

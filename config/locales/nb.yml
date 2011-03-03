@@ -1,0 +1,20 @@
+nb:
+  plugins:
+    events:
+      title: Events
+  admin:
+    events:
+      index:
+        title: Events
+        create_new: Lag en ny Events
+        reorder: Endre rekkefølgen på Events
+        reorder_done: Ferdig å endre rekkefølgen Events
+        sorry_no_results: Beklager! Vi fant ikke noen resultater.
+        no_items_yet: Det er ingen Events enda. Klikk på "Lag en ny Events" for å legge til din første events.
+      events:
+        view_live_html: Vis hvordan denne events ser ut offentlig <br/><em>(åpner i et nytt vindu)</em>
+        edit: Rediger denne events
+        delete: Fjern denne events permanent
+  events:
+    show:
+      other: Andre Events
