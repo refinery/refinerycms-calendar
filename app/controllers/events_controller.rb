@@ -20,7 +20,8 @@ class EventsController < ApplicationController
 protected
 
   def find_all_events
-    @events = Event.find(:all, :order => "position ASC")
+    @events = Event.current.upcoming.not_featured
+    @featured_events = Event.current.upcoming.featured
   end
 
   def find_page
