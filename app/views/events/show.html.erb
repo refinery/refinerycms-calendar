@@ -4,59 +4,61 @@
 
 <% content_for :body_content_left do %>
   <section>
-    <h1>Title</h1>
-    <p>
-      <%=raw @event.title %>
-    </p>
-  </section>
-  <section>
+    <%= image_fu @event.image, nil %>
+    
     <h1>Start At</h1>
     <p>
-      <%=raw @event.start_at %>
+      <%= @event.start_at %>
     </p>
   </section>
   <section>
     <h1>End At</h1>
     <p>
-      <%=raw @event.end_at %>
+      <%= @event.end_at %>
     </p>
   </section>
   <section>
     <h1>Venue Name</h1>
     <p>
-      <%=raw @event.venue_name %>
+      <%= @event.venue_name %>
     </p>
   </section>
   <section>
     <h1>Venue Address</h1>
     <p>
-      <%=raw @event.venue_address %>
+      <%= @event.venue_address %>
     </p>
   </section>
   <section>
     <h1>Ticket Price</h1>
     <p>
-      <%=raw @event.ticket_price %>
+      <%=number_to_currency @event.ticket_price %>
     </p>
   </section>
   <section>
     <h1>Ticket Link</h1>
     <p>
-      <%=raw @event.ticket_link %>
+      <%=auto_link @event.ticket_link %>
     </p>
   </section>
   <section>
-    <h1>Description</h1>
-    <p>
-      <%=raw @event.description %>
-    </p>
+    <%=raw @event.description %>
   </section>
-  <section>
-    <h1>Image</h1>
-    <p>
-      <%= image_fu @event.image, nil %>
-    </p>
-  </section>
+  
+  <nav id="prevnext_nav">
+		<a href="#" class="prev button">
+			<h1>Previous</h1>
+			<h2>Free Wine Tasting at Loop Store</h2>
+		</a>
+		<a href="#" class="home button">
+			<h1>Events</h1>
+			<h2>Home</h2>
+		</a>
+		<a href="#" class="next button">
+			<h1>Next</h1>
+			<h2>this should truncate please!!!</h2>
+		</a>
+	</nav><!--#event_nav-->
 <% end %>
 
 <% content_for :body_content_right do %>
