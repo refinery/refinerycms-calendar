@@ -6,6 +6,6 @@ Gem::Specification.new do |s|
   s.date              = '2011-03-03'
   s.summary           = 'Events engine for Refinery CMS'
   s.require_paths     = %w(lib)
-  s.files             = Dir['lib/**/*', 'config/**/*', 'app/**/*']
+  s.files             = Dir['lib/**/*', 'config/**/*', 'app/**/*', 'features/**/*', 'spec/**/*']
   s.authors           = %w(Resolve\ Digital Neoteric\ Design)
 end
