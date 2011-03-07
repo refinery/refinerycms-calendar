@@ -11,6 +11,7 @@ class Event < ActiveRecord::Base
 
   validates :title, :presence => true, :uniqueness => true
   validates :ticket_price, :numericality => true
+  validate :ends_after_start
   
   has_friendly_id :title, :use_slug => true
   
@@ -36,6 +37,12 @@ class Event < ActiveRecord::Base
     "current" if current?
     "coming up" if upcoming?
     "archived" if archived?
+  end
+  
+  private
+  
+  def ends_after_start
+    errors.add(:base, "End at date must be after the start at date") if end_at < start_at
   end
 
 end
