@@ -10,7 +10,7 @@ class Event < ActiveRecord::Base
   acts_as_indexed :fields => [:title, :venue_name, :venue_address, :ticket_link, :description]
 
   validates :title, :presence => true, :uniqueness => true
-  validates :ticket_price, :numericality => true
+  validates :ticket_price, :numericality => true, :allow_blank => true
   validates :ticket_link, :format => /^(http|https):\/\/[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(([0-9]{1,5})?\/.*)?$/ix, :allow_blank => true
   validate :ends_after_start
   
