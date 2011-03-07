@@ -11,3 +11,5 @@
 * Friendly ID based on titles
 * Archiving (TODO: pending front-end work)
 * Admin screen separates events by their status (TODO: pagination somehow)
+* Reasonable validations
+* Practical instance methods to check against scopes
