@@ -1,3 +1,20 @@
-<ul id='sortable_list'>
-  <%= render :partial => 'event', :collection => @events %>
-</ul>
+<% if @current.any? -%>
+  <h2>Current Events</h2>
+  <ul id='sortable_list'>
+    <%= render :partial => 'event', :collection => @current %>
+  </ul>
+<% end -%>
+
+<% if @upcoming.any? -%>
+<h2>Upcoming Events</h2>
+  <ul id='sortable_list'>
+    <%= render :partial => 'event', :collection => @upcoming %>
+  </ul>
+<% end -%>
+
+<% if @archived.any? -%>
+  <h2>Archived Events</h2>
+  <ul id='sortable_list'>
+    <%= render :partial => 'event', :collection => @archived %>
+  </ul>
+<% end -%>

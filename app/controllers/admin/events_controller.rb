@@ -5,7 +5,12 @@ module Admin
 
     def index
       search_all_events if searching?
-      paginate_all_events
+      
+      @archived = Event.archive
+      @upcoming = Event.upcoming
+      @current = Event.current
+      
+      @events = (@archived | @upcoming | @current)
 
       render :partial => 'events' if request.xhr?
     end
