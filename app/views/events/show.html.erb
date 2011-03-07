@@ -46,19 +46,26 @@
   </section>
   
   <nav id="prevnext_nav">
-		<a href="#" class="prev button">
-			<h1>Previous</h1>
-			<h2>Free Wine Tasting at Loop Store</h2>
-		</a>
-		<a href="#" class="home button">
+		<% if @event.prev.present? -%>
+		  <%= link_to event_path(@event.prev), :class => "prev button" do -%>
+  			<h1>Previous</h1>
+  			<h2><%= @event.prev.title %></h2>
+  		<% end -%>
+		<% end -%>
+		
+		<%= link_to events_path, :class => "home button" do -%>
 			<h1>Events</h1>
 			<h2>Home</h2>
-		</a>
-		<a href="#" class="next button">
-			<h1>Next</h1>
-			<h2>this should truncate please!!!</h2>
-		</a>
+		<% end -%>
+		
+		<% if @event.next.present? -%>
+		  <%= link_to event_path(@event.next), :class => "next button" do -%>
+  			<h1>Next</h1>
+  			<h2><%= @event.next.title %></h2>
+  		<% end -%>
+  	<% end -%>
 	</nav><!--#event_nav-->
+	
 <% end %>
 
 <% content_for :body_content_right do %>

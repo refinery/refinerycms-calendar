@@ -40,6 +40,14 @@ class Event < ActiveRecord::Base
     "archived" if archived?
   end
   
+  def next
+    Event.where(['end_at >= ? AND start_at > ?', Time.now, self.start_at]).first
+  end
+  
+  def prev
+    Event.where(['end_at >= ? AND start_at < ?', Time.now, self.start_at]).reverse.first
+  end
+  
   private
   
   def ends_after_start
