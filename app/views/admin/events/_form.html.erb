@@ -20,26 +20,6 @@
   </div>
   
   <div class='field'>
-    <%= f.label :venue_name -%>
-    <%= f.text_field :venue_name -%>
-  </div>
-  
-  <div class='field'>
-    <%= f.label :venue_address -%>
-    <%= f.text_field :venue_address, :class => 'larger wide' -%>
-  </div>
-  
-  <div class='field'>
-    <%= f.label :ticket_price -%>
-    $<%= f.text_field :ticket_price, :size => 3 -%>
-  </div>
-  
-  <div class='field'>
-    <%= f.label :ticket_link -%>
-    <%= f.text_field :ticket_link, :class => 'larger wide' -%>
-  </div>
-  
-  <div class='field'>
     <div id='page-tabs' class='clearfix ui-tabs ui-widget ui-widget-content ui-corner-all'>
       <ul id='page_parts'>
         <% [:description].each_with_index do |part, part_index| %>
@@ -70,7 +50,27 @@
   </div>
   
   <div class='field'>
-    <%= f.check_box :featured -%> <%= f.label :featured, "Featured event", :class => 'stripped' -%>
+    <%= f.label :venue_name -%>
+    <%= f.text_field :venue_name -%>
+  </div>
+  
+  <div class='field'>
+    <%= f.label :venue_address -%>
+    <%= f.text_field :venue_address, :class => 'larger wide' -%>
+  </div>
+  
+  <div class='field'>
+    <%= f.label :ticket_price -%>
+    $<%= f.text_field :ticket_price, :size => 3 -%>
+  </div>
+  
+  <div class='field'>
+    <%= f.label :ticket_link -%>
+    <%= f.text_field :ticket_link, :class => 'larger wide' -%>
+  </div>
+  
+  <div class='field'>
+    <p><%= f.check_box :featured -%> <%= f.label :featured, "Featured event", :class => 'stripped' -%></p>
   </div>
   
   <%= render :partial => "/shared/admin/form_actions",
