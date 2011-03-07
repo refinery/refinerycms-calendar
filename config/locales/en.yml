@@ -20,5 +20,7 @@ en:
         edit: Edit this event
         delete: Remove this event forever
   events:
+    index:
+      archives: Archives
     show:
       other: Other Events

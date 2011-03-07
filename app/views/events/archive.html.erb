@@ -1,0 +1,17 @@
+<% content_for :title do -%>
+  <% date_format = params[:month].present? ? '%B %Y' : '%Y' -%>
+  <%= "Events posted in #{@archive_date.strftime(date_format)}" %>
+<% end -%>
+
+<% content_for :body_content_left do %>
+  <ul id="events">
+    <% @events.each do |event| %>
+      <li>
+        <%= link_to event.title, event_url(event) %>
+      </li>
+    <% end %>
+  </ul>
+  <%= will_paginate @events %>
+<% end %>
+
+<%= render :partial => "/shared/content_page" %>

@@ -6,6 +6,15 @@ class Event < ActiveRecord::Base
   scope :featured, where(['featured IS NOT NULL and featured = ?', true])
   scope :not_featured, where(['featured IS NULL or featured = ?', false])
   scope :archive, where(['end_at < ?', Time.now])
+  scope :for_archive_list, where(['end_at < ?', Time.now.beginning_of_month])
+  
+  scope :by_archive, lambda { |archive_date|
+    where(['start_at between ? and ?', archive_date.beginning_of_month, archive_date.end_of_month])
+  }
+  
+  scope :by_year, lambda { |archive_year|
+    where(['start_at between ? and ?', archive_year.beginning_of_year, archive_year.end_of_year])
+  }
   
   acts_as_indexed :fields => [:title, :venue_name, :venue_address, :ticket_link, :description]
 
