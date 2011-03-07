@@ -20,8 +20,13 @@ class EventsController < ApplicationController
 protected
 
   def find_all_events
-    @events = Event.current.upcoming.not_featured
-    @featured_events = Event.current.upcoming.featured
+    upcoming = Event.upcoming.not_featured
+    current = Event.current.not_featured
+    @events = (upcoming | current).sort { |a,b| a.start_at <=> b.start_at }
+    
+    featured_upcoming = Event.upcoming.featured
+    featured_current = Event.current.featured
+    @featured_events = (featured_upcoming | featured_current).sort { |a,b| a.start_at <=> b.start_at }
   end
 
   def find_page
