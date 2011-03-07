@@ -11,12 +11,12 @@
   
   <div class='field'>
     <%= f.label :start_at -%>
-    <%= f.datetime_select :start_at -%>
+    <%= f.datetime_select :start_at, :default => Time.now.change(:hour => 12, :minute => 0) -%>
   </div>
   
   <div class='field'>
     <%= f.label :end_at -%>
-    <%= f.datetime_select :end_at -%>
+    <%= f.datetime_select :end_at, :default => Time.now.change(:hour => 13, :minute => 0) -%>
   </div>
   
   <div class='field'>
@@ -67,6 +67,10 @@
           :image => @event.image,
           :toggle_image_display => false
         } %>
+  </div>
+  
+  <div class='field'>
+    <%= f.check_box :featured -%> <%= f.label :featured, "Featured event", :class => 'strip' -%>
   </div>
   
   <%= render :partial => "/shared/admin/form_actions",
