@@ -16,5 +16,26 @@ class Event < ActiveRecord::Base
   
   belongs_to :image
   
+  def current?
+    end_at >= Time.now
+  end
   
+  def upcoming?
+    start_at >= Time.now
+  end
+  
+  def archived?
+    end_at < Time.now
+  end
+  
+  def featured?
+    featured == true
+  end
+  
+  def status
+    "current" if current?
+    "coming up" if upcoming?
+    "archived" if archived?
+  end
+
 end
