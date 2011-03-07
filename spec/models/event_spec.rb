@@ -27,6 +27,22 @@ describe Event do
       Event.new(@valid_attributes).should_not be_valid
     end
     
+    it "rejects a non-numerical ticket price" do
+      Event.new({
+        :title => "I have a bad ticket price",
+        :ticket_price => "$25"
+      }).should_not be_valid
+      
+      Event.new({
+        :title => "I have a good ticket price",
+        :ticket_price => "25"
+      }).should be_valid
+    
+      Event.new({
+        :title => "I have a decimal ticket price",
+        :ticket_price => "25.00"
+      }).should be_valid
+    end
   end
 
 end
