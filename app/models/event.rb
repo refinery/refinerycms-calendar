@@ -1,7 +1,7 @@
 class Event < ActiveRecord::Base
   default_scope order('start_at ASC')
   
-  scope :current, where(['end_at >= ?', Time.now])
+  scope :current, where(['start_at < ? and end_at >= ?', Time.now, Time.now])
   scope :upcoming, where(['start_at >= ?', Time.now])
   scope :featured, where(['featured IS NOT NULL and featured = ?', true])
   scope :not_featured, where(['featured IS NULL or featured = ?', false])
