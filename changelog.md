@@ -13,3 +13,4 @@
 * Admin screen separates events by their status (TODO: pagination somehow)
 * Reasonable validations
 * Practical instance methods to check against scopes
+* Next & previous navigation on individual event pages.
