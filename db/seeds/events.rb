@@ -12,6 +12,6 @@ page = Page.create(
   :position => ((Page.maximum(:position, :conditions => {:parent_id => nil}) || -1)+1),
   :menu_match => '^/events(\/|\/.+?|)$'
 )
-Page.default_parts.each do |default_page_part|
-  page.parts.create(:title => default_page_part, :body => nil)
+Page.default_parts.each_with_index do |default_page_part, idx|
+  page.parts.create(:title => default_page_part, :body => nil, :position => idx)
 end
