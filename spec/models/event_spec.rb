@@ -44,5 +44,15 @@ describe Event do
       }).should be_valid
     end
   end
+  
+  context "instance methods" do
+    it "can find the next item" do
+      #TODO: test next & previous methods
+    end
+    
+    it "can find the previous item" do
+      #TODO: test next & previous methods
+    end
+  end
 
 end
