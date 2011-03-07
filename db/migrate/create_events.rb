@@ -10,6 +10,7 @@ class CreateEvents < ActiveRecord::Migration
       t.decimal :ticket_price, :precision => 8, :scale => 2
       t.string :ticket_link
       t.text :description
+      t.boolean :featured
       t.integer :image_id
       t.integer :position
 
