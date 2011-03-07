@@ -49,7 +49,7 @@
 		<% if @event.prev.present? -%>
 		  <%= link_to event_path(@event.prev), :class => "prev button" do -%>
   			<h1>Previous</h1>
-  			<h2><%=truncate @event.prev.title, :length => 60 %></h2>
+  			<h2><%=truncate @event.prev.title, :length => 38 %></h2>
   		<% end -%>
 		<% end -%>
 		
@@ -61,7 +61,7 @@
 		<% if @event.next.present? -%>
 		  <%= link_to event_path(@event.next), :class => "next button" do -%>
   			<h1>Next</h1>
-  			<h2><%=truncate @event.next.title, :length => 60 %></h2>
+  			<h2><%=truncate @event.next.title, :length => 38 %></h2>
   		<% end -%>
   	<% end -%>
 	</nav><!--#event_nav-->
