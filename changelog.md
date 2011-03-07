@@ -5,3 +5,5 @@
 * Ticket Pricing & Link
 * Feature-ability
 * Image attachment
+* Ticket price requires a number
+* Datetime select defaults noon to 1pm
