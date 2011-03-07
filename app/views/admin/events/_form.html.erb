@@ -26,17 +26,17 @@
   
   <div class='field'>
     <%= f.label :venue_address -%>
-    <%= f.text_field :venue_address -%>
+    <%= f.text_field :venue_address, :class => 'larger wide' -%>
   </div>
   
   <div class='field'>
     <%= f.label :ticket_price -%>
-    <%= f.text_field :ticket_price -%>
+    $<%= f.text_field :ticket_price, :size => 3 -%>
   </div>
   
   <div class='field'>
     <%= f.label :ticket_link -%>
-    <%= f.text_field :ticket_link -%>
+    <%= f.text_field :ticket_link, :class => 'larger wide' -%>
   </div>
   
   <div class='field'>
@@ -70,7 +70,7 @@
   </div>
   
   <div class='field'>
-    <%= f.check_box :featured -%> <%= f.label :featured, "Featured event", :class => 'strip' -%>
+    <%= f.check_box :featured -%> <%= f.label :featured, "Featured event", :class => 'stripped' -%>
   </div>
   
   <%= render :partial => "/shared/admin/form_actions",
