@@ -1,5 +1,9 @@
+require 'acts_as_commentable'
+
 class Event < ActiveRecord::Base
   default_scope order('start_at ASC')
+  
+  acts_as_commentable
   
   scope :current, where(['start_at < ? and end_at >= ?', Time.now, Time.now])
   scope :upcoming, where(['start_at >= ?', Time.now])
