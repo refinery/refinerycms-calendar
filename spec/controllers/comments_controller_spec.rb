@@ -2,16 +2,17 @@ require 'spec_helper'
 
 describe CommentsController do
 
-  describe "GET 'create'" do
+  describe "POST 'create'" do
     it "should be successful" do
-      get 'create'
+      post 'create'
       response.should be_success
     end
   end
 
-  describe "GET 'reply'" do
+  describe "POST 'reply'" do
     it "should be successful" do
-      get 'reply'
+      comment = Comment.create!
+      post 'reply', :id => comment.id
       response.should be_success
     end
   end
