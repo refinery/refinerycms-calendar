@@ -1,0 +1,50 @@
+<% content_for :stylesheets, stylesheet_link_tag('refinerycms-events') -%>
+<% content_for :javascripts do -%>
+  <%= javascript_include_tag 'https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js','refinery/core' %>
+<% end -%>
+
+<section id="commenting" class="events">
+	<div id="flash_container">
+    <%= render :partial => '/shared/no_script' %>
+    <%= render :partial => "/shared/message" %>
+  </div>
+  
+	<h2>Comments</h2>
+	
+	<article>
+		<p><strong>dosankodebbie wrote:</strong><br/>
+			“This sounds awesome. I can’t wait to try it out. I’ve never even heard of Podda cheese but that ain’t gonna stop me.”</p>
+		<div class="comment_meta">
+			<button>Reply</button>
+			<p>posted jan 4, 2011</p>
+		</div>
+	</article>
+	
+	<article class="reply">
+		<p><strong>dosankodebbie wrote:</strong><br/>
+			“thanks for the compliments. Hope it works out great!”</p>
+		<div class="comment_meta">
+			<p>posted jan 5, 2011</p>
+		</div>
+	</article>
+		
+</section><!--#commenting-->
+
+<section id="leave_a_comment" class="events">
+	<h2>Leave a comment</h2>
+	
+	<%= form_for @comment, :url => comments_path(@event) do |f| %>
+  	<p class='field'>
+  	  <%= f.label :name %>
+  	  <%= f.text_field :name %>
+  	</p>
+		<p class='field'>
+  	  <%= f.label :comment %>
+  	  <%= f.text_area :comment, :size => '30x5' %>
+  	</p>
+		<p>
+			<button>Submit</button>
+		</p>
+	<% end -%>
+	
+</section><!--#leave_a_comment-->
