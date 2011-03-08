@@ -8,3 +8,11 @@
     
     # Sign up for a http://rubygems.org/ account and publish the gem
     gem push refinerycms-events.gem
+    
+## TODO: 
+
+* Add has_many :through categories
+* Add RSS feed
+* Add sharing interface
+* Add comments
+* Add "disabled" next / prev buttons
