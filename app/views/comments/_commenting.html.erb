@@ -15,19 +15,20 @@
   		<p><strong><%= comment.name %> wrote:</strong><br/>
   			&#8220;<%= strip_tags comment.comment %>&#8221;</p>
   		<div class="comment_meta">
-  			<button>Reply</button>
+  			<button class="comment-reply">Reply</button>
   			<p>posted <%= comment.created_at.strftime('%b %d, %Y') %></p>
   		</div>
   	</article>
+	  <% comment.replies.each do |reply| -%>
+	    <article class="reply">
+    		<p><strong><%= reply.name %> wrote:</strong><br/>
+    			&#8220;<%= strip_tags reply.comment %>&#8221;</p>
+    		<div class="comment_meta">
+    			<p>posted <%= reply.created_at.strftime('%b %d, %Y') %></p>
+    		</div>
+    	</article>
+	  <% end -%>
 	<% end -%>
-	
-	<article class="reply">
-		<p><strong>## TODO ## dosankodebbie wrote:</strong><br/>
-			“thanks for the compliments. Hope it works out great!”</p>
-		<div class="comment_meta">
-			<p>posted jan 5, 2011</p>
-		</div>
-	</article>
 		
 </section><!--#commenting-->
 
