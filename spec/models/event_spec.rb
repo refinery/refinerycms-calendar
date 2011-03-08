@@ -1,4 +1,5 @@
 require 'spec_helper'
+Dir[File.expand_path('../../../features/support/factories/*.rb', __FILE__)].each{|factory| require factory}
 
 describe Event do
 
@@ -10,13 +11,13 @@ describe Event do
 
     @event.destroy! if @event
     @event = Event.create!(@valid_attributes.update(options))
-  end
-
-  before(:each) do
-    reset_event
-  end
+  end 
 
   context "validations" do
+    
+    before(:each) do
+      reset_event
+    end
     
     it "rejects empty title" do
       Event.new(@valid_attributes.merge(:title => "")).should_not be_valid
@@ -47,11 +48,15 @@ describe Event do
   
   context "instance methods" do
     it "can find the next item" do
-      #TODO: test next & previous methods
+      event1 = Factory(:event)
+      event2 = Factory(:event, :start_at => Time.now.advance(:days => 1), :end_at => Time.now.advance(:days => 1, :hours => 1))
+      event1.next.should == event2
     end
     
     it "can find the previous item" do
-      #TODO: test next & previous methods
+      event1 = Factory(:event)
+      event2 = Factory(:event, :start_at => Time.now.advance(:days => 1), :end_at => Time.now.advance(:days => 1, :hours => 1))
+      event2.prev.should == event1
     end
   end
 
