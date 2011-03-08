@@ -14,3 +14,4 @@
 * Reasonable validations
 * Practical instance methods to check against scopes
 * Next & previous navigation on individual event pages.
+* Commentable

@@ -14,5 +14,6 @@
 * Add has_many :through categories
 * Add RSS feed
 * Add sharing interface
-* Add comments
 * Add "disabled" next / prev buttons
+* Add comment spam protection
+* Add comment moderation in ADMIN section
