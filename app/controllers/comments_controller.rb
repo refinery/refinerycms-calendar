@@ -3,10 +3,11 @@ class CommentsController < ApplicationController
   
   def create
     @event = Event.find(params[:id])
-    if @event.comments.create(params[:comment]) and @event.save
+    @comment = @event.comments.build(params[:comment])
+    if @comment.save
       redirect_to event_path(@event, :anchor => 'commenting'), :notice => "Thank you for commenting!"
     else
-      render :template => @event
+      render :template => "events/show"
     end
   end
 

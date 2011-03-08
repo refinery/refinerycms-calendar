@@ -10,18 +10,19 @@
   </div>
   
 	<h2>Comments</h2>
-	
-	<article>
-		<p><strong>dosankodebbie wrote:</strong><br/>
-			“This sounds awesome. I can’t wait to try it out. I’ve never even heard of Podda cheese but that ain’t gonna stop me.”</p>
-		<div class="comment_meta">
-			<button>Reply</button>
-			<p>posted jan 4, 2011</p>
-		</div>
-	</article>
+	<% @event.comments.select(&:persisted?).each do |comment| -%>
+  	<article>
+  		<p><strong><%= comment.name %> wrote:</strong><br/>
+  			&#8220;<%= strip_tags comment.comment %>&#8221;</p>
+  		<div class="comment_meta">
+  			<button>Reply</button>
+  			<p>posted <%= comment.created_at.strftime('%b %d, %Y') %></p>
+  		</div>
+  	</article>
+	<% end -%>
 	
 	<article class="reply">
-		<p><strong>dosankodebbie wrote:</strong><br/>
+		<p><strong>## TODO ## dosankodebbie wrote:</strong><br/>
 			“thanks for the compliments. Hope it works out great!”</p>
 		<div class="comment_meta">
 			<p>posted jan 5, 2011</p>
@@ -32,11 +33,14 @@
 
 <section id="leave_a_comment" class="events">
   <% if @comment.errors.any? -%>
-    <ul id="errors">
-      <% @comment.errors.each do |attr, msg| -%>
-        <li><%= "#{attr} #{msg}" %></li>
-      <% end -%>
-    </ul>
+    <div id="errors">
+      <h3>Sorry. There was a problem while trying to save your comment</h3>
+      <ul>
+        <% @comment.errors.each do |attr, msg| -%>
+          <li><%= "#{attr.to_s.titleize} #{msg}" %></li>
+        <% end -%>
+      </ul>
+    </div>
   <% end -%>
 	<h2>Leave a comment</h2>
 	

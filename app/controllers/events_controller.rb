@@ -12,7 +12,7 @@ class EventsController < ApplicationController
 
   def show
     @event = Event.find(params[:id])
-    @comment = @event.comments.build
+    @comment = @event.build_comment
     # you can use meta fields from your model instead (e.g. browser_title)
     # by swapping @page for @event in the line below:
     present(@page)
