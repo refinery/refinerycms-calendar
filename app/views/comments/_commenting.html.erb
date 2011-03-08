@@ -31,6 +31,13 @@
 </section><!--#commenting-->
 
 <section id="leave_a_comment" class="events">
+  <% if @comment.errors.any? -%>
+    <ul id="errors">
+      <% @comment.errors.each do |attr, msg| -%>
+        <li><%= "#{attr} #{msg}" %></li>
+      <% end -%>
+    </ul>
+  <% end -%>
 	<h2>Leave a comment</h2>
 	
 	<%= form_for @comment, :url => comments_path(@event) do |f| %>
