@@ -11,7 +11,6 @@
     
 ## TODO: 
 
-* Add has_many :through categories
 * Add RSS feed
 * Add sharing interface
 * Add "disabled" next / prev buttons
