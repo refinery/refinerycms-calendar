@@ -27,7 +27,7 @@ en:
         reorder_done: Done Reordering Event Categories
         sorry_no_results: Sorry! There are no results found.
         no_items_yet: There are no Event Categories yet. Click "Add New Event Category" to add your first event category.
-      event:
+      event_category:
         view_live_html: View this event category live <br/><em>(opens in a new window)</em>
         edit: Edit this event category
         delete: Remove this event category forever
