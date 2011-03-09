@@ -12,6 +12,7 @@ class Event < ActiveRecord::Base
   scope :upcoming, where(['start_at >= ?', Time.now])
   scope :featured, where(['featured IS NOT NULL and featured = ?', true])
   scope :not_featured, where(['featured IS NULL or featured = ?', false])
+  scope :live, where(['end_at > ?', Time.now])
   scope :archive, where(['end_at < ?', Time.now])
   scope :for_archive_list, where(['end_at < ?', Time.now.beginning_of_month])
   
