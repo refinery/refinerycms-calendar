@@ -2,7 +2,7 @@ require 'acts_as_commentable'
 
 class Event < ActiveRecord::Base
   has_many :event_categorizations
-  has_many :event_categories, :through => :event_categorizations
+  has_many :categories, :through => :event_categorizations, :source => :event_category
   
   default_scope order('start_at ASC')
   

@@ -59,5 +59,24 @@ describe Event do
       event2.prev.should == event1
     end
   end
+  
+  context "categories" do
+    it "has many categories" do
+      event = Factory(:event)
+      event.should respond_to :categories
+    end
+    
+    it "can be assigned categories" do
+      event = Factory(:event)
+      cat1 = Factory(:event_category)
+      cat2 = Factory(:event_category)
+      
+      event.categories << cat1
+      event.categories << cat2
+      
+      event.categories.size.should be 2
+    end     
+    
+  end
 
 end
