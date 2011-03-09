@@ -1,5 +1,5 @@
 class CommentsController < ApplicationController
-  helper [:events, :comments]
+  helper [:events, :comments, :event_categories]
   
   def create
     @event = Event.find(params[:id])

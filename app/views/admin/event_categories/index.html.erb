@@ -2,9 +2,9 @@
   <% if searching? %>
     <h2><%= t('results_for', :scope => 'shared.admin.search', :query => params[:search]) %></h2>
   <% end %>
-  <% if @events.any? %>
+  <% if @event_categories.any? %>
     <div class='pagination_container'>
-      <%= render :partial => 'events' %>
+      <%= render :partial => 'event_categories' %>
     </div>
   <% else %>
     <p>
@@ -20,22 +20,17 @@
 </div>
 <div id='actions'>
   <ul>
-    <% if Admin::EventsController.searchable? %>
+    <% if Admin::EventCategoriesController.searchable? %>
       <li>
         <%= render :partial => "/shared/admin/search",
                     :locals => {
-                      :url => admin_events_url
+                      :url => admin_event_categories_url
                     } %>
       </li>
     <% end %>
     <li>
-      <%= link_to t('.create_new'), new_admin_event_url,
+      <%= link_to t('.create_new'), new_admin_event_category_url,
                    :class => "add_icon" %>
-    </li>
-    
-    <li>
-      <%= link_to "Manage Categories", admin_event_categories_url,
-                   :class => "edit_icon" %>
     </li>
   </ul>
 </div>

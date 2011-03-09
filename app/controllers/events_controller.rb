@@ -2,8 +2,8 @@ class EventsController < ApplicationController
 
   before_filter :find_all_events
   before_filter :find_page
-  helper [:events, :comments]
-
+  helper [:events, :comments, :event_categories]
+  
   def index
     # you can use meta fields from your model instead (e.g. browser_title)
     # by swapping @page for @event in the line below:
