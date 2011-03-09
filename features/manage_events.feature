@@ -12,6 +12,7 @@ Feature: Events
   Scenario: Events List
    Given I have events titled UniqueTitleOne, UniqueTitleTwo
    When I go to the list of events
+   # And show me the page
    Then I should see "UniqueTitleOne"
    And I should see "UniqueTitleTwo"
 

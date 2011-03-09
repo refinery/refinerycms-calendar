@@ -5,7 +5,7 @@ end
 Given /^I (only )?have events titled "?([^\"]*)"?$/ do |only, titles|
   Event.delete_all if only
   titles.split(', ').each do |title|
-    Event.create(:title => title)
+    Factory(:event, :title => title)
   end
 end
 
