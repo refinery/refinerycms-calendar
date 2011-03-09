@@ -14,7 +14,7 @@
                 :f => f,
                 :continue_editing => false,
                 :delete_title => t('delete', :scope => 'admin.event_categories.event_category'),
-                :delete_confirmation => t('message', :scope => 'shared.admin.delete', :title => @event_category.title)
+                :delete_confirmation => t('message', :scope => 'shared.admin.delete', :title => @event_category.name)
               } %>
 <% end -%>
 <% content_for :javascripts do %>
