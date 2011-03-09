@@ -10,8 +10,12 @@ module Refinery
       config.after_initialize do
         Refinery::Plugin.register do |plugin|
           plugin.name = "events"
-          plugin.activity = {
-            :class => Event}
+          plugin.activity = [{
+            :class => Event
+          }, {
+            :class => EventCategory
+          }]
+          plugin.menu_match = /^(admin|refinery)\/(event(_categorie)?s)/
         end
       end
     end
