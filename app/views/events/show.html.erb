@@ -51,8 +51,13 @@
   			<h1>Previous</h1>
   			<h2><%=truncate @event.prev.title, :length => 38 %></h2>
   		<% end -%>
-		<% end -%>
-		
+	  <% else -%>
+  	  <span class="prev disabled">
+  	    <h1>Previous</h1>
+				<h2>&nbsp;</h2>
+  	  </span>
+	  <% end -%>
+	
 		<%= link_to events_path, :class => "home button" do -%>
 			<h1>Events</h1>
 			<h2>Home</h2>
@@ -63,7 +68,12 @@
   			<h1>Next</h1>
   			<h2><%=truncate @event.next.title, :length => 38 %></h2>
   		<% end -%>
-  	<% end -%>
+    <% else -%>
+  	  <span class="next disabled">
+  	    <h1>Next</h1>
+				<h2>&nbsp;</h2>
+  	  </span>
+	  <% end -%>
 	</nav><!--#event_nav-->
 	
 <% end %>
