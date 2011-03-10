@@ -9,6 +9,6 @@
     # Sign up for a http://rubygems.org/ account and publish the gem
     gem push refinerycms-events.gem
     
-## TODO: 
+## TODO for 1.0 Release: 
 
-* Add sharing interface
+* Wire up basic views better

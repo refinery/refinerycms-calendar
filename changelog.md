@@ -16,3 +16,4 @@
 * Next & previous navigation on individual event pages.
 * has_many :categories, :through => :categorizations, :source => :event_category
 * RSS feed of current, upcoming & featured events
+* Basic Facebook & Twitter sharing interface
