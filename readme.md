@@ -12,4 +12,3 @@
 ## TODO: 
 
 * Add sharing interface
-* Add "disabled" next / prev buttons
