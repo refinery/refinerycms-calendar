@@ -14,6 +14,3 @@
 * Add RSS feed
 * Add sharing interface
 * Add "disabled" next / prev buttons
-* Add comment spam protection
-* Add comment moderation in ADMIN section
-* Add "reply" form & logic for comment replies

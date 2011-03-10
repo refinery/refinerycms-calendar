@@ -10,7 +10,6 @@ Gem::Specification.new do |s|
   s.authors           = %w(Resolve\ Digital Neoteric\ Design)
   
   s.add_dependency    'refinerycms',  '>= 0.9.9'
-  s.add_dependency    'acts_as_commentable'
 end
 
 

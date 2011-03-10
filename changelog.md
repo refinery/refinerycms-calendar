@@ -14,6 +14,4 @@
 * Reasonable validations
 * Practical instance methods to check against scopes
 * Next & previous navigation on individual event pages.
-* Commentable
-* Comments have 1 level of replies
 * has_many :categories, :through => :categorizations, :source => :event_category

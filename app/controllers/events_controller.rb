@@ -4,7 +4,7 @@ class EventsController < ApplicationController
   before_filter :find_page
   before_filter :find_categories
   
-  helper [:events, :comments, :event_categories]
+  helper [:events, :event_categories]
   
   def index
     # you can use meta fields from your model instead (e.g. browser_title)
@@ -14,7 +14,6 @@ class EventsController < ApplicationController
 
   def show
     @event = Event.find(params[:id])
-    @comment = @event.build_comment
     # you can use meta fields from your model instead (e.g. browser_title)
     # by swapping @page for @event in the line below:
     present(@page)

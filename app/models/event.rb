@@ -1,13 +1,9 @@
-require 'acts_as_commentable'
-
 class Event < ActiveRecord::Base
   has_many :event_categorizations
   has_many :categories, :through => :event_categorizations, :source => :event_category
   
   default_scope order('start_at ASC')
-  
-  acts_as_commentable
-  
+    
   scope :current, where(['start_at < ? and end_at >= ?', Time.now, Time.now])
   scope :upcoming, where(['start_at >= ?', Time.now])
   scope :featured, where(['featured IS NOT NULL and featured = ?', true])
