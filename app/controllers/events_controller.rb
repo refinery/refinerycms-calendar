@@ -2,6 +2,8 @@ class EventsController < ApplicationController
 
   before_filter :find_all_events
   before_filter :find_page
+  before_filter :find_categories
+  
   helper [:events, :comments, :event_categories]
   
   def index
@@ -52,6 +54,10 @@ protected
 
   def find_page
     @page = Page.find_by_link_url("/events")
+  end
+  
+  def find_categories
+    @event_categories = EventCategory.all
   end
 
 end
