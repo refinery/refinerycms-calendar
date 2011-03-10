@@ -4,7 +4,7 @@
     <span class="preview"></span>
   </span>
   <span class='actions'>
-    <%= link_to refinery_icon_tag("application_go.png"), event_category_url(event_category),
+    <%= link_to refinery_icon_tag("application_go.png"), category_events_url(event_category),
         :title => t('.view_live_html'),
         :target => "_blank" %>
     <%= link_to refinery_icon_tag("application_edit.png"), edit_admin_event_category_path(event_category),
