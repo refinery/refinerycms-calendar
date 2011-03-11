@@ -35,4 +35,5 @@ en:
     index:
       archives: Archives
     show:
+    sidebar:
       other: Other Events
