@@ -1,0 +1,36 @@
+.individual_event {
+	padding: 15px;
+	margin: 0 0 10px;
+	background-color: #f4f4f4;
+}
+.individual_event h1 {
+	margin: 0 0 10px;
+	padding: 0;
+}
+.individual_event .event_image {
+	float: left;
+	margin: 0 15px 10px 0;
+}
+#featured_events h2 {
+	margin: 15px 0 10px;
+}
+
+.sidebar_module {
+	padding: 15px;
+}
+.sidebar_module h2 {
+	margin: 0 0 10px;
+}
+.categories a {
+	display: block;
+	margin: 5px 0;
+}
+.sidebar_module ul {
+	list-style: square;
+	padding: 0 0 0 26px;
+	margin: 0;
+}
+.sidebar_module ul li {
+	margin: 2px 0;
+	padding: 2px 0;
+}
