@@ -1,0 +1,12 @@
+<% content_for :body_content_right do %>
+  <aside>
+    <h2><%= t('.other') %></h2>
+    <ul id="events">
+      <% @events.each do |event| %>
+        <li>
+          <%= link_to event.title, event_url(event) %>
+        </li>
+      <% end %>
+    </ul>
+  </aside>
+<% end %>
