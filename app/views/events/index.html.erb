@@ -1,9 +1,9 @@
 <% content_for :body_content_left do %>
-	<div id="events">
+	<div id="featured_events" class="events">
 		<%= render :partial => 'event', :collection => @featured_events, :locals => { :featured => true } %>
 	</div>
 	
-  <div id="events">
+  <div id="all_events" class="events">
 		<%= render :partial => 'event', :collection => @events %>
 	</div>
 <% end %>
