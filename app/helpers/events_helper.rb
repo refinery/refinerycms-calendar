@@ -2,9 +2,7 @@ module EventsHelper
   def events_archive_list
     events = Event.select('start_at').for_archive_list
     return nil if events.blank?
-    html = '<aside class="sidebar_module list" id="archives"><header><h1>'
-    html << t('events.index.archives')
-    html << '</h1></header><ul>'
+    html = '<ul>'
     links = []
     super_old_links = []
 
@@ -34,7 +32,7 @@ module EventsHelper
       html << link_to(text, archive_events_path(:year => year))
       html << "</li>"
     end
-    html << '</ul></aside>'
+    html << '</ul>'
     html.html_safe
   end
 end
