@@ -1,4 +1,4 @@
-<% content_for :title do -%>
+<% content_for :body_content_title do -%>
   <% date_format = params[:month].present? ? '%B %Y' : '%Y' -%>
   <%= "Events posted in #{@archive_date.strftime(date_format)}" %>
 <% end -%>

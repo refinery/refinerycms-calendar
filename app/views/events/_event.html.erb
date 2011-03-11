@@ -5,54 +5,45 @@
 	category ||= false
 -%>
 
+<%= div_for event, :class => 'individual_event' do -%>
+
+	<section class="event_image">
+  	<%= image_fu event.image, "150x150#c" %>
+	</section>
+
 	<% unless individual -%>
 		<h1><%= link_to event.title, event %></h1>
 	<% end -%>
 	
-	<% if featured or individual -%>
-		<section>
-	    <%= image_fu event.image, "200x200#c" %>
-	  </section>
-	<% end -%>
-	
-  <section>
-    <h1>Start At</h1>
-    <p>
-      <%= event.start_at.strftime('%b %e, %Y %I:%M%p') %>
-    </p>
+	<section class="start_end">
+		<p>Starts:<br/>
+		<%= event.start_at.strftime('%b %e, %Y %l:%M %p') %></p>
+		<p>Ends:<br/>
+		<%= event.end_at.strftime('%b %e, %Y %l:%M %p') %></p>
+  </section><!-- .start_end -->
+
+  <section class="venue">
+		<p>Location:<br/>
+		<%= event.venue_name %></p>
   </section>
-  <section>
-    <h1>End At</h1>
-    <p>
-      <%= event.end_at.strftime('%b %e, %Y %I:%M%p') %>
-    </p>
-  </section>
-  <section>
-    <h1>Venue Name</h1>
-    <p>
-      <%= event.venue_name %>
-    </p>
-  </section>
-  <section>
-    <h1>Venue Address</h1>
-    <p>
+
+  <section class="address">
+		<p>Address:<br/>
       <%= event.venue_address %>
     </p>
   </section>
 
 <% unless archive -%>
 	<% unless event.ticket_price.blank? -%>
-	  <section>
-	    <h1>Ticket Price</h1>
-	    <p>
+	  <section class="price">
+	    <p>Ticket Price:<br/>
 	      <%=number_to_currency event.ticket_price %>
 	    </p>
 	  </section>
 	<% end -%>
 	<% unless event.ticket_link.blank? -%>
-	  <section>
-	    <h1>Ticket Link</h1>
-	    <p>
+	  <section class="ticket">
+	    <p>Ticket Link:<br/>
 	      <%=auto_link event.ticket_link %>
 	    </p>
 	  </section>
@@ -63,7 +54,7 @@
 		<% if individual -%>
     	<%=raw event.description %>
 		<% else -%>
-			<%= simple_format(truncate event.description, :length => 200) %>
+			<%= simple_format(truncate strip_tags(event.description), :length => 200) %>
 		<% end -%>
   </section>
   
@@ -107,4 +98,6 @@
   	  </span>
 	  <% end -%>
 	</nav><!--#event_nav-->
+<% end -%>
+
 <% end -%>
