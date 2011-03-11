@@ -1,11 +1,11 @@
 <% content_for :body_content_left do %>
-  <ul id="events">
-    <% @events.each do |event| %>
-      <li>
-        <%= link_to event.title, event_url(event) %>
-      </li>
-    <% end %>
-  </ul>
+	<div id="events">
+		<%= render :partial => 'event', :collection => @featured_events, :locals => { :featured => true } %>
+	</div>
+	
+  <div id="events">
+		<%= render :partial => 'event', :collection => @events %>
+	</div>
 <% end %>
 
 <%= render 'events/sidebar' %>

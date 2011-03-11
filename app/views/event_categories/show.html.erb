@@ -1,11 +1,7 @@
 <% content_for :body_content_left do %>
-  <ul id="events">
-    <% @event_category.events.each do |event| %>
-      <li>
-        <%= link_to event.title, event_url(event) %>
-      </li>
-    <% end %>
-  </ul>
+  <div id="events">
+		<%= render :partial => 'event', :collection => @event_category.events, :locals => { :category => true } %>
+	</div>
 <% end %>
 
 <%= render :partial => "/shared/content_page" %>

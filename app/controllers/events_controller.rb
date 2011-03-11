@@ -49,6 +49,8 @@ protected
     featured_upcoming = Event.upcoming.featured
     featured_current = Event.current.featured
     @featured_events = (featured_upcoming | featured_current).sort { |a,b| a.start_at <=> b.start_at }
+    
+    @other_events = Event.live.limit(5)
   end
 
   def find_page

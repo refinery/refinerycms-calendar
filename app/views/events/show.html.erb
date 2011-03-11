@@ -3,88 +3,13 @@
 <% end %>
 
 <% content_for :body_content_left do %>
-  <section>
-    <%= image_fu @event.image, "200x200#c" %>
-    
-    <h1>Start At</h1>
-    <p>
-      <%= @event.start_at %>
-    </p>
-  </section>
-  <section>
-    <h1>End At</h1>
-    <p>
-      <%= @event.end_at %>
-    </p>
-  </section>
-  <section>
-    <h1>Venue Name</h1>
-    <p>
-      <%= @event.venue_name %>
-    </p>
-  </section>
-  <section>
-    <h1>Venue Address</h1>
-    <p>
-      <%= @event.venue_address %>
-    </p>
-  </section>
-  <section>
-    <h1>Ticket Price</h1>
-    <p>
-      <%=number_to_currency @event.ticket_price %>
-    </p>
-  </section>
-  <section>
-    <h1>Ticket Link</h1>
-    <p>
-      <%=auto_link @event.ticket_link %>
-    </p>
-  </section>
-  <section>
-    <%=raw @event.description %>
-  </section>
-  
-  <section id="share_this_event">
-    <ul>
-      <li class="facebook"><script src="http://connect.facebook.net/en_US/all.js#xfbml=1"></script><fb:like href="<%= request.url %>" layout="box_count" show_faces="false" width="55" font=""></fb:like></li>
-      <li class="twitter"><a href="http://twitter.com/share" class="twitter-share-button" data-count="vertical">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script></li>
-    </ul>
-  </section>
-  
-  <nav id="prevnext_nav">
-		<% if @event.prev.present? -%>
-		  <%= link_to event_path(@event.prev), :class => "prev button" do -%>
-  			<h1>Previous</h1>
-  			<h2><%=truncate @event.prev.title, :length => 38 %></h2>
-  		<% end -%>
-	  <% else -%>
-  	  <span class="prev disabled">
-  	    <h1>Previous</h1>
-				<h2>&nbsp;</h2>
-  	  </span>
-	  <% end -%>
-	
-		<%= link_to events_path, :class => "home button" do -%>
-			<h1>Events</h1>
-			<h2>Home</h2>
-		<% end -%>
-		
-		<% if @event.next.present? -%>
-		  <%= link_to event_path(@event.next), :class => "next button" do -%>
-  			<h1>Next</h1>
-  			<h2><%=truncate @event.next.title, :length => 38 %></h2>
-  		<% end -%>
-    <% else -%>
-  	  <span class="next disabled">
-  	    <h1>Next</h1>
-				<h2>&nbsp;</h2>
-  	  </span>
-	  <% end -%>
-	</nav><!--#event_nav-->
-	
+  <div id="event">
+		<%= render :partial => 'event', :locals => { :event => @event, :individual => true } %>
+	</div>	
 <% end %>
 
 <%= render 'events/sidebar' %>
 
 <%= render :partial => "/shared/content_page" %>
+
+<% content_for :stylesheets, stylesheet_link_tag('refinerycms-events') %>
