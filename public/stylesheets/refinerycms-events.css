@@ -34,3 +34,40 @@
 	margin: 2px 0;
 	padding: 2px 0;
 }
+
+#share_this_event {
+	border-top: 1px solid #ddd;
+	border-bottom: 1px solid #ddd;
+	padding: 20px 0;
+	margin: 20px 0;
+}
+#share_this_event ul {
+	list-style: none;
+	border: 0;
+	padding: 0;
+	margin: 0;
+}
+#share_this_event ul li {
+	float: left;
+	height: 70px;
+	margin: 0 15px 0 0;
+}
+
+#prevnext_nav {
+	clear: both;
+	display: block;
+	height: 100px;
+}
+#prevnext_nav .prev {
+	width: 33%;
+	float: left;
+}
+#prevnext_nav .home {
+	width: 33%;
+	float: left;
+}
+#prevnext_nav .next {
+	width: 33%;
+	float: left;
+}
+	
