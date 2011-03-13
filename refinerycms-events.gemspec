@@ -7,8 +7,8 @@ Gem::Specification.new do |s|
   s.summary           = 'Events engine for Refinery CMS'
   s.require_paths     = %w(lib)
   s.files             = Dir['lib/**/*', 'config/**/*', 'app/**/*', 'features/**/*', 'spec/**/*']
-  s.authors           = %w(Resolve\ Digital Neoteric\ Design)
-  
+  s.authors           = ["Neoteric Design", "Joe Sak", "Philip Arndt"]
+
   s.add_dependency    'refinerycms',  '>= 0.9.9'
 end
 
