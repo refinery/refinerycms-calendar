@@ -1,7 +1,7 @@
 require 'refinery'
 
 module Refinery
-  module Events
+  module Calendar
     class Engine < Rails::Engine
       initializer "static assets" do |app|
         app.middleware.insert_after ::ActionDispatch::Static, ::ActionDispatch::Static, "#{root}/public"
@@ -9,7 +9,7 @@ module Refinery
 
       config.after_initialize do
         Refinery::Plugin.register do |plugin|
-          plugin.name = "events"
+          plugin.name = "calendar"
           plugin.activity = [{
             :class => Event
           }, {
