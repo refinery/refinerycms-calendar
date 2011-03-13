@@ -15,6 +15,7 @@ module Refinery
           }, {
             :class => EventCategory
           }]
+          plugin.url = {:controller => '/admin/events'}
           plugin.menu_match = /^(admin|refinery)\/(event(_categorie)?s)/
         end
       end
