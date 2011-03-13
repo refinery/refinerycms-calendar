@@ -3,7 +3,7 @@ nb:
     events:
       title: Events
   admin:
-    events:
+    calendar:
       index:
         title: Events
         create_new: Lag en ny Event

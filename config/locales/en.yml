@@ -4,7 +4,7 @@ en:
       image_picker:
         image: image
   plugins:
-    events:
+    calendar:
       title: Events
   admin:
     events:

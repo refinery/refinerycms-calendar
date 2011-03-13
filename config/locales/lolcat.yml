@@ -4,7 +4,7 @@ lolcat:
       image_picker:
         image: IMAGE
   plugins:
-    events:
+    calendar:
       title: Events
   admin:
     events:

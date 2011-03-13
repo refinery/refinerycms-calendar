@@ -3,7 +3,7 @@ nl:
     events:
       title: Events
   admin:
-    events:
+    calendar:
       index:
         title: Events
         create_new: Maak een nieuwe Event
