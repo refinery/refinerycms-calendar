@@ -15,13 +15,13 @@
 
 Using Rails 3 / Bundler Gemfile:
 
-    gem 'refinerycms-calendar', '~>1.0'
+    gem 'refinerycms-events', '~>1.0'
 
 bash:
 
     bundle install
 
-    rails g refinerycms_calendar
+    rails g refinerycms_events
 
     rake db:migrate
 
