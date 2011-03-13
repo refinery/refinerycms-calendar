@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
   s.files             = Dir['**/*']
   s.authors           = ["Neoteric Design", "Joe Sak", "Philip Arndt"]
   s.email             = %q{joe@neotericdesign.com}
-  s.homepage          = "https://github.com/resolve/refinerycms-events"
+  s.homepage          = "https://github.com/resolve/refinerycms-calendar"
 
   s.add_dependency    'refinerycms',  '>= 0.9.9'
 end
