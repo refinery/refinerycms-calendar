@@ -1,5 +1,32 @@
 # Events engine for Refinery CMS.
 
+* Venue Details
+* Ticket pricing & Link
+* Mark featured events
+* Specify a main image
+* Archives
+* Categories
+* Basic layout and styling to get started immediately [blake0102](http://github.com/blake0102)
+* Easily hook onto a few semantic CSS classes built into the markup [blake0102](http://github.com/blake0102)
+* Basic Facebook & Twitter sharing interface
+* RSS feed
+
+# Install
+
+Using Rails 3 / Bundler
+
+    Gemfile: gem 'refinerycms-events', '~>1.0'
+    
+    bash:
+    
+    bundle install
+    
+    rails g refinerycms_events
+    
+    rake db:migrate
+    
+    
+
 Maintained by [joemsak](http://github.com/joemsak)
     
 ## TODO for 1.1 Release: 
