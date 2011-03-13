@@ -1,5 +1,14 @@
+<% content_for :meta, "
+                        <link 
+                          rel='alternate' 
+                          type='application/rss+xml' 
+                          title='#{RefinerySetting.find_or_set(:site_name, 'Company Name')} Events'
+                          href='#{events_url(:format => :rss)}' />".html_safe -%>
 <% content_for :body_content_right do %>
-	
+	<aside class="sidebar_module rss">
+		<h2>RSS</h2>
+		<%= link_to "Subscribe", events_path(:format => :rss) %>
+	</aside><!-- .rss -->
 	
 	<aside class="sidebar_module categories">
 		<h2>Categories</h2>
