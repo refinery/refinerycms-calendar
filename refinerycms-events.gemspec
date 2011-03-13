@@ -8,6 +8,8 @@ Gem::Specification.new do |s|
   s.require_paths     = %w(lib)
   s.files             = Dir['lib/**/*', 'config/**/*', 'app/**/*', 'features/**/*', 'spec/**/*']
   s.authors           = ["Neoteric Design", "Joe Sak", "Philip Arndt"]
+  s.email             = %q{joe@neotericdesign.com}
+  s.homepage          = "https://github.com/resolve/refinerycms-events"
 
   s.add_dependency    'refinerycms',  '>= 0.9.9'
 end
