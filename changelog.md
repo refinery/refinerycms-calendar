@@ -1,5 +1,5 @@
 
-## 1.0 [UNRELEASED]
+## 1.0 [13 March 2011]
 
 * Venue Details
 * Ticket Pricing & Link
@@ -16,4 +16,7 @@
 * Next & previous navigation on individual event pages.
 * has_many :categories, :through => :categorizations, :source => :event_category
 * RSS feed of current, upcoming & featured events
+* RSS in sidebar && autodiscovery
+* Basic layout and styling to get started immediately [blake0102](http://github.com/blake0102)
+* Easily hook onto a few semantic CSS classes built into the markup [blake0102](http://github.com/blake0102)
 * Basic Facebook & Twitter sharing interface

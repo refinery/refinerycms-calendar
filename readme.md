@@ -1,14 +1,14 @@
 # Events engine for Refinery CMS.
 
-## How to build this engine as a gem
-
-    cd vendor/engines/events
-    gem build refinerycms-events.gempspec
-    gem install refinerycms-events.gem
+Maintained by [joemsak](http://github.com/joemsak)
     
-    # Sign up for a http://rubygems.org/ account and publish the gem
-    gem push refinerycms-events.gem
-    
-## TODO for 1.0 Release: 
+## TODO for 1.1 Release: 
 
-* Wire up basic views better
+* Import events from Facebook fan page?
+
+## Acknowledgements
+
+* [Ed Blake](http://github.com/blake0102) structured semantic markup and design-minded workflow.
+* [Neoteric Design, Inc.](http://www.neotericdesign.com) support and enthusiasm for my time & energy spent on helping the Refinery community.
+* [Philip Arndt](http://github.com/parndt) Core team, RefineryCMS. Built the generator that makes this engine possible.
+* [Resolve Digital](http://www.resolvedigital.com) The company behind the fabulous [RefineryCMS](http://www.refinerycms.com).
