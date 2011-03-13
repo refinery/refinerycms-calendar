@@ -13,23 +13,23 @@
 
 # Install
 
-Using Rails 3 / Bundler
+Using Rails 3 / Bundler Gemfile:
 
-    Gemfile: gem 'refinerycms-events', '~>1.0'
-    
-    bash:
-    
+    gem 'refinerycms-events', '~>1.0'
+
+bash:
+
     bundle install
-    
+
     rails g refinerycms_events
-    
+
     rake db:migrate
-    
-    
+
+
 
 Maintained by [joemsak](http://github.com/joemsak)
-    
-## TODO for 1.1 Release: 
+
+## TODO for 1.1 Release:
 
 * Import events from Facebook fan page?
 * JS datepicker in admin backend
