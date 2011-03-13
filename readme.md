@@ -32,6 +32,14 @@ Maintained by [joemsak](http://github.com/joemsak)
 ## TODO for 1.1 Release: 
 
 * Import events from Facebook fan page?
+* JS datepicker in admin backend
+* Calendar grid view? (can be kinda gross, honestly)
+* iCal export
+
+## TODO for 1.2
+
+* Google map of address
+* Address finder?
 
 ## Acknowledgements
 
