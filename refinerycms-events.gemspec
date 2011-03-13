@@ -6,7 +6,7 @@ Gem::Specification.new do |s|
   s.date              = '2011-03-03'
   s.summary           = 'Events engine for Refinery CMS'
   s.require_paths     = %w(lib)
-  s.files             = Dir['lib/**/*', 'config/**/*', 'app/**/*', 'features/**/*', 'spec/**/*']
+  s.files             = Dir['lib/**/*', 'db/**/*', 'public/**/*', 'config/**/*', 'app/**/*', 'features/**/*', 'spec/**/*', 'changelog.md', 'readme.md', 'refinerycms-events.gemspec']
   s.authors           = ["Neoteric Design", "Joe Sak", "Philip Arndt"]
   s.email             = %q{joe@neotericdesign.com}
   s.homepage          = "https://github.com/resolve/refinerycms-events"
