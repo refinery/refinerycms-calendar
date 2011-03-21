@@ -1,0 +1,45 @@
+fr:
+  shared:
+    admin:
+      image_picker:
+        image: image
+  plugins:
+    calendar:
+      title: Événements
+  admin:
+    events:
+      index:
+        title: Événements
+        create_new: Ajouter un nouvel événement
+        reorder: Reordrer les événements
+        reorder_done: Finir de réordrer les événements
+        sorry_no_results: Désolé! Aucun résultat n'a été trouvé
+        no_items_yet: "Il n'y a pas encore d'événement. Cliquez sur &quot;Ajouter un événement&quot; pour en créer un."
+        manage_categories: Gérer les catégories
+      event:
+        view_live_html: Voir cet événement <br/><em>(s'ouvre dans une nouvelle fenêtre)</em>
+        edit: Editer cet événement
+        delete: Effacer complètement cet événement
+      sortable_list:
+        current_events: Événements en cours
+        upcoming_events: Événements à venir
+        archived_events: Événements archivés
+    event_categories:
+      index:
+        title: Catégories d'événements
+        create_new: Ajouter une nouvelle catégorie d'événements
+        reorder: Réordrer les catégories d'événements
+        reorder_done: Finir de réordrer les catégories d'événements
+        sorry_no_results: Désolé! Aucun résultat n'a été trouvé
+        no_items_yet: "Il n'y a pas encore de catégories d'événements pour le moment. Cliquez sur &quot;Ajouter une catégorie d'événements&quot; pour en créer une."
+        manage_events: Gérer les événements
+      event_category:
+        view_live_html: Voir cette catégorie <br/><em>(s'ouvre dans une nouvelle fenêtre)</em>
+        edit: Editer cette catégorie d'événements
+        delete: Effacer complètement cette catégorie
+  events:
+    index:
+      archives: Archives
+    show:
+    sidebar:
+      other: Autres événements
