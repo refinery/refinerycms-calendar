@@ -1,9 +1,9 @@
 Gem::Specification.new do |s|
   s.platform          = Gem::Platform::RUBY
   s.name              = 'refinerycms-calendar'
-  s.version           = '1.0.2'
+  s.version           = '1.0.3'
   s.description       = 'Ruby on Rails Events engine for Refinery CMS'
-  s.date              = '2011-03-03'
+  s.date              = Time.now.strftime('%Y-%m-%d')
   s.summary           = 'Events engine for Refinery CMS'
   s.require_paths     = %w(lib)
   s.files             = Dir['**/*']
