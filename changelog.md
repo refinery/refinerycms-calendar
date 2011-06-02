@@ -1,4 +1,8 @@
 
+## 1.1 [02 June 2011]
+* Archive listing should be reversed
+
+
 ## 1.0 [13 March 2011]
 
 * Venue Details
