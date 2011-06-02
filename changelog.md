@@ -1,5 +1,5 @@
 
-## 1.1 [02 June 2011]
+## 1.0.4 [02 June 2011]
 * Archive listing should be reversed
 
 
