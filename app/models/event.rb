@@ -9,12 +9,6 @@ class Event < ActiveRecord::Base
   scope :featured, where(['featured IS NOT NULL and featured = ?', true])
   scope :not_featured, where(['featured IS NULL or featured = ?', false])
   scope :live, where(['end_at > ?', Time.now])
-  scope :archive, where(['end_at < ?', Time.now])
-  scope :for_archive_list, where(['end_at < ?', Time.now.beginning_of_month])
-  
-  scope :by_archive, lambda { |archive_date|
-    where(['start_at between ? and ?', archive_date.beginning_of_month, archive_date.end_of_month])
-  }
   
   scope :by_year, lambda { |archive_year|
     where(['start_at between ? and ?', archive_year.beginning_of_year, archive_year.end_of_year])
@@ -59,6 +53,18 @@ class Event < ActiveRecord::Base
   
   def prev
     Event.where(['end_at >= ? AND start_at < ?', Time.now, self.start_at]).reverse.first
+  end
+  
+  def self.archive
+    with_exclusive_scope { order('start_at DESC').where 'end_at < ?', Time.now }
+  end
+  
+  def self.by_archive archive_date
+    with_exclusive_scope { order('start_at DESC').where 'start_at between ? and ?', archive_date.beginning_of_month, archive_date.end_of_month }
+  end
+  
+  def self.for_archive_list
+    with_exclusive_scope { order('start_at DESC').where(['end_at < ?', Time.now.beginning_of_month]) }
   end
   
   private
