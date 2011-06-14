@@ -1,3 +1,8 @@
+## 1.1 [UNRELASED]
+* No more unique titles
+* Cached slugs for performance boost
+* Controller & view template refactoring
+
 
 ## 1.0.4 [02 June 2011]
 * Archive listing should be reversed
