@@ -22,11 +22,6 @@ describe Event do
     it "rejects empty title" do
       Event.new(@valid_attributes.merge(:title => "")).should_not be_valid
     end
-
-    it "rejects non unique title" do
-      # as one gets created before each spec by reset_event
-      Event.new(@valid_attributes).should_not be_valid
-    end
     
     it "rejects a non-numerical ticket price" do
       Event.new({

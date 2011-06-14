@@ -44,16 +44,6 @@ Feature: Events
     And I should be on the list of events
     And I should not see "A title"
 
-  @events-duplicate @duplicate
-  Scenario: Create Duplicate Event
-    Given I only have events titled UniqueTitleOne, UniqueTitleTwo
-    When I go to the list of events
-    And I follow "Add New Event"
-    And I fill in "Title" with "UniqueTitleTwo"
-    And I press "Save"
-    Then I should see "There were problems"
-    And I should have 2 events
-
   @events-delete @delete
   Scenario: Delete Event
     Given I only have events titled UniqueTitleOne
