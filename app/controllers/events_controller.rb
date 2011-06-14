@@ -37,6 +37,7 @@ class EventsController < ApplicationController
         :per_page => RefinerySetting.find_or_set(:events_per_page, 10)
       })
     end
+    #render :template => 'events/index'
   end
 
 protected
