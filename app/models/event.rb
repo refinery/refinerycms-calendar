@@ -48,11 +48,11 @@ class Event < ActiveRecord::Base
   end
   
   def next
-    Event.where(['end_at >= ? AND start_at > ?', Time.now, self.start_at]).first
+    Event.where(['start_at > ?', start_at]).first
   end
   
   def prev
-    Event.where(['end_at >= ? AND start_at < ?', Time.now, self.start_at]).reverse.first
+    Event.where(['start_at < ?', start_at]).reverse.first
   end
   
   def self.archive
