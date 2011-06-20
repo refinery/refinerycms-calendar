@@ -54,6 +54,14 @@ class Event < ActiveRecord::Base
   def prev
     Event.where(['start_at < ?', start_at]).reverse.first
   end
+
+  def single_day?
+    end_at.blank? || start_at.blank? || (end_at - start_at) < 24*60*60
+  end
+
+  def multi_day?
+    !single_day?
+  end
   
   def self.archive
     with_exclusive_scope { order('start_at DESC').where 'end_at < ?', Time.now }
