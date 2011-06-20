@@ -1,7 +1,8 @@
 ## 1.1 [UNRELASED]
-* No more unique titles
-* Cached slugs for performance boost
-* Controller & view template refactoring
+* No more unique titles [joemsak](https://github.com/joemsak)
+* Cached slugs for performance boost [joemsak](https://github.com/joemsak)
+* Controller & view template refactoring [joemsak](https://github.com/joemsak)
+* Easy multi-day or single-day detection for date formatting [mdoel](https://github.com/mdoel)
 
 
 ## 1.0.4 [02 June 2011]
