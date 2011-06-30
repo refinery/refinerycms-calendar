@@ -37,7 +37,6 @@ Maintained by [joemsak](http://github.com/joemsak)
 
 ## TODO for 1.2
 
-* Google map of address
 * Address finder?
 
 ## Acknowledgements

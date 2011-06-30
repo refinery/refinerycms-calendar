@@ -4,6 +4,7 @@
 * Controller & view template refactoring [joemsak](https://github.com/joemsak)
 * Easy multi-day or single-day detection for date formatting [mdoel](https://github.com/mdoel)
 * iCal (ics) export [joemsak](https://github.com/joemsak)
+* Google map of venue address [joemsak](https://github.com/joemsak)
 
 ## 1.0.4 [02 June 2011]
 * Archive listing should be reversed
