@@ -34,7 +34,6 @@ Maintained by [joemsak](http://github.com/joemsak)
 * Import events from Facebook fan page?
 * JS datepicker in admin backend
 * Calendar grid view? (can be kinda gross, honestly)
-* iCal export
 
 ## TODO for 1.2
 
