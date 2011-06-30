@@ -1,4 +1,10 @@
 module EventsHelper
+  
+  def custom_url_for(event, format = nil)
+    port = request.port == 80 ? nil : ":#{request.port}"
+    "#{request.protocol}#{request.host}#{port}/events/#{event.friendly_id}#{format}"
+  end
+
   def events_archive_list
     events = Event.select('start_at').for_archive_list
     return nil if events.blank?

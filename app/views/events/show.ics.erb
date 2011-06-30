@@ -1,0 +1,16 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//iCalendar export//EN
+BEGIN:VEVENT
+UID:<%= @event.id %>@<%= request.host %>
+SUMMARY:<%= @event.title %>
+DESCRIPTION:<%= truncate(strip_tags(@event.description.gsub(/\n/," ").gsub(/\r/," ")), :length => 200) %>
+LOCATION:<%= @event.venue_address %>
+URL:<%= custom_url_for @event %>
+STATUS:CONFIRMED
+CLASS:PUBLIC
+DTSTART:<%= @event.start_at.strftime('%Y%m%dT%H%M%S') %>
+DTEND:<%= @event.end_at.strftime('%Y%m%dT%H%M%S') %>
+DTSTAMP:<%= @event.start_at.strftime('%Y%m%dT%H%M%S') %>
+END:VEVENT
+END:VCALENDAR
