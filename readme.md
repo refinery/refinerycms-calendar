@@ -29,6 +29,11 @@ bash:
 
 Maintained by [joemsak](http://github.com/joemsak)
 
+## TODO for 1.1.1:
+
+* Controller & view template refactoring
+
+
 ## TODO for 1.2 Release:
 
 * Import events from Facebook fan page?

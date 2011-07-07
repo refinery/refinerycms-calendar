@@ -1,9 +1,11 @@
 ## 1.2 [UNRELEASED]
 
+## 1.1.1 [UNRELEASED]
+* Controller & view template refactoring [joemsak](https://github.com/joemsak)
+
 ## 1.1 [07 July 2011]
 * No more unique titles [joemsak](https://github.com/joemsak)
 * Cached slugs for performance boost [joemsak](https://github.com/joemsak)
-* Controller & view template refactoring [joemsak](https://github.com/joemsak)
 * Easy multi-day or single-day detection for date formatting [mdoel](https://github.com/mdoel)
 * iCal (ics) export [joemsak](https://github.com/joemsak)
 * Google map of venue address [joemsak](https://github.com/joemsak)
