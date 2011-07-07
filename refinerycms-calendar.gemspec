@@ -1,7 +1,7 @@
 Gem::Specification.new do |s|
   s.platform          = Gem::Platform::RUBY
   s.name              = 'refinerycms-calendar'
-  s.version           = '1.0.4'
+  s.version           = '1.1.0'
   s.description       = 'Ruby on Rails Events engine for Refinery CMS'
   s.date              = Time.now.strftime('%Y-%m-%d')
   s.summary           = 'Events engine for Refinery CMS'

@@ -1,4 +1,6 @@
-## 1.1 [UNRELASED]
+## 1.2 [UNRELEASED]
+
+## 1.1 [07 July 2011]
 * No more unique titles [joemsak](https://github.com/joemsak)
 * Cached slugs for performance boost [joemsak](https://github.com/joemsak)
 * Controller & view template refactoring [joemsak](https://github.com/joemsak)

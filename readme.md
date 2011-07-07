@@ -15,7 +15,7 @@
 
 Using Rails 3 / Bundler Gemfile:
 
-    gem 'refinerycms-calendar', '~>1.0'
+    gem 'refinerycms-calendar', '~>1.1.0'
 
 bash:
 
@@ -29,14 +29,11 @@ bash:
 
 Maintained by [joemsak](http://github.com/joemsak)
 
-## TODO for 1.1 Release:
+## TODO for 1.2 Release:
 
 * Import events from Facebook fan page?
 * JS datepicker in admin backend
 * Calendar grid view? (can be kinda gross, honestly)
-
-## TODO for 1.2
-
 * Address finder?
 
 ## Acknowledgements
