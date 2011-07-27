@@ -1,0 +1,45 @@
+bg:
+  shared:
+    admin:
+      image_picker:
+        image: изображение
+  plugins:
+    calendar:
+      title: Събития
+  admin:
+    events:
+      index:
+        title: Събития
+        create_new: Добавяне на ново събитие
+        reorder: Пренареждане на събитията
+        reorder_done: Запис на текущото подреждане на събитията
+        sorry_no_results: За съжаление нищо не бе намерено.
+        no_items_yet: Все още няма събития. Натиснете "Добавяне на ново събитие", за да добавите ново.
+        manage_categories: Управление на категории
+      event:
+        view_live_html: Преглед на това събитие <br/><em>(ще се отвори се в нов прозорец)</em>
+        edit: Редактиране на това събитие
+        delete: Изтриване на това събитие завинаги
+      sortable_list:
+        current_events: Текущи събития
+        upcoming_events: Предстоящи събития
+        archived_events: Архивирани събития
+    event_categories:
+      index:
+        title: Категории на събития
+        create_new: Добавяне на нова категория
+        reorder: Пренареждане на категориите
+        reorder_done: Запис на текущото подреждане на категориите
+        sorry_no_results: За съжаление нищо не бе намерено.
+        no_items_yet: Все още няма категории на събития. Натиснете "Добавяне на нова категория", за да добавите нова.
+        manage_events: Управление на събития
+      event_category:
+        view_live_html: Преглед на тази категория <br/><em>(ще се отвори се в нов прозорец)</em>
+        edit: Редактиране на тази категория
+        delete: Изтриване на тази категория завинаги
+  events:
+    index:
+      archives: Архиви
+    show:
+    sidebar:
+      other: Други събития
