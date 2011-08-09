@@ -16,10 +16,7 @@
 	<% end -%>
 	
 	<section class="start_end">
-		<p>Starts:<br/>
-		<%= event.start_at.strftime('%b %e, %Y %l:%M %p') %></p>
-		<p>Ends:<br/>
-		<%= event.end_at.strftime('%b %e, %Y %l:%M %p') %></p>
+		<%= smart_date_for event %>
   </section><!-- .start_end -->
 
   <section class="venue">

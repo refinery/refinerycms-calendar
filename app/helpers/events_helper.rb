@@ -1,5 +1,13 @@
 module EventsHelper
   
+  def smart_date_for event
+    if event.start_at.to_date == event.end_at.to_date
+      "#{event.start_at.strftime('%A, %B %e &ndash; %l:%M%p')} to #{event.end_at.strftime('%l:%M%p')} <br />".html_safe
+    else
+      "#{event.start_at.strftime('%A, %B %e, at %l:%M%p')} until #{event.end_at.strftime('%A %B %e, %l:%M%p')}<br />".html_safe
+    end
+  end
+  
   def custom_url_for(event, format = nil)
     port = request.port == 80 ? nil : ":#{request.port}"
     "#{request.protocol}#{request.host}#{port}/events/#{event.friendly_id}#{format}"
