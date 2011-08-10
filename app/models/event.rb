@@ -78,8 +78,6 @@ class Event < ActiveRecord::Base
   private
   
   def ends_after_start
-    start_at ||= Time.now
-    end_at ||= start_at.advance(:hours => 1)
     errors.add(:base, "End at date must be after the start at date") if end_at < start_at
   end
 
