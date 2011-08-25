@@ -11,6 +11,9 @@ nl:
       event:
         one: Event
         other: Events
+      event_category:
+        one: Event Categorie
+        other: Event Categoriën &event_categories
     attributes:
       event:
         venue_name: Lokatie
@@ -38,20 +41,20 @@ nl:
         archived_events: Event Archief
     event_categories:
       index:
-        title: Event Categorien
+        title: Event Categoriën
         create_new: Voeg een nieuwe Event Categorie toe
-        reorder: Orden de Event Categorien
-        reorder_done: Klaar met ordenen van de Event Categorien
+        reorder: Orden de Event Categoriën
+        reorder_done: Klaar met ordenen van de Event Categoriën
         sorry_no_results: Helaas! Er zijn geen resultaten gevonden.
-        no_items_yet: Er zijn nog geen Event Categorien. Druk op "Maak een nieuwe Event Categorie" om de eerste aan te maken.
+        no_items_yet: Er zijn nog geen Event Categoriën. Druk op "Maak een nieuwe Event Categorie" om de eerste aan te maken.
         manage_events: Beheer de Events
       event_category:
         view_live_html: Bekijk deze Event Categorie live <br/><em>(opent in een nieuw venster)</em>
         edit: Bewerk deze Event Categorie
         delete: Verwijder deze Event Categorie permanent
   events:
-    index:
-      archives: Archief
-    show:
     sidebar:
-      other: Andere Events
+      subscribe: Abboneer
+      event_categories: Event Categoriën
+      other_events: Andere Events
+      archives: Archief

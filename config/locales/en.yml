@@ -55,4 +55,7 @@ en:
       archives: Archives
     show:
     sidebar:
-      other: Other Events
+      subscribe: Subscribe
+      event_categories: Event Categories
+      other_events: Other Events
+      archives: Archive
