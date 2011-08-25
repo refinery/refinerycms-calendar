@@ -1,20 +1,57 @@
 nl:
+  shared:
+    admin:
+      image_picker:
+        image: plaatje
   plugins:
-    events:
-      title: Events
-  admin:
     calendar:
+      title: Events
+  activerecord:
+    model:
+      event:
+        one: Event
+        other: Events
+    attributes:
+      event:
+        venue_name: Lokatie
+        venue_address: Adres
+        ticket_price: Kosten
+        ticket_link: Ticket link
+        prev: Vorige
+        next: Volgende
+  admin:
+    events:
       index:
         title: Events
-        create_new: Maak een nieuwe Event
-        reorder: Wijzig de volgorde van de Events
-        reorder_done: Klaar met het wijzingen van de volgorde van de Events
+        create_new: Voeg een Event toe
+        reorder: Orden de Events
+        reorder_done: Klaar met ordenen van de Events
         sorry_no_results: Helaas! Er zijn geen resultaten gevonden.
-        no_items_yet: Er zijn nog geen Events. Druk op 'Maak een nieuwe Event' om de eerste aan te maken.
+        no_items_yet: Er zijn nog geen Events. Druk op "Maak een nieuw Event" om de eerste aan te maken.
       event:
-        view_live_html: Bekijk deze event op de website <br/><em>(opent een nieuw venster)</em>
-        edit: Bewerk deze event
-        delete: Verwijder deze event voor eeuwig
+        view_live_html: Bekijk dit event op de website <br/><em>(opent een nieuw venster)</em>
+        edit: Bewerk dit event
+        delete: Verwijder dit event permanent 
+      sortable_list:
+        current_events: Huidige Events
+        upcoming_events: Aankomende Events
+        archived_events: Event Archief
+    event_categories:
+      index:
+        title: Event Categorien
+        create_new: Voeg een nieuwe Event Categorie toe
+        reorder: Orden de Event Categorien
+        reorder_done: Klaar met ordenen van de Event Categorien
+        sorry_no_results: Helaas! Er zijn geen resultaten gevonden.
+        no_items_yet: Er zijn nog geen Event Categorien. Druk op "Maak een nieuwe Event Categorie" om de eerste aan te maken.
+        manage_events: Beheer de Events
+      event_category:
+        view_live_html: Bekijk deze Event Categorie live <br/><em>(opent in een nieuw venster)</em>
+        edit: Bewerk deze Event Categorie
+        delete: Verwijder deze Event Categorie permanent
   events:
+    index:
+      archives: Archief
     show:
+    sidebar:
       other: Andere Events

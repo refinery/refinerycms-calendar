@@ -6,6 +6,19 @@ en:
   plugins:
     calendar:
       title: Events
+  activerecord:
+    model:
+      event:
+        one: Event
+        other: Events
+    attributes:
+      event:
+        venue_name: Location
+        venue_address: Address
+        ticket_price: Ticket Price
+        ticket_link: Ticket Link
+        prev: Previous
+        next: Next
   admin:
     events:
       index:

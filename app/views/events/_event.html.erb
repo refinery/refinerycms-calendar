@@ -1,4 +1,4 @@
-<% 
+<%
 	featured ||= false
 	individual ||= false
 	archive ||= false
@@ -14,7 +14,7 @@
 	<% unless individual -%>
 		<h1><%= link_to event.title, event %></h1>
 	<% end -%>
-	
+
 	<section class="start_end">
 		<p><%= t('.starts') %>:<br/>
 		<%= event.start_at.strftime('%b %e, %Y %l:%M %p') %></p>
@@ -24,21 +24,21 @@
 
   <section class="venue">
 		<p><%= t('.location') %>:<br/>
+    <p><%= Event.human_attribute_name :venue_name %>:<br/>
 		<%= event.venue_name %></p>
   </section>
 
-  
-  
+
   <% if event.venue_address.present? -%>
     <section class="address">
-  		<p><%= t('.address') %>:<br/>
+      <p><%= Event.human_attribute_name :venue_address %>:<br/>
         <%= event.venue_address %>
       </p>
     </section>
 
 	  <section id="event_map">
 		</section><!-- #event_map -->
-		
+
 		<% content_for :javascripts do %>
       <%= javascript_include_tag 'http://maps.googleapis.com/maps/api/js?sensor=false' %>
       <script type="text/javascript">
@@ -63,7 +63,7 @@
                 var marker = new google.maps.Marker ({
                                 position: results[0].geometry.location,
                                 map: map
-                              });   
+                              });
 
                 google.maps.event.addListener(marker, 'click', function() {
                   infowindow.open(map,marker);
@@ -85,14 +85,14 @@
 <% unless archive -%>
 	<% unless event.ticket_price.blank? -%>
 	  <section class="price">
-	    <p><%= t('.ticket_price') %>:<br/>
+      <p><%= Event.human_attribute_name :ticket_price %>:<br/>
 	      <%=number_to_currency event.ticket_price %>
 	    </p>
 	  </section>
 	<% end -%>
 	<% unless event.ticket_link.blank? -%>
 	  <section class="ticket">
-	    <p><%= t('.ticket_link') %>:<br/>
+      <p><%= Event.human_attribute_name :ticket_link %>:<br/>
 	      <%=link_to event.ticket_link, event.ticket_link %>
 	    </p>
 	  </section>
@@ -106,9 +106,8 @@
 			<%= simple_format(truncate strip_tags(event.description), :length => 200) %>
 		<% end -%>
   </section>
-  
 
-  
+
 <% if individual -%>
 	<section id="share_this_event">
 	  <ul>
@@ -120,29 +119,29 @@
   <nav id="prevnext_nav">
 		<% if event.prev.present? -%>
 		  <%= link_to event_path(event.prev), :class => "prev button" do -%>
-  			<h3><%= t('.previous') %></h3>
+        <h3><%= Event.human_attribute_name :prev %></h3>
   			<h4><%=truncate event.prev.title, :length => 38 %></h4>
   		<% end -%>
 	  <% else -%>
   	  <span class="prev disabled">
-  	    <h3><%= t('.previous') %></h3>
+        <h3><%= Event.human_attribute_name :prev %></h3>
 				<h4>&nbsp;</h4>
   	  </span>
 	  <% end -%>
-	
+
 		<%= link_to events_path, :class => "home button" do -%>
-			<h3><%= t('.events') %></h3>
+      <h3><%= Event.model_name.human(:count => 2) %></h3>
 			<h4><%= t('.home') %></h4>
 		<% end -%>
-		
+
 		<% if event.next.present? -%>
 		  <%= link_to event_path(event.next), :class => "next button" do -%>
-  			<h3><%= t('.next') %></h3>
+        <h3><%= Event.human_attribute_name :next %></h3>
   			<h4><%=truncate event.next.title, :length => 38 %></h4>
   		<% end -%>
     <% else -%>
   	  <span class="next disabled">
-  	    <h3><%= t('.next') %></h3>
+        <h3><%= Event.human_attribute_name :next %></h3>
 				<h4>&nbsp;</h4>
   	  </span>
 	  <% end -%>
