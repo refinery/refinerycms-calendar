@@ -2,7 +2,7 @@ xml.instruct! :xml, :version => "1.0"
 xml.rss :version => "2.0" do
   xml.channel do
     xml.title RefinerySetting.find_or_set(:site_name, "Pastoral Artisan Cheese, Bread & Wine")
-    xml.description RefinerySetting.find_or_set(:site_name, "Pastoral Artisan Cheese, Bread & Wine") + " Events"
+    xml.description RefinerySetting.find_or_set(:site_name, "Pastoral Artisan Cheese, Bread & Wine") + " " + t('.events')
     xml.link events_url
 
     (@featured_events | @events).each do |event|

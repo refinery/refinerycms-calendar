@@ -42,6 +42,7 @@ es:
       archives: Archivo
       featured_events: Eventos destacados
       all_events: Todos los eventos
+      events: Eventos
     show:
     sidebar:
       categories: Categorias
