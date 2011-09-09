@@ -40,6 +40,21 @@ es:
   events:
     index:
       archives: Archivo
+      featured_events: Eventos destacados
+      all_events: Todos los eventos
     show:
     sidebar:
-      other: Otros Eventos
+      categories: Categorias
+      other: Otros eventos
+      archives: Archivo
+    event:
+      starts: Empieza
+      ends: Termina
+      location: Lugar
+      address: Dirección
+      ticket_price: Precio del ticket
+      ticket_link: Enlace al ticket
+      previous: Anterior
+      next: Siguiente
+      events: Eventos
+      home: Inicio
