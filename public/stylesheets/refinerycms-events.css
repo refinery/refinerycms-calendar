@@ -70,4 +70,7 @@
 	width: 33%;
 	float: left;
 }
-	
+#event_map {
+  width: 400px;
+  height: 200px;
+}
