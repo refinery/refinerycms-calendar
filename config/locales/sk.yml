@@ -1,0 +1,45 @@
+sk:
+  shared:
+    admin:
+      image_picker:
+        image: Obrázok
+  plugins:
+    calendar:
+      title: Udalosti
+  admin:
+    events:
+      index:
+        title: Udalosti
+        create_new: Pridať novú udalosť
+        reorder: Preusporiadať udalosti
+        reorder_done: Hotovo
+        sorry_no_results: Ospravedlňujeme sa! Neboli nájdené žiadne výsledky.
+        no_items_yet: Niesu tu žiadne udalosti. Klikni na "Pridať novú udalosť" pre vloženie prvej.
+        manage_categories: Spravovať kategórie
+      event:
+        view_live_html: Zobraziť náhľad <br/><em>(otvorí nové okno)</em>
+        edit: Upraviť túto udalosť
+        delete: Trvalo odstraniť túto udalosť
+      sortable_list:
+        current_events: Súčasné udalosti
+        upcoming_events: Nadchádzajúce udalosti
+        archived_events: Archivované udalosti
+    event_categories:
+      index:
+        title: Kategórie udalostí
+        create_new: Pridať novú kategóriu
+        reorder: Preusporiadať kategórie
+        reorder_done: Preusporiadanie kategórií dokončené
+        sorry_no_results: Ospravedlňujeme sa! Neboli nájdené žiadne výsledky.
+        no_items_yet: Niesu tu žiadne kategórie udalostí. Klikni na "Pridať novú kategóriu" pre vloženie prvej.
+        manage_events: Spravovať udalosti
+      event_category:
+        view_live_html: Zobraziť náhľad <br/><em>(otvorí nové okno)</em>
+        edit: Upraviť túto kategóriu
+        delete: Trvalo odstraniť túto kategóriu
+  events:
+    index:
+      archives: Archív
+    show:
+    sidebar:
+      other: Iné udalosti

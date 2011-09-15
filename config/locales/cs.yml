@@ -1,0 +1,45 @@
+cs:
+  shared:
+    admin:
+      image_picker:
+        image: Obrázek
+  plugins:
+    calendar:
+      title: Události
+  admin:
+    events:
+      index:
+        title: Události
+        create_new: Přidat novou událost
+        reorder: Přeuspořádat události
+        reorder_done: Hotovo
+        sorry_no_results: Ospravedlňujeme se! Nebyly nalezeny žádné výsledky.
+        no_items_yet: Nejsou zde žádné události. Klikni na "Přidat novou událost" pro vložení první.
+        manage_categories: Spravovat kategorie
+      event:
+        view_live_html: Zobrazit náhled <br/><em>(otevře nové okno)</em>
+        edit: Udalosti Upravit tuto událost
+        delete: Trvale odstranit tuto událost
+      sortable_list:
+        current_events: Současné události
+        upcoming_events: Nadcházející události
+        archived_events: Archivované události
+    event_categories:
+      index:
+        title: Kategorie událostí
+        create_new: Přidat novou kategorii
+        reorder: Přeuspořádat kategórie
+        reorder_done: Přeskupení kategorií dokončeno
+        sorry_no_results: Ospravedlňujeme se! Nebyly nalezeny žádné výsledky.
+        no_items_yet: Nejsou zde žádné kategorie událostí. Klikni na "Přidat novou kategorii" pro vložení první.
+        manage_events: Spravovat události
+      event_category:
+        view_live_html: Zobrazit náhled <br/><em>(otevře nové okno)</em>
+        edit: Upravit tuto kategorii
+        delete: Trvale odstranit tuto kategorii
+  events:
+    index:
+      archives: Archiv
+    show:
+    sidebar:
+      other: Jiné události
