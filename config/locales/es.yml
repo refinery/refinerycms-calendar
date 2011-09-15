@@ -1,0 +1,61 @@
+es:
+  shared:
+    admin:
+      image_picker:
+        image: imagen
+  plugins:
+    calendar:
+      title: Eventos
+  admin:
+    events:
+      index:
+        title: Eventos
+        create_new: Añadir un evento
+        reorder: Reordenar eventos
+        reorder_done: Eventos reordenados
+        sorry_no_results: ¡Lo sentimos! No se ha encontrado ningún resultado.
+        no_items_yet: Aún no hay ningún evento. Haz click en "Añadir un evento" para crear el primer evento.
+        manage_categories: Administrar categorías
+      event:
+        view_live_html: Ver este evento como abierto al público <br/><em>(se abre en una ventana nueva)</em>
+        edit: Editar este evento
+        delete: Borrar este evento para siempre
+      sortable_list:
+        current_events: Eventos actuales
+        upcoming_events: Próximos eventos
+        archived_events: Eventos archivadoscategoría
+    event_categories:
+      index:
+        title: categorías de eventos
+        create_new: Añadir una nueva categoría de eventos
+        reorder: Reordenar categorías de eventos
+        reorder_done: categorías de eventos reordenadas
+        sorry_no_results: ¡Lo sentimos! No se ha encontrado ningún resultado.
+        no_items_yet: Aún no hay ninguna categoría de eventos. Haz click en "Añadir una categoría de evento" para crear la primera categoría.
+        manage_events: Administrar eventos
+      event_category:
+        view_live_html: Ver esta categoría como abierta al público <br/><em>(se abre en una ventana nueva)</em>
+        edit: Editar esta categoría de eventos
+        delete: Borrar esta categoría de eventos para siempre
+  events:
+    index:
+      archives: Archivo
+      featured_events: Eventos destacados
+      all_events: Todos los eventos
+      events: Eventos
+    show:
+    sidebar:
+      categories: Categorias
+      other: Otros eventos
+      archives: Archivo
+    event:
+      starts: Empieza
+      ends: Termina
+      location: Lugar
+      address: Dirección
+      ticket_price: Precio del ticket
+      ticket_link: Enlace al ticket
+      previous: Anterior
+      next: Siguiente
+      events: Eventos
+      home: Inicio
