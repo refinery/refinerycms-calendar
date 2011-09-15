@@ -34,8 +34,49 @@
     </section>
 
 	  <section id="event_map">
-			<iframe width="400" height="200" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://maps.google.com/maps?q=<%= CGI::escape(event.venue_address) %>&amp;z=14&amp;output=embed"></iframe>
 		</section><!-- #event_map -->
+		
+		<% content_for :javascripts do %>
+      <%= javascript_include_tag 'http://maps.googleapis.com/maps/api/js?sensor=false' %>
+      <script type="text/javascript">
+        function initialize() {
+          var geocoder = new google.maps.Geocoder();
+          var address = '<%= CGI::escape(event.venue_address) %>';
+
+          if (geocoder) {
+            geocoder.geocode({ 'address': address }, function (results, status) {
+              if (status == google.maps.GeocoderStatus.OK) {
+                var myOptions = {
+                  zoom: 13,
+                  center: results[0].geometry.location,
+                  mapTypeId: google.maps.MapTypeId.ROADMAP
+                };
+
+                var infowindow = new google.maps.InfoWindow({
+                    content: "<%= event.venue_name %>"
+                });
+
+                var map = new google.maps.Map(document.getElementById("event_map"), myOptions);
+                var marker = new google.maps.Marker ({
+                                position: results[0].geometry.location,
+                                map: map
+                              });   
+
+                google.maps.event.addListener(marker, 'click', function() {
+                  infowindow.open(map,marker);
+                });
+
+               }
+               else {
+                console.log("Geocoding failed: " + status);
+               }
+            });
+          }
+        }
+        google.maps.event.addDomListener(window, 'load', initialize);
+
+      </script>
+    <% end %>
   <% end -%>
 
 <% unless archive -%>
@@ -49,7 +90,7 @@
 	<% unless event.ticket_link.blank? -%>
 	  <section class="ticket">
 	    <p>Ticket Link:<br/>
-	      <%=auto_link event.ticket_link %>
+	      <%=link_to event.ticket_link, event.ticket_link %>
 	    </p>
 	  </section>
 	<% end -%>
