@@ -58,3 +58,8 @@ nl:
       event_categories: Event Categoriën
       other_events: Andere Events
       archives: Archief
+    archive:
+      posted_in: "Events die %{date} plaatsvonden"
+  event_categories:
+    show:
+      category: "%{name} Categorie"

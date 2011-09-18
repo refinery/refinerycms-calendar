@@ -1,5 +1,5 @@
 <% content_for :body_content_title do -%>
-  <%= "#{@event_category.name} Category" %>
+  <%= t(".category", :name => @event_category.name) %>
 <% end -%>
 
 <% content_for :body_content_left do %>

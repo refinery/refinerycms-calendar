@@ -59,3 +59,8 @@ en:
       event_categories: Event Categories
       other_events: Other Events
       archives: Archive
+    archive:
+      posted_in: "Events posted in %{date}"
+  event_categories:
+    show:
+      category: "%{name} Category"
