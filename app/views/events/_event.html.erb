@@ -8,7 +8,7 @@
 <%= div_for event, :class => 'individual_event' do -%>
 
 	<section class="event_image">
-  	<%= image_fu event.image, "150x150#c" %>
+  	<%= link_to(image_fu(event.image, "150x150#c"), event) %>
 	</section>
 
 	<% unless individual -%>
