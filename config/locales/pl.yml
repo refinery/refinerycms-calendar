@@ -1,0 +1,45 @@
+pl:
+  shared:
+    admin:
+      image_picker:
+        image: obrazek
+  plugins:
+    calendar:
+      title: Wydarzenia
+  admin:
+    events:
+      index:
+        title: Wydarzenia
+        create_new: Dodaj nowe wydarzenie
+        reorder: Zmień kolejność wydarzeń
+        reorder_done: Zakończ zmianę kolejności
+        sorry_no_results: Przepraszamy! Nic nie znaleźliśmy.
+        no_items_yet: Brak jakichkolwiek wydarzeń. Kliknij "Dodaj nowe wydarzenie" by utworzyć nowe.
+        manage_categories: Zarządzaj kategoriami
+      event:
+        view_live_html: Zobacz podgląd<br/><em>(otwiera nowe okno)</em>
+        edit: Edytuj to wydarzenie
+        delete: Skasuj to wydarzenie na zawsze
+      sortable_list:
+        current_events: Aktualne wydarzenia
+        upcoming_events: Nadchodzące wydarzenia
+        archived_events: Zarchiwizowane wydarzenia
+    event_categories:
+      index:
+        title: Kategorie wydarzeń
+        create_new: Dodaj nową kategorię wydarzeń
+        reorder: Zmień kolejność kategorii wydarzeń
+        reorder_done: Zakończ zmianę kolejności
+        sorry_no_results: Przepraszamy! Nic nie znaleźliśmy.
+        no_items_yet: Brak kategorii wydarzeń. Dodaj jedną klikając "Dodaj nową kategorię wydarzeń".
+        manage_events: Zarządzaj wydarzeiami
+      event_category:
+        view_live_html: Zobacz podgląd <br/><em>(otwiera nowe okno)</em>
+        edit: Edytuj kategorię
+        delete: Skasuj kategorię na zawszę
+  events:
+    index:
+      archives: Archiwum
+    show:
+    sidebar:
+      other: Pozostałe wydarzenia
