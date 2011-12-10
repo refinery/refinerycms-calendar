@@ -1,6 +1,21 @@
 BEGIN:VCALENDAR
 VERSION:2.0
 PRODID:-//iCalendar export//EN
+BEGIN:VTIMEZONE
+TZID:Europe/Central
+BEGIN:STANDARD
+DTSTART:19710101T030000
+TZOFFSETFROM:+0200
+TZOFFSETTO:+0100
+RRULE:FREQ=YEARLY;BYMONTH=10;BYDAY=-1SU
+END:STANDARD
+BEGIN:DAYLIGHT
+DTSTART:19710101T020000
+TZOFFSETFROM:+0100
+TZOFFSETTO:+0200
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=-1SU
+END:DAYLIGHT
+END:VTIMEZONE
 BEGIN:VEVENT
 UID:<%= @event.id %>@<%= request.host %>
 SUMMARY:<%= @event.title %>
@@ -9,6 +24,7 @@ LOCATION:<%= @event.venue_address %>
 URL:<%= custom_url_for @event %>
 STATUS:CONFIRMED
 CLASS:PUBLIC
+TZID=Europe/Central
 DTSTART:<%= @event.start_at.strftime('%Y%m%dT%H%M%S') %>
 DTEND:<%= @event.end_at.strftime('%Y%m%dT%H%M%S') %>
 DTSTAMP:<%= @event.start_at.strftime('%Y%m%dT%H%M%S') %>
