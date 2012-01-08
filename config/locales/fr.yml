@@ -10,8 +10,6 @@ fr:
     events:
       index:
         title: Événements
-        featured_events: Événements spéciaux
-        all_events: Tous les événements
         create_new: Ajouter un nouvel événement
         reorder: Reordrer les événements
         reorder_done: Finir de réordrer les événements
@@ -41,7 +39,12 @@ fr:
         delete: Effacer complètement cette catégorie
   events:
     index:
+      featured_events: Événements spéciaux
+      all_events: Tous les événements    
       archives: Archives
     show:
     sidebar:
       other: Autres événements
+      categories: Catégories
+      archives: Archives
+      
