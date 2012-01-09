@@ -28,7 +28,7 @@ fr:
       index:
         title: Catégories d'événements
         create_new: Ajouter une nouvelle catégorie d'événements
-        reorder: Réordrer les catégories d'événements
+        reorder: Réordonner les catégories d'événements
         reorder_done: Finir de réordrer les catégories d'événements
         sorry_no_results: Désolé! Aucun résultat n'a été trouvé
         no_items_yet: "Il n'y a pas encore de catégories d'événements pour le moment. Cliquez sur &quot;Ajouter une catégorie d'événements&quot; pour en créer une."
@@ -39,7 +39,22 @@ fr:
         delete: Effacer complètement cette catégorie
   events:
     index:
+      featured_events: Événements spéciaux
+      all_events: Tous les événements    
       archives: Archives
     show:
     sidebar:
       other: Autres événements
+      categories: Catégories
+      archives: Archives
+    event:
+      starts: Début
+      ends: Fin
+      location: Lieu
+      address: Adresse
+      ticket_price: Prix
+      previous: Précédent
+      next: Suivant
+      events: Événements
+      home: Accueil
+      
