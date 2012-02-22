@@ -1,20 +1,61 @@
 nl:
+  shared:
+    admin:
+      image_picker:
+        image: afbeelding
   plugins:
-    events:
+    calendar:
       title: Events
   admin:
-    calendar:
+    events:
       index:
         title: Events
-        create_new: Maak een nieuwe Event
-        reorder: Wijzig de volgorde van de Events
-        reorder_done: Klaar met het wijzingen van de volgorde van de Events
+        create_new: Maak een nieuw event
+        reorder: Wijzig de volgorde van events
+        reorder_done: Klaar met het wijzigen van de volgorde van events
         sorry_no_results: Helaas! Er zijn geen resultaten gevonden.
-        no_items_yet: Er zijn nog geen Events. Druk op 'Maak een nieuwe Event' om de eerste aan te maken.
+        no_items_yet: Er zijn nog geen events. Druk op 'maak een nieuw event' om de eerste aan te maken.
+        manage_categories: Beheer Categoriën
       event:
-        view_live_html: Bekijk deze event op de website <br/><em>(opent een nieuw venster)</em>
-        edit: Bewerk deze event
-        delete: Verwijder deze event voor eeuwig
+        view_live_html: Bekijk dit event op de website <br/><em>(opent in een nieuw venster)</em>
+        edit: Bewerk dit event
+        delete: Verwijder dit event definitief
+      sortable_list:
+        current_events: Huidige Events
+        upcoming_events: Aankomende Events
+        archived_events: Gearchiveerde Events
+    event_categories:
+      index:
+        title: Categorieën
+        create_new: Maak een nieuwe categorie
+        reorder: Wijzig de volgorde van categorieën
+        reorder_done: Klaar met het wijzigen van de categorieën
+        sorry_no_results: Helaas! Er zijn geen resultaten gevonden.
+        no_items_yet: Er zijn nog geen categorieen. Druk op 'Maak een nieuwe categorie' om de eerste aan te maken.
+        manage_events: Beheer Events
+      event_category:
+        view_live_html: Bekijk deze categorie op de website <br/><em>(opent in een nieuw venster)</em>
+        edit: Bewerk deze categorie
+        delete: Verwijder deze categorie definitief
   events:
+    index:
+      archives: Archief
+      featured_events: Bijzondere Events
+      all_events: Alle Events
+      events: Events
     show:
+    sidebar:
+      categories: Categorieën
       other: Andere Events
+      archives: Archief
+    event:
+      starts: Begin
+      ends: Einde
+      location: Plaats
+      address: Adres
+      ticket_price: Toegangprijs
+      ticket_link: Ticketlink
+      previous: Vorige
+      next: Volgende
+      events: Events
+      home: Overzicht
