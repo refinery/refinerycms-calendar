@@ -4,17 +4,8 @@ begin
 rescue LoadError
   puts 'You must `gem install bundler` and `bundle install` to run rake tasks'
 end
+require 'rspec/core/rake_task'
 
-ENGINE_PATH = File.dirname(__FILE__)
-APP_RAKEFILE = File.expand_path("../spec/dummy/Rakefile", __FILE__)
+RSpec::Core::RakeTask.new(:spec)
 
-if File.exists?(APP_RAKEFILE)
-  load 'rails/tasks/engine.rake'
-end
-
-require "refinerycms-testing"
-Refinery::Testing::Railtie.load_tasks
-Refinery::Testing::Railtie.load_dummy_tasks(ENGINE_PATH)
-
-load File.expand_path('../tasks/testing.rake', __FILE__)
-load File.expand_path('../tasks/rspec.rake', __FILE__)
+task :default => :spec
