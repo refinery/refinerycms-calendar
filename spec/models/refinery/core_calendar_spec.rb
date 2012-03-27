@@ -19,22 +19,22 @@ module Refinery
         subject.should have(0).entries
       end
 
-      describe "#new_entry" do
+      describe "#new_event" do
         before do
-          @new_entry = OpenStruct.new
-          subject.entry_source = -> { @new_entry }
+          @new_event = OpenStruct.new
+          subject.event_source = -> { @new_event }
         end
 
-        it "returns a new entry" do
-          subject.new_entry.should == @new_entry
+        it "returns a new event" do
+          subject.new_event.should == @new_event
         end
 
         it "accepts an attribute hash on behalf of the event maker" do
-          entry_source = MiniTest::Mock.new
-          entry_source.expect(:call, @new_entry, [{x: 42, y: 'z'}])
-          subject.entry_source = entry_source
-          subject.new_entry(x: 42, y: 'z')
-          entry_source.verify
+          event_source = MiniTest::Mock.new
+          event_source.expect(:call, @new_event, [{x: 42, y: 'z'}])
+          subject.event_source = event_source
+          subject.new_event(x: 42, y: 'z')
+          event_source.verify
         end
       end
 

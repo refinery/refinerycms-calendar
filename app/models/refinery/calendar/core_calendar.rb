@@ -2,7 +2,7 @@ module Refinery
   module Calendar
     class CoreCalendar
       attr_accessor :entries
-      attr_writer :entry_source
+      attr_writer :event_source
 
       def initialize
         @entries = []
@@ -12,8 +12,8 @@ module Refinery
         Refinery::Calendar.title
       end
 
-      def new_entry(*args)
-        entry_source.call(*args).tap do |e|
+      def new_event(*args)
+        event_source.call(*args).tap do |e|
           e.calendar = self
         end
       end
@@ -24,8 +24,8 @@ module Refinery
 
       private
 
-      def entry_source
-        @entry_source ||= Event.public_method(:new)
+      def event_source
+        @event_source ||= Event.public_method(:new)
       end
     end
   end
