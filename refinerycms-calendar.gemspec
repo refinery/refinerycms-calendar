@@ -1,9 +1,13 @@
 # Encoding: UTF-8
+$:.push File.expand_path('../lib', __FILE__)
+require 'refinery/blog/version'
+
+version = Refinery::Blog::Version.to_s
 
 Gem::Specification.new do |s|
   s.platform          = Gem::Platform::RUBY
   s.name              = 'refinerycms-calendar'
-  s.version           = '1.0'
+  s.version           = version
   s.description       = 'Ruby on Rails Calendar extension for Refinery CMS'
   s.date              = '2012-03-26'
   s.summary           = 'Calendar extension for Refinery CMS'
@@ -12,7 +16,4 @@ Gem::Specification.new do |s|
 
   # Runtime dependencies
   s.add_dependency             'refinerycms-core',    '~> 2.0.2'
-
-  # Development dependencies (usually used for testing)
-  s.add_development_dependency 'refinerycms-testing', '~> 2.0.2'
 end
