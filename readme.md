@@ -1,5 +1,7 @@
 # Calendar extension for Refinery CMS.
 
+[![Build Status](https://secure.travis-ci.org/resolve/refinerycms-calendar.png?branch=master)](http://travis-ci.org/resolve/refinerycms-calendar)
+
 ## How to build this extension as a gem
 
     cd vendor/extensions/calendar
