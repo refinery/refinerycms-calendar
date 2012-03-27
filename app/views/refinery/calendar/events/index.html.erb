@@ -1,0 +1,11 @@
+<% content_for :body_content_left do %>
+  <ul id="events">
+    <% @events.each do |event| %>
+      <li>
+        <%= link_to event.title, refinery.calendar_event_path(event) %>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
+
+<%= render '/refinery/content_page' %>

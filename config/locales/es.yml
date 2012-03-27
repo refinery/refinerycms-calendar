@@ -1,0 +1,28 @@
+es:
+  refinery:
+    plugins:
+      events:
+        title: Events
+#        article: masculino/femenino
+    calendar:
+      admin:
+        events:
+          actions:
+            create_new: Crear nuevo event
+            reorder: Reordenar events
+            reorder_done: Reordenación de events completada
+          records:
+            title: Events
+            sorry_no_results: Lo siento, no hay resultados
+            no_items_yet: No hay events todavía. Pulsa en "Crear nuevo Event" para crear tu primer event.
+          event:
+            view_live_html: Ver este event como abierto al público <br/><em>(abre en ventana nueva)</em>
+            edit: Editar este event
+            delete: Borrar este event para siempre
+      events:
+        show:
+          other: Otros events
+  activerecord:
+    attributes:
+      'refinery/calendar/event':
+        title: Title

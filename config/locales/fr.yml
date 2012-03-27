@@ -1,0 +1,27 @@
+fr:
+  refinery:
+    plugins:
+      events:
+        title: Events
+    calendar:
+      admin:
+        events:
+          actions:
+            create_new: Créer un(e) nouve(au/l/lle) Event
+            reorder: Réordonner les Events
+            reorder_done: Fin de réordonnancement des Events
+          records:
+            title: Events
+            sorry_no_results: "Désolé ! Aucun résultat."
+            no_items_yet: 'Il n''y a actuellement aucun(e) Event. Cliquer sur "Créer un(e) nouve(au/l/lle) Event" pour créer votre premi(er/ère) event.'
+          event:
+            view_live_html: Voir ce(t/tte) event <br/><em>(Ouvre une nouvelle fenêtre)</em>
+            edit: Modifier ce(t/tte) event
+            delete: Supprimer définitivement ce(t/tte) event
+      events:
+        show:
+          other: Autres Events
+  activerecord:
+    attributes:
+      'refinery/calendar/event':
+        title: Title
