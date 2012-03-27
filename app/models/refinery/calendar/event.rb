@@ -1,15 +1,15 @@
-require 'active_model'
-
 module Refinery
   module Calendar
     class Event
       extend ActiveModel::Naming
       include ActiveModel::Conversion
       include ActiveModel::Validations
+      include MultiparameterAssignment
 
       attr_accessor :title, :starts, :ends, :body, :calendar
 
       def initialize(attrs={})
+        setup_parameters(attrs)
         attrs.each do |k,v| send("#{k}=",v) end
       end
 

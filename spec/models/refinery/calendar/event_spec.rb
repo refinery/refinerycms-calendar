@@ -1,3 +1,4 @@
+require 'active_model'
 require 'spec_no_rails_helper'
 require 'calendar/event'
 
@@ -57,6 +58,16 @@ module Refinery
         event.starts.should == time
         event.ends.should == end_time
         event.calendar.should == calendar
+      end
+
+      it "supports nutty rails date/time multiparams" do
+        event = Event.new('starts(1i)' => '2012',
+                          'starts(2i)' => '01',
+                          'starts(3i)' => '01',
+                          'ends(1i)' => '2012',
+                          'ends(2i)' => '02',
+                          'ends(3i)' => '01')
+        event.verify
       end
 
       describe "#publish" do
