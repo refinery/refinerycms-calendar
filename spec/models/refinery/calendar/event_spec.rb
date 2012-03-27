@@ -1,3 +1,4 @@
+require 'minitest/autorun'
 require 'spec_no_rails_helper'
 require 'calendar/event'
 
@@ -35,6 +36,28 @@ module Refinery
       it "supports reading and writing a body" do
         @event.body = '<html>foo</html>'
         @event.body.should == '<html>foo</html>'
+      end
+
+      it "supports reading and writing a blog reference" do
+        calendar = Object.new
+        @event.calendar = calendar
+        @event.calendar.should == calendar
+      end
+
+      describe "#publish" do
+        before do
+          @calendar = MiniTest::Mock.new
+          @event.calendar = @calendar
+        end
+
+        after do
+          @calendar.verify
+        end
+
+        it "adds the event to the calendar" do
+          @calendar.expect :add_entry, nil, [@event]
+          @event.publish
+        end
       end
     end
   end
