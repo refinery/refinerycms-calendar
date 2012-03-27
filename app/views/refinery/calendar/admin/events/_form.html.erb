@@ -7,7 +7,21 @@
   <div class='field'>
     <%= f.label :title -%>
     <%= f.text_field :title, :class => 'larger widest'  -%>
+  </div>
 
+  <div class='field'>
+    <%= f.label :body -%>
+    <%= f.text_area :body, :class => 'wymeditor widest'  -%>
+  </div>
+
+  <div class='field'>
+    <%= f.label :starts %>
+    <%= f.datetime_select :starts %>
+  </div>
+
+  <div class='field'>
+    <%= f.label :ends %>
+    <%= f.datetime_select :ends %>
   </div>
 
   <%= render '/refinery/admin/form_actions', :f => f,

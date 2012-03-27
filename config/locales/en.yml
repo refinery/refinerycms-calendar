@@ -1,8 +1,8 @@
 en:
   refinery:
     plugins:
-      events:
-        title: Events
+      calendar:
+        title: Calendar
     calendar:
       admin:
         events:
