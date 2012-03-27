@@ -1,5 +1,4 @@
-require 'rails'
-require 'refinery/engine'
+require 'refinerycms-core'
 
 module Refinery
   autoload :CalendarGenerator, 'generators/refinery/calendar_generator'

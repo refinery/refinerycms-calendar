@@ -1,4 +1,5 @@
-require 'refinery/calendar'
+require 'active_support'
+require 'refinery/calendar/configuration'
 require 'calendar/core_calendar'
 
 module Refinery
