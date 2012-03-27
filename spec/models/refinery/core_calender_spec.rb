@@ -29,6 +29,14 @@ module Refinery
           subject.new_entry.should == @new_entry
         end
       end
+
+      describe "#add_entry" do
+        it "adds the entry to the calendar" do
+          entry = Object.new
+          subject.add_entry(entry)
+          subject.entries.should include entry
+        end
+      end
     end
   end
 end

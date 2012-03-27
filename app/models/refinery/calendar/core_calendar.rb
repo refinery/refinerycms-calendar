@@ -18,6 +18,10 @@ module Refinery
         end
       end
 
+      def add_entry(entry)
+        entries << entry
+      end
+
       private
 
       def entry_source
