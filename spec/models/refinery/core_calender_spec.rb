@@ -1,3 +1,4 @@
+require 'refinery/calendar'
 require 'calendar/core_calendar'
 
 module Refinery
@@ -8,7 +9,7 @@ module Refinery
       end
 
       it "can have its title configured" do
-        Calendar::Core.configure do |config|
+        Calendar.configure do |config|
           config.title = 'Refinery Calendar'
         end
         subject.title.should == 'Refinery Calendar'

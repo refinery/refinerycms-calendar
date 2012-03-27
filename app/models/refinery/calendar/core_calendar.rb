@@ -1,7 +1,11 @@
 module Refinery
-  module Calender
+  module Calendar
     class CoreCalendar
       attr_accessor :entries
+
+      def initialize
+        @entries = []
+      end
 
       def title
         Refinery::Calendar.title

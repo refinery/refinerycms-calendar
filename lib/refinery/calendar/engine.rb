@@ -2,7 +2,7 @@ module Refinery
   module Calendar
     class Engine < Rails::Engine
       include Refinery::Engine
-      isolate_namespace Refinery
+      isolate_namespace Refinery::Calendar
 
       engine_name :refinery_calendar
 
