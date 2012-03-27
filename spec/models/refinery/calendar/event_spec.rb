@@ -37,10 +37,26 @@ module Refinery
         @event.body.should == '<html>foo</html>'
       end
 
-      it "supports reading and writing a blog reference" do
+      it "supports reading and writing a calendar reference" do
         calendar = Object.new
         @event.calendar = calendar
         @event.calendar.should == calendar
+      end
+
+      it "supports setting attributes in the initializer" do
+        time = DateTime.now
+        end_time = DateTime.new(2045,1,1)
+        calendar = Object.new
+        event = Event.new(:title => 'foo',
+                          :body => '<html>bar</html>',
+                          :starts => time,
+                          :ends => end_time,
+                          :calendar => calendar)
+        event.title.should == 'foo'
+        event.body.should == '<html>bar</html>'
+        event.starts.should == time
+        event.ends.should == end_time
+        event.calendar.should == calendar
       end
 
       describe "#publish" do
