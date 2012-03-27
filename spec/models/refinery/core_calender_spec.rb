@@ -1,7 +1,5 @@
-require 'active_support'
-require 'refinery/calendar/configuration'
+require 'spec_no_rails_helper'
 require 'calendar/core_calendar'
-require 'ostruct'
 
 module Refinery
   module Calendar
