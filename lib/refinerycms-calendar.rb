@@ -1,1 +1,1 @@
-require 'refinery/events'
+require 'refinery/calendar'

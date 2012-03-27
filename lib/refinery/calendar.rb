@@ -3,8 +3,8 @@ require 'refinerycms-core'
 module Refinery
   autoload :CalendarGenerator, 'generators/refinery/calendar_generator'
 
-  module Events
-    require 'refinery/events/engine'
+  module Calendar
+    require 'refinery/calendar/engine'
 
     class << self
       attr_writer :root
