@@ -28,6 +28,14 @@ module Refinery
         it "returns a new entry" do
           subject.new_entry.should == @new_entry
         end
+
+        it "accepts an attribute hash on behalf of the event maker" do
+          entry_source = MiniTest::Mock.new
+          entry_source.expect(:call, @new_entry, [{x: 42, y: 'z'}])
+          subject.entry_source = entry_source
+          subject.new_entry(x: 42, y: 'z')
+          entry_source.verify
+        end
       end
 
       describe "#add_entry" do

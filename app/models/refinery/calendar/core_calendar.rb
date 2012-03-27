@@ -12,8 +12,8 @@ module Refinery
         Refinery::Calendar.title
       end
 
-      def new_entry
-        entry_source.call do |e|
+      def new_entry(*args)
+        entry_source.call(*args).tap do |e|
           e.calendar = self
         end
       end

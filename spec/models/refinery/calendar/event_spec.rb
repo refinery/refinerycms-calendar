@@ -1,4 +1,3 @@
-require 'minitest/autorun'
 require 'spec_no_rails_helper'
 require 'calendar/event'
 
