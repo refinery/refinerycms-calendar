@@ -20,18 +20,25 @@ module Refinery
       end
 
       def setup_parameters(attrs={})
+        i = 0
         datetime = ''
         new_params = {}
         attrs.each do |key, value|
           if (k = key.to_s.match(/^(starts|ends)\(/) { |m| m[1] })
-            datetime += "#{value}-"
+            sep = '-'
+            sep = 'T' if i == 2
+            sep = ':' if i > 2
+            datetime += "#{value}#{sep}"
+            i += 1
           else
             new_params[key] = value
           end
 
-          if datetime.split('-').length == 3
-            new_params[k] = DateTime.parse(datetime.gsub(/-$/,''))
+          if datetime.split(':').length == 2
+            datetime += Time.new.zone
+            new_params[k] = DateTime.parse(datetime.gsub(/:$/,''))
             datetime = ''
+            i = 0
           end
         end
         return new_params

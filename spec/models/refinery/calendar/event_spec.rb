@@ -64,11 +64,15 @@ module Refinery
         event = Event.new('starts(1i)' => '2012',
                           'starts(2i)' => '01',
                           'starts(3i)' => '01',
+                          'starts(4i)' => '12',
+                          'starts(5i)' => '30',
                           'ends(1i)' => '2012',
                           'ends(2i)' => '02',
-                          'ends(3i)' => '01')
-        event.starts.should == DateTime.parse('2012-01-01')
-        event.ends.should == DateTime.parse('2012-02-01')
+                          'ends(3i)' => '01',
+                          'ends(4i)' => '12',
+                          'ends(5i)' => '30')
+        event.starts.should == DateTime.parse('2012-01-01T12:30')
+        event.ends.should == DateTime.parse('2012-02-01T12:30')
       end
 
       describe "#publish" do
