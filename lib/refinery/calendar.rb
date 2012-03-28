@@ -6,7 +6,6 @@ module Refinery
   module Calendar
     require 'refinery/calendar/engine'
     require 'refinery/calendar/configuration'
-    require 'refinery/calendar/multiparameter_assignment'
 
     autoload :Version, 'refinery/calendar/version'
 

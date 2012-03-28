@@ -67,7 +67,8 @@ module Refinery
                           'ends(1i)' => '2012',
                           'ends(2i)' => '02',
                           'ends(3i)' => '01')
-        event.verify
+        event.starts.should == DateTime.parse('2012-01-01')
+        event.ends.should == DateTime.parse('2012-02-01')
       end
 
       describe "#publish" do
