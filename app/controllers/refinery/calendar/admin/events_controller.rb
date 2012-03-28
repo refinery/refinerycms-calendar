@@ -5,7 +5,7 @@ module Refinery
         before_filter :init_calendar
 
         def index
-          @events = []
+          @events = @calendar.entries
         end
 
         def new
@@ -15,10 +15,14 @@ module Refinery
         def create
           @event = @calendar.new_event(params[:event])
           @event.publish
-          redirect_to admin_refinery_calendar_events_path
+          redirect_to refinery.calendar_admin_events_path
         end
 
         def self.searchable?
+          false
+        end
+
+        def self.pageable?
           false
         end
 
