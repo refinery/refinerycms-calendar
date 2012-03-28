@@ -19,7 +19,11 @@ module Refinery
       end
 
       def add_entry(entry)
-        entries << entry
+        @entries << entry
+      end
+
+      def entries
+        @entries.sort_by { |e| e.starts }
       end
 
       private

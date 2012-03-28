@@ -19,6 +19,22 @@ module Refinery
         subject.should have(0).entries
       end
 
+      describe "#entries" do
+        def stub_entry_with_date(date)
+          OpenStruct.new(:starts => DateTime.parse(date))
+        end
+
+        it "is sorted in chronological order" do
+          newest = stub_entry_with_date("2011-09-11")
+          oldest = stub_entry_with_date("2011-09-09")
+          middle = stub_entry_with_date("2011-09-10")
+          subject.add_entry(oldest)
+          subject.add_entry(newest)
+          subject.add_entry(middle)
+          subject.entries.should == [oldest, middle, newest]
+        end
+      end
+
       describe "#new_event" do
         before do
           @new_event = OpenStruct.new
@@ -40,7 +56,7 @@ module Refinery
 
       describe "#add_entry" do
         it "adds the entry to the calendar" do
-          entry = Object.new
+          entry = OpenStruct.new(:starts => DateTime.parse('2011-01-01'))
           subject.add_entry(entry)
           subject.entries.should include entry
         end
