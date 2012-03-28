@@ -4,7 +4,7 @@ module Refinery
       extend ActiveModel::Naming
       include ActiveModel::Conversion
       include ActiveModel::Validations
-      include MultiparameterAssignment
+      include Refinery::Engine::MultiparameterAssignment
 
       attr_accessor :title, :starts, :ends, :body, :calendar
 

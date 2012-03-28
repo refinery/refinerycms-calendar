@@ -1,5 +1,5 @@
 module Refinery
-  module Calendar
+  module Engine
     module MultiparameterAssignment
       def setup_parameters(params = {})
         new_params = {}
