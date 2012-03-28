@@ -14,8 +14,11 @@ module Refinery
 
         def create
           @event = @calendar.new_event(params[:event])
-          @event.publish
-          redirect_to refinery.calendar_admin_events_path
+          if @event.publish
+            redirect_to refinery.calendar_admin_events_path
+          else
+            render :new
+          end
         end
 
         def self.searchable?
