@@ -6,14 +6,25 @@ module Refinery
   module Calendar
     describe Event do
       before do
-        @event = Event.new
+        @event = Event.new(:title => 'Something to be valid')
       end
 
-      it "starts with blank attributes" do
-        @event.title.should be_nil
+      it "starts with blank optional attributes" do
         @event.starts.should be_nil
         @event.ends.should be_nil
         @event.body.should be_nil
+      end
+
+      it "is not valid with a blank title" do
+        [nil, "", " "].each do |bad_title|
+          @event.title = bad_title
+          @event.should_not be_valid
+        end
+      end
+
+      it "is valid with a non-blank title" do
+        @event.title = "x"
+        @event.should be_valid
       end
 
       it "supports reading and writing a title" do
@@ -77,17 +88,26 @@ module Refinery
 
       describe "#publish" do
         before do
-          @calendar = MiniTest::Mock.new
+          @calendar = stub(:calendar)
           @event.calendar = @calendar
         end
 
-        after do
-          @calendar.verify
+        it "adds the event to the calendar" do
+          @calendar.should_receive(:add_entry).with(@event)
+          @event.publish
         end
 
-        it "adds the event to the calendar" do
-          @calendar.expect :add_entry, nil, [@event]
-          @event.publish
+        describe "given an invalid event" do
+          before do @event.title = nil end
+
+          it "wont add the event to the calendar" do
+            @calendar.should_not_receive(:add_entry)
+            @event.publish
+          end
+
+          it "returns false" do
+            @event.publish.should be_false
+          end
         end
       end
     end

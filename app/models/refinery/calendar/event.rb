@@ -7,11 +7,14 @@ module Refinery
 
       attr_accessor :title, :starts, :ends, :body, :calendar
 
+      validates :title, :presence => true
+
       def initialize(attrs={})
         setup_parameters(attrs).each do |k,v| send("#{k}=",v) end
       end
 
       def publish
+        return false unless valid?
         calendar.add_entry(self)
       end
 
