@@ -11,6 +11,7 @@ Gem::Specification.new do |s|
   s.description       = 'Ruby on Rails Calendar extension for Refinery CMS'
   s.date              = '2012-03-26'
   s.summary           = 'Calendar extension for Refinery CMS'
+  s.authors           = ['Joe Sak']
   s.require_paths     = %w(lib)
   s.files             = Dir["{app,config,db,lib}/**/*"] + ["readme.md"]
 
