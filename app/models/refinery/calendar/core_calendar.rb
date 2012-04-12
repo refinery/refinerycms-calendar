@@ -1,6 +1,8 @@
 module Refinery
   module Calendar
     class CoreCalendar < ActiveRecord::Base
+      self.table_name = 'refinery_calendar_core_calendars'
+
       attr_accessor :entries
       attr_writer :event_source
 
