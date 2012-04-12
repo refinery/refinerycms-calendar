@@ -1,3 +1,4 @@
+*.sqlite3
 *.gem
 rails_dummy
 .DS_Store
