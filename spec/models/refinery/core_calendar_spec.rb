@@ -61,6 +61,14 @@ module Refinery
           subject.entries.should include entry
         end
       end
+
+      describe "#find_entry" do
+        it "finds entries by id" do
+          entry = stub(:entry, :id => 5)
+          subject.add_entry(entry)
+          subject.find_entry(5).should == entry
+        end
+      end
     end
   end
 end

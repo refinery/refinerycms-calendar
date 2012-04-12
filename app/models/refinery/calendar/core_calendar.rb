@@ -22,6 +22,11 @@ module Refinery
         @entries << entry
       end
 
+      def find_entry(id)
+        idx = @entries.index { |e| id == e.id }
+        @entries[idx]
+      end
+
       def entries
         @entries.sort_by { |e| e.starts }
       end
