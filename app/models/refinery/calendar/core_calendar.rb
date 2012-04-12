@@ -3,13 +3,7 @@ module Refinery
     class CoreCalendar < ActiveRecord::Base
       self.table_name = 'refinery_calendar_core_calendars'
 
-      attr_accessor :entries
       attr_writer :event_source
-
-      def initialize(attrs = {}, options = {})
-        super(attrs, options)
-        @entries = []
-      end
 
       def title
         Refinery::Calendar.title
@@ -22,16 +16,19 @@ module Refinery
       end
 
       def add_entry(entry)
+        init_entries
         @entries << entry
       end
 
       def find_entry(id)
+        init_entries
         idx = @entries.index { |e| id == e.id }
         return nil if idx.nil?
         @entries[idx]
       end
 
       def entries
+        init_entries
         @entries.sort_by { |e| e.starts }
       end
 
@@ -42,9 +39,12 @@ module Refinery
       end
 
       private
-
       def event_source
         @event_source ||= Event.public_method(:new)
+      end
+
+      def init_entries
+        @entries ||= []
       end
     end
   end
