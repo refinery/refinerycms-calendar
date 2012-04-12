@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    refinerycms-calendar (2.0.0)
+    refinerycms-calendar (2.0.0.alpha)
       refinerycms-core (~> 2.0.2)
 
 GEM
@@ -48,6 +48,7 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.2.0)
+    database_cleaner (0.7.2)
     devise (2.0.4)
       bcrypt-ruby (~> 3.0)
       orm_adapter (~> 0.0.3)
@@ -207,6 +208,7 @@ DEPENDENCIES
   activerecord-jdbcpostgresql-adapter
   activerecord-jdbcsqlite3-adapter
   coffee-rails
+  database_cleaner
   generator_spec
   growl (~> 1.0.3)
   guard-spork

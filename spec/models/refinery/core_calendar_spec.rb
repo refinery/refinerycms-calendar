@@ -1,3 +1,6 @@
+require 'ostruct'
+require 'active_support'
+require 'refinery/calendar/configuration'
 require 'spec_no_rails_helper'
 require 'calendar/core_calendar'
 
@@ -46,11 +49,10 @@ module Refinery
         end
 
         it "accepts an attribute hash on behalf of the event maker" do
-          event_source = MiniTest::Mock.new
-          event_source.expect(:call, @new_event, [{x: 42, y: 'z'}])
-          subject.event_source = event_source
-          subject.new_event(x: 42, y: 'z')
-          event_source.verify
+          subject.event_source = OpenStruct.public_method(:new)
+          event = subject.new_event(x: 42, y: 'z')
+          event.x.should == 42
+          event.y.should == 'z'
         end
       end
 
@@ -71,6 +73,13 @@ module Refinery
 
         it "returns nil when the id is invalid" do
           subject.find_entry(999).should be_nil
+        end
+      end
+
+      describe ".fetch" do
+        it "returns a calendar from storage" do
+          calendar = CoreCalendar.create!(:app => 'oxbow')
+          CoreCalendar.fetch('oxbow').should == calendar
         end
       end
     end

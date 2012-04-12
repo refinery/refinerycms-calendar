@@ -1,10 +1,11 @@
 module Refinery
   module Calendar
-    class CoreCalendar
+    class CoreCalendar < ActiveRecord::Base
       attr_accessor :entries
       attr_writer :event_source
 
-      def initialize
+      def initialize(attrs = {}, options = {})
+        super(attrs, options)
         @entries = []
       end
 
@@ -30,6 +31,12 @@ module Refinery
 
       def entries
         @entries.sort_by { |e| e.starts }
+      end
+
+      class << self
+        def fetch(app)
+          find_by_app(app)
+        end
       end
 
       private
