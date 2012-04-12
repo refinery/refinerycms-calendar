@@ -68,6 +68,10 @@ module Refinery
           subject.add_entry(entry)
           subject.find_entry(5).should == entry
         end
+
+        it "returns nil when the id is invalid" do
+          subject.find_entry(999).should be_nil
+        end
       end
     end
   end

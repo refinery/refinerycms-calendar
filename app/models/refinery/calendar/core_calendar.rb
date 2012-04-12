@@ -24,6 +24,7 @@ module Refinery
 
       def find_entry(id)
         idx = @entries.index { |e| id == e.id }
+        return nil if idx.nil?
         @entries[idx]
       end
 
