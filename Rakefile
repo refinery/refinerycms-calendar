@@ -10,7 +10,7 @@ require 'yaml'
 
 RSpec::Core::RakeTask.new(:spec)
 
-task :default => :spec
+task :default => :tests
 
 desc "Migrate the database through scripts in db/migrate. Target specific version with VERSION=x"
 task :migrate => :environment do
@@ -19,4 +19,12 @@ end
 
 task :environment do
   ActiveRecord::Base.establish_connection(YAML::load(File.open('config/database.yml'))['test'])
+end
+
+task :tests => :environment do
+  Rake::Task["migrate"].reenable
+  Rake::Task["migrate"].invoke
+
+  Rake::Task["spec"].reenable
+  Rake::Task["spec"].invoke
 end
