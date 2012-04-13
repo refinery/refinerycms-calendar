@@ -57,16 +57,26 @@ module Refinery
       end
 
       describe "#add_entry" do
+        let(:entry) do
+          OpenStruct.new(:starts => DateTime.parse('2011-01-01'))
+        end
+
+        let(:calendar) { CoreCalendar.find_or_create_by_id(1) }
+
         it "adds the entry to the calendar" do
-          entry = OpenStruct.new(:starts => DateTime.parse('2011-01-01'))
-          subject.add_entry(entry)
-          subject.entries.should include entry
+          calendar.add_entry(entry)
+          calendar.entries.should include entry
+        end
+
+        it "assigns its id to the entry's calendar_id" do
+          calendar.add_entry(entry)
+          entry.calendar_id.should == 1
         end
       end
 
       describe "#find_entry" do
         it "finds entries by id" do
-          entry = stub(:entry, :id => 5)
+          entry = OpenStruct.new(:id => 5)
           subject.add_entry(entry)
           subject.find_entry(5).should == entry
         end

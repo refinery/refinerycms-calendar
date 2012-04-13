@@ -17,6 +17,7 @@ module Refinery
 
       def add_entry(entry)
         init_entries
+        entry.calendar_id = id
         @entries << entry
       end
 
