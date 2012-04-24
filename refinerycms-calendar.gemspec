@@ -11,7 +11,9 @@ Gem::Specification.new do |s|
   s.email             = %q{joe@neotericdesign.com}
   s.homepage          = "https://github.com/resolve/refinerycms-calendar"
 
-  s.add_dependency    'refinerycms-core',  '>= 0.9.9.1'
+  s.add_dependency    'refinerycms-core',  '~> 1.0.0'
+
+  s.add_development_dependency  'refinerycms-testing', '~>1.0.0'
 end
 
 
