@@ -41,6 +41,12 @@ Maintained by [joemsak](http://github.com/joemsak)
 * Calendar grid view? (can be kinda gross, honestly)
 * Address finder?
 
+## More Information
+* Check out our [Website](http://refinerycms.com/)
+* Refinery Documentation is available in the [guides](http://refinerycms.com/guides)
+* Questions can be asked on our [Google Group](http://group.refinerycms.org)
+* Questions can also be asked in our IRC room, [#refinerycms on freenode](irc://irc.freenode.net/refinerycms)
+
 ## Acknowledgements
 
 * [Ed Blake](http://github.com/blake0102) structured semantic markup and design-minded workflow.
