@@ -6,6 +6,19 @@ en:
   plugins:
     calendar:
       title: Events
+  activerecord:
+    model:
+      event:
+        one: Event
+        other: Events
+    attributes:
+      event:
+        venue_name: Location
+        venue_address: Address
+        ticket_price: Ticket Price
+        ticket_link: Ticket Link
+        prev: Previous
+        next: Next
   admin:
     events:
       index:
@@ -42,4 +55,12 @@ en:
       archives: Archives
     show:
     sidebar:
-      other: Other Events
+      subscribe: Subscribe
+      event_categories: Event Categories
+      other_events: Other Events
+      archives: Archive
+    archive:
+      posted_in: "Events posted in %{date}"
+  event_categories:
+    show:
+      category: "%{name} Category"
