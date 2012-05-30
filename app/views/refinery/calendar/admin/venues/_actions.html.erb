@@ -1,0 +1,26 @@
+<ul>
+  <% if ::Refinery::Calendar::Admin::VenuesController.searchable? %>
+    <li>
+      <%= render '/refinery/admin/search', :url => refinery.calendar_admin_venues_path %>
+    </li>
+  <% end %>
+  <li>
+    <%= link_to t('.create_new'), refinery.new_calendar_admin_venue_path,
+                 :class => "add_icon" %>
+  </li>
+  <%= render 'refinery/calendar/admin/shared/links' %>
+<% if !searching? && ::Refinery::Calendar::Admin::VenuesController.sortable? && ::Refinery::Calendar::Venue.any? %>
+  <li>
+    <%= link_to t('.reorder', :what => "Venues"),
+                 refinery.calendar_admin_venues_path,
+                 :id => "reorder_action",
+                 :class => "reorder_icon" %>
+
+    <%= link_to t('.reorder_done', :what => "Venues"),
+                 refinery.calendar_admin_venues_path,
+                 :id => "reorder_action_done",
+                 :style => "display: none;",
+                 :class => "reorder_icon" %>
+  </li>
+<% end %>
+</ul>

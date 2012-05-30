@@ -1,66 +1,61 @@
 en:
-  shared:
-    admin:
-      image_picker:
-        image: image
-  plugins:
+  refinery:
+    plugins:
+      venues:
+        title: Venues
+      calendar:
+        title: Calendar
     calendar:
-      title: Events
+      admin:
+        shared:
+          links:
+            manage_events: Manage Events
+            manage_venues: Manage Venues
+        venues:
+          actions:
+            create_new: Add New Venue
+            reorder: Reorder Venues
+            reorder_done: Done Reordering Venues
+          records:
+            title: Venues
+            sorry_no_results: Sorry! There are no results found.
+            no_items_yet: There are no Venues yet. Click "Add New Venue" to add your
+              first venue.
+          venue:
+            view_live_html: View this venue live <br/><em>(opens in a new window)</em>
+            edit: Edit this venue
+            delete: Remove this venue forever
+        events:
+          actions:
+            create_new: Add New Event
+            reorder: Reorder Events
+            reorder_done: Done Reordering Events
+          records:
+            title: Events
+            sorry_no_results: Sorry! There are no results found.
+            no_items_yet: There are no Events yet. Click "Add New Event" to add your
+              first event.
+          event:
+            view_live_html: View this event live <br/><em>(opens in a new window)</em>
+            edit: Edit this event
+            delete: Remove this event forever
+      venues:
+        show:
+          other: Other Venues
+      events:
+        show:
+          other: Other Events
   activerecord:
-    model:
-      event:
-        one: Event
-        other: Events
     attributes:
-      event:
-        venue_name: Location
-        venue_address: Address
-        ticket_price: Ticket Price
-        ticket_link: Ticket Link
-        prev: Previous
-        next: Next
-  admin:
-    events:
-      index:
-        title: Events
-        create_new: Add New Event
-        reorder: Reorder Events
-        reorder_done: Done Reordering Events
-        sorry_no_results: Sorry! There are no results found.
-        no_items_yet: There are no Events yet. Click "Add New Event" to add your first event.
-        manage_categories: Manage Categories
-      event:
-        view_live_html: View this event live <br/><em>(opens in a new window)</em>
-        edit: Edit this event
-        delete: Remove this event forever
-      sortable_list:
-        current_events: Current Events
-        upcoming_events: Upcoming Events
-        archived_events: Archived Events
-    event_categories:
-      index:
-        title: Event Categories
-        create_new: Add New Event Category
-        reorder: Reorder Event Categories
-        reorder_done: Done Reordering Event Categories
-        sorry_no_results: Sorry! There are no results found.
-        no_items_yet: There are no Event Categories yet. Click "Add New Event Category" to add your first event category.
-        manage_events: Manage Events
-      event_category:
-        view_live_html: View this event category live <br/><em>(opens in a new window)</em>
-        edit: Edit this event category
-        delete: Remove this event category forever
-  events:
-    index:
-      archives: Archives
-    show:
-    sidebar:
-      subscribe: Subscribe
-      event_categories: Event Categories
-      other_events: Other Events
-      archives: Archive
-    archive:
-      posted_in: "Events posted in %{date}"
-  event_categories:
-    show:
-      category: "%{name} Category"
+      refinery/calendar/venue:
+        name: Name
+        address: Address
+        url: Url
+        phone: Phone
+      refinery/calendar/event:
+        title: Title
+        from: From
+        to: To
+        registration_link: Registration Link
+        excerpt: Excerpt
+        description: Description

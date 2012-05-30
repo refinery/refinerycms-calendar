@@ -1,65 +1,59 @@
 nl:
-  shared:
-    admin:
-      image_picker:
-        image: plaatje
-  plugins:
-    calendar:
-      title: Events
-  activerecord:
-    model:
-      event:
-        one: Event
-        other: Events
-      event_category:
-        one: Event Categorie
-        other: Event Categoriën &event_categories
-    attributes:
-      event:
-        venue_name: Lokatie
-        venue_address: Adres
-        ticket_price: Kosten
-        ticket_link: Ticket link
-        prev: Vorige
-        next: Volgende
-  admin:
-    events:
-      index:
+  refinery:
+    plugins:
+      venues:
+        title: Venues
+      events:
         title: Events
-        create_new: Voeg een Event toe
-        reorder: Orden de Events
-        reorder_done: Klaar met ordenen van de Events
-        sorry_no_results: Helaas! Er zijn geen resultaten gevonden.
-        no_items_yet: Er zijn nog geen Events. Druk op "Maak een nieuw Event" om de eerste aan te maken.
-      event:
-        view_live_html: Bekijk dit event op de website <br/><em>(opent een nieuw venster)</em>
-        edit: Bewerk dit event
-        delete: Verwijder dit event permanent 
-      sortable_list:
-        current_events: Huidige Events
-        upcoming_events: Aankomende Events
-        archived_events: Event Archief
-    event_categories:
-      index:
-        title: Event Categoriën
-        create_new: Voeg een nieuwe Event Categorie toe
-        reorder: Orden de Event Categoriën
-        reorder_done: Klaar met ordenen van de Event Categoriën
-        sorry_no_results: Helaas! Er zijn geen resultaten gevonden.
-        no_items_yet: Er zijn nog geen Event Categoriën. Druk op "Maak een nieuwe Event Categorie" om de eerste aan te maken.
-        manage_events: Beheer de Events
-      event_category:
-        view_live_html: Bekijk deze Event Categorie live <br/><em>(opent in een nieuw venster)</em>
-        edit: Bewerk deze Event Categorie
-        delete: Verwijder deze Event Categorie permanent
-  events:
-    sidebar:
-      subscribe: Abboneer
-      event_categories: Event Categoriën
-      other_events: Andere Events
-      archives: Archief
-    archive:
-      posted_in: "Events die %{date} plaatsvonden"
-  event_categories:
-    show:
-      category: "%{name} Categorie"
+    calendar:
+      admin:
+        venues:
+          actions:
+            create_new: Maak een nieuwe Venue
+            reorder: Wijzig de volgorde van de Venues
+            reorder_done: Klaar met het wijzingen van de volgorde van de Venues
+          records:
+            title: Venues
+            sorry_no_results: Helaas! Er zijn geen resultaten gevonden.
+            no_items_yet: Er zijn nog geen Venues. Druk op 'Maak een nieuwe Venue'
+              om de eerste aan te maken.
+          venue:
+            view_live_html: Bekijk deze venue op de website <br/><em>(opent een nieuw
+              venster)</em>
+            edit: Bewerk deze venue
+            delete: Verwijder deze venue voor eeuwig
+        events:
+          actions:
+            create_new: Maak een nieuwe Event
+            reorder: Wijzig de volgorde van de Events
+            reorder_done: Klaar met het wijzingen van de volgorde van de Events
+          records:
+            title: Events
+            sorry_no_results: Helaas! Er zijn geen resultaten gevonden.
+            no_items_yet: Er zijn nog geen Events. Druk op 'Maak een nieuwe Event'
+              om de eerste aan te maken.
+          event:
+            view_live_html: Bekijk deze event op de website <br/><em>(opent een nieuw
+              venster)</em>
+            edit: Bewerk deze event
+            delete: Verwijder deze event voor eeuwig
+      venues:
+        show:
+          other: Andere Venues
+      events:
+        show:
+          other: Andere Events
+  activerecord:
+    attributes:
+      refinery/calendar/venue:
+        name: Name
+        address: Address
+        url: Url
+        phone: Phone
+      refinery/calendar/event:
+        title: Title
+        from: From
+        to: To
+        registration_link: Registration Link
+        excerpt: Excerpt
+        description: Description

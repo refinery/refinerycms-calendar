@@ -1,0 +1,9 @@
+<% content_for :body_content_left do %>
+  <section id="events">
+    <%= render @events %>
+  </section>
+<% end %>
+
+<% content_for :stylesheets, stylesheet_link_tag('events') %>
+
+<%= render '/refinery/content_page' %>

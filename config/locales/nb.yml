@@ -1,20 +1,59 @@
 nb:
-  plugins:
-    events:
-      title: Events
-  admin:
-    calendar:
-      index:
+  refinery:
+    plugins:
+      venues:
+        title: Venues
+      events:
         title: Events
-        create_new: Lag en ny Event
-        reorder: Endre rekkefølgen på Events
-        reorder_done: Ferdig å endre rekkefølgen Events
-        sorry_no_results: Beklager! Vi fant ikke noen resultater.
-        no_items_yet: Det er ingen Events enda. Klikk på "Lag en ny Event" for å legge til din første event.
-      event:
-        view_live_html: Vis hvordan denne event ser ut offentlig <br/><em>(åpner i et nytt vindu)</em>
-        edit: Rediger denne event
-        delete: Fjern denne event permanent
-  events:
-    show:
-      other: Andre Events
+    calendar:
+      admin:
+        venues:
+          actions:
+            create_new: Lag en ny Venue
+            reorder: Endre rekkefølgen på Venues
+            reorder_done: Ferdig å endre rekkefølgen Venues
+          records:
+            title: Venues
+            sorry_no_results: Beklager! Vi fant ikke noen resultater.
+            no_items_yet: Det er ingen Venues enda. Klikk på "Lag en ny Venue" for
+              å legge til din første venue.
+          venue:
+            view_live_html: Vis hvordan denne venue ser ut offentlig <br/><em>(åpner
+              i et nytt vindu)</em>
+            edit: Rediger denne venue
+            delete: Fjern denne venue permanent
+        events:
+          actions:
+            create_new: Lag en ny Event
+            reorder: Endre rekkefølgen på Events
+            reorder_done: Ferdig å endre rekkefølgen Events
+          records:
+            title: Events
+            sorry_no_results: Beklager! Vi fant ikke noen resultater.
+            no_items_yet: Det er ingen Events enda. Klikk på "Lag en ny Event" for
+              å legge til din første event.
+          event:
+            view_live_html: Vis hvordan denne event ser ut offentlig <br/><em>(åpner
+              i et nytt vindu)</em>
+            edit: Rediger denne event
+            delete: Fjern denne event permanent
+      venues:
+        show:
+          other: Andre Venues
+      events:
+        show:
+          other: Andre Events
+  activerecord:
+    attributes:
+      refinery/calendar/venue:
+        name: Name
+        address: Address
+        url: Url
+        phone: Phone
+      refinery/calendar/event:
+        title: Title
+        from: From
+        to: To
+        registration_link: Registration Link
+        excerpt: Excerpt
+        description: Description
