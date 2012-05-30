@@ -1,10 +1,12 @@
 # Calendar extension for Refinery CMS.
 
-## How to build this extension as a gem
+## Installation
 
-    cd vendor/extensions/calendar
-    gem build refinerycms-calendar.gemspec
-    gem install refinerycms-calendar.gem
+  # In Gemfile:
+  gem 'refinerycms-calendar', :git => 'git://github.com/resolve/refinerycms-calendar.git', :branch => '2-0-stable'
 
-    # Sign up for a http://rubygems.org/ account and publish the gem
-    gem push refinerycms-calendar.gem
+  $ bundle
+  $ rails g refinery:calendar
+  $ rake db:migrate db:test:prepare
+
+  Restart the server
