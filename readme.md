@@ -4,7 +4,7 @@
 
 ```ruby
 # in Gemfile:
-gem 'refinerycms-calendar', :git => 'git://github.com/resolve/refinerycms-calendar.git', :branch => '2-0-stable'
+gem 'refinerycms-calendar', :git => 'git://github.com/resolve/refinerycms-calendar.git', :branch => 'master'
 ```
 
 ```
