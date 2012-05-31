@@ -12,7 +12,7 @@ gem 'refinerycms-calendar', '~>2.0.0'
 
 bundle
 rails g refinery:calendar
-rake db:migrate db:test:prepare
+rake db:migrate db:seed db:test:prepare
 ```
 
 Restart the server
