@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    refinerycms-calendar (1.0)
+    refinerycms-calendar (2.0.0)
       refinerycms-core (~> 2.0.3)
 
 GEM
