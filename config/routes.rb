@@ -1,7 +1,7 @@
 Refinery::Core::Engine.routes.append do
 
   # Frontend routes
-  namespace :calendar, :path => 'connect' do
+  namespace :calendar do
     get 'events/archive' => 'events#archive'
     resources :events, :only => [:index, :show]
   end
