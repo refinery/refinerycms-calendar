@@ -1,3 +1,10 @@
+## 2.0.1 [20 June 2012]
+* Assets added to fix missing datepicker
+
+## 2.0.0 [23 April 2012]
+* New calendar gem released from scratch
+* Supports Refinery 2.0.x
+
 ## 1.2 [UNRELEASED]
 
 ## 1.1.1 [UNRELEASED]
