@@ -41,8 +41,10 @@ Refinery::Core.configure do |config|
   # config.wymeditor_whitelist_tags = {}
 
   # Register extra javascript for backend
-  # config.register_javascript "prototype-rails"
+  config.register_javascript "jquery.ui.timepicker.addon.js"
+  config.register_javascript "refinery/calendar.js"
 
   # Register extra stylesheet for backend (optional options)
-  # config.register_stylesheet "custom", :media => 'screen'
+  config.register_stylesheet "refinery/calendar", :media => 'screen'
+  config.register_stylesheet "jquery-ui", :media => 'screen'
 end
