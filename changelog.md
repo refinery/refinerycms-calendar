@@ -1,3 +1,12 @@
+## 2.0.1 [20 June 2012]
+* Assets added to fix missing datepicker
+* Remove public venues controller, views, routes - this is not officially supported but DIY is possible
+* Remove the /connect prefix from the routes - it was client specific, sorry about that
+
+## 2.0.0 [23 April 2012]
+* New calendar gem released from scratch
+* Supports Refinery 2.0.x
+
 ## 1.2 [UNRELEASED]
 
 ## 1.1.1 [UNRELEASED]
