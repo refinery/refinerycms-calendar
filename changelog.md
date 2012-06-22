@@ -1,3 +1,6 @@
+## 2.0.2 [21 June 2012]
+* Fix bug; add vendor path to gemspec for assets to be packaged up
+
 ## 2.0.1 [20 June 2012]
 * Assets added to fix missing datepicker
 * Remove public venues controller, views, routes - this is not officially supported but DIY is possible
