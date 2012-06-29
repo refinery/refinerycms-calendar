@@ -9,7 +9,7 @@ module Refinery
 
       validates :title, :presence => true, :uniqueness => true
 
-      attr_accessible :title, :from, :to, :registration_link,
+      attr_accessible :title, :start_at, :end_at, :registration_link,
                       :venue_id, :excerpt, :description,
                       :featured, :position
 
@@ -20,7 +20,7 @@ module Refinery
 
       class << self
         def upcoming
-          where('refinery_calendar_events.from >= ?', Time.now)
+          where('refinery_calendar_events.start_at >= ?', Time.now)
         end
 
         def featured
@@ -28,7 +28,7 @@ module Refinery
         end
 
         def archive
-          where('refinery_calendar_events.from < ?', Time.now)
+          where('refinery_calendar_events.end_at < ?', Time.now)
         end
       end
     end
