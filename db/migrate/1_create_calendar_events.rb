@@ -3,8 +3,8 @@ class CreateCalendarEvents < ActiveRecord::Migration
   def up
     create_table :refinery_calendar_events do |t|
       t.string :title
-      t.time :start_at
-      t.time :end_at
+      t.datetime :start_at
+      t.datetime :end_at
       t.string :registration_link
       t.string :excerpt
       t.text :description

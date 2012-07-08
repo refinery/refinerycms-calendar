@@ -7,7 +7,7 @@ module Refinery
 
       belongs_to :venue
 
-      validates :title, :presence => true, :uniqueness => true
+      validates :title, :presence => true
 
       attr_accessible :title, :start_at, :end_at, :registration_link,
                       :venue_id, :excerpt, :description,
@@ -28,7 +28,7 @@ module Refinery
         end
 
         def archive
-          where('refinery_calendar_events.end_at < ?', Time.now)
+          where('refinery_calendar_events.start_at < ?', Time.now)
         end
       end
     end
