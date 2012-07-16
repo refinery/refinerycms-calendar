@@ -6,8 +6,8 @@
   <h4>Event details</h4>
   <h5><%= @event.venue_name %></h5>
 
-  <p>From <%= @event.from.strftime('%B %d, %Y %I:%M%p') %> to
-      <br><%= @event.to.strftime('%B %d, %Y %I:%M%p') %></p>
+  <p>From<%= @event.start_at.strftime('%B %d, %Y %I:%M%p') %> to
+      <br><%= @event.end_at.strftime('%B %d, %Y %I:%M%p') %></p>
 
   <% if @event.registration_link.present? %>
     <p><%= link_to 'Register for this event', @event.registration_link %></p>
