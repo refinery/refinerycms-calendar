@@ -46,22 +46,6 @@ describe Refinery do
             end
           end
 
-          context "duplicate" do
-            before(:each) { FactoryGirl.create(:event, :title => "UniqueTitle") }
-
-            it "should fail" do
-              visit refinery.calendar_admin_events_path
-
-              click_link "Add New Event"
-
-              fill_in "Title", :with => "UniqueTitle"
-              click_button "Save"
-
-              page.should have_content("There were problems")
-              Refinery::Calendar::Event.count.should == 1
-            end
-          end
-
         end
 
         describe "edit" do
