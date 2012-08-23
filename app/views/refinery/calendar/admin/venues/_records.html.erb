@@ -8,7 +8,7 @@
     <p>
       <% unless searching? %>
         <strong>
-          <%= t('.no_items_yet') %>
+          <%= t('.no_items_yet', :create => t('create_new', :scope => 'refinery.calendar.admin.venues.actions')) %>
         </strong>
       <% else %>
         <%= t('no_results', :scope => 'refinery.admin.search') %>

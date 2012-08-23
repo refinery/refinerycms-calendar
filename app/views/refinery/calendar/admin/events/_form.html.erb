@@ -32,8 +32,8 @@
   </div>
 
   <div class='field'>
-    <%= f.label :venue_id, 'Venue' %>
-    <%= f.collection_select :venue_id, @venues, :id, :name, { :include_blank => 'None' }, :class => 'chzn-select', :'data-placeholder' => 'Search Venues', :style => 'width: 300px;' %>
+    <%= f.label :venue_id, t('venue', :scope => "activerecord.attributes.refinery/calendar/event") %>
+    <%= f.collection_select :venue_id, @venues, :id, :name, { :include_blank => t('venue_none', :scope => "activerecord.attributes.refinery/calendar/event") }, :class => 'chzn-select', :'data-placeholder' => 'Search Venues', :style => 'width: 300px;' %>
   </div>
 
   <div class='field'>

@@ -1,0 +1,69 @@
+de:
+  refinery:
+    plugins:
+      venues:
+        title: Veranstaltungsort
+      calendar:
+        title: Events
+    calendar:
+      admin:
+        shared:
+          links:
+            manage_events: Events verwalten
+            manage_venues: Orte verwalten
+        venues:
+          actions:
+            create_new: Ort hinzufügen
+            reorder: Orte umsortieren
+            reorder_done: Umsortieren erledigt
+          records:
+            title: Veranstaltungsorte
+            sorry_no_results: Es sind momentan keine vorhanden
+            no_items_yet: 'Es sind noch keine Veranstaltungsorte vorhanden. Klicken Sie auf "%{create}", um Ihren erstem Veranstaltungsort hinzuzufügen.'
+          venue:
+            view_live_html: Diesen Ort Live betrachten <br/><em>(öffnet sich in einem neuen Fenster)</em>
+            edit: Diesen Ort bearbeiten
+            delete: Diesen Ort bearbeiten
+        events:
+          actions:
+            create_new: Event hinzufügen
+            reorder: Events umsortieren
+            reorder_done: Umsortieren erledigt
+          records:
+            title: Events
+            sorry_no_results: Es sind momentan keine Events vorhanden
+            no_items_yet: 'Es sind noch keine Events vorhanden. Klicken Sie auf "%{create}", um Ihr erstes Event hinzuzufügen.'
+          event:
+            view_live_html: Dieses Event live betrachten <br/><em>(Öffnet sich in einem neuen Fenster)</em>
+            edit: Dieses Event bearbeiten
+            delete: Dies Event löschen
+      venues:
+        show:
+          other: Andere Veranstaltungsorte
+      events:
+        show:
+          other: Andere Events
+          event_details: Detaills
+          start: 'Beginn %{when}'
+          end: 'Bis %{when}'
+          view_on_map: Auf einer Karte anschauen
+          register: Für dieses Event anmelden
+  activerecord:
+    attributes:
+      refinery/calendar/venue:
+        name: Name
+        address: Addresse
+        url: Url
+        phone: Telefon
+      refinery/calendar/event:
+        title: Titel
+        from: Von
+        to: Bis
+        registration_link: Registrierungs Link
+        venue: Veranstaltungsort
+        venue_none: Keine Angabe
+        excerpt: Kurzbeschreibung
+        description: Beschreibung
+        featured: Spezial
+
+
