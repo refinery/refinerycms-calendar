@@ -2,7 +2,7 @@ PATH
   remote: .
   specs:
     refinerycms-calendar (2.0.2)
-      refinerycms-core (~> 2.0.3)
+      refinerycms-core (~> 2.0)
 
 GEM
   remote: http://rubygems.org/
