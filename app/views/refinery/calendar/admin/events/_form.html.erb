@@ -3,6 +3,7 @@
               :object => @event,
               :include_object_name => true %>
 
+  <%= render '/refinery/calendar/admin/shared/locale_picker', :current_locale => Globalize.locale if Refinery.i18n_enabled? %>
 
   <div class='field'>
     <%= f.label :title -%>
