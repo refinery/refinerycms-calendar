@@ -7,7 +7,8 @@ module Refinery
         crudify :'refinery/calendar/event',
                 :xhr_paging => true,
                 :sortable => false,
-                :order => "'from' DESC"
+                :order => "'from' DESC",
+                :include => [:translations]
 
         private
         def find_venues
