@@ -1,3 +1,12 @@
+GIT
+  remote: git://github.com/parndt/refinerycms-i18n.git
+  revision: 2a6d35554421d4e0a2ebeba6eb291bcd0ade9291
+  specs:
+    refinerycms-i18n (2.1.0.dev)
+      rails-i18n (~> 0.6.5)
+      refinerycms-core (~> 2.0)
+      routing-filter (~> 0.3.0)
+
 PATH
   remote: .
   specs:
@@ -130,6 +139,8 @@ GEM
       activesupport (= 3.2.3)
       bundler (~> 1.0)
       railties (= 3.2.3)
+    rails-i18n (0.6.5)
+      i18n (~> 0.5)
     railties (3.2.3)
       actionpack (= 3.2.3)
       activesupport (= 3.2.3)
@@ -188,6 +199,8 @@ GEM
       rack-test (~> 0.6.0)
       refinerycms-core (= 2.0.3)
       rspec-rails (~> 2.8.1)
+    routing-filter (0.3.1)
+      actionpack
     rspec (2.8.0)
       rspec-core (~> 2.8.0)
       rspec-expectations (~> 2.8.0)
@@ -258,6 +271,7 @@ DEPENDENCIES
   rb-notifu (~> 0.0.4)
   refinerycms (~> 2.0.0)
   refinerycms-calendar!
+  refinerycms-i18n!
   refinerycms-testing (~> 2.0.0)
   sass-rails
   spork (= 0.9.0.rc9)
