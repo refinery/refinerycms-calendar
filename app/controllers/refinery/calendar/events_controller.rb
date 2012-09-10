@@ -5,7 +5,10 @@ module Refinery
       helper 'refinery/calendar/calendar'
 
       def index
-        @events = Event.upcoming.order('refinery_calendar_events.from DESC')
+        d = Date.parse(params[:date]) rescue nil
+        @events = d.nil? ?
+          Event.upcoming.order('refinery_calendar_events.from DESC') :
+          Event.on_day(d).order('refinery_calendar_events.from DESC')
 
         # you can use meta fields from your model instead (e.g. browser_title)
         # by swapping @page for @event in the line below:
