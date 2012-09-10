@@ -77,7 +77,9 @@ module Refinery::Calendar::CalendarHelper
     raise(ArgumentError, "No year given")  unless options.has_key?(:year)
     raise(ArgumentError, "No month given") unless options.has_key?(:month)
 
-    block                        ||= Proc.new {|d| nil}
+    block                        ||= Proc.new do |d|
+      [d, class: (Refinery::Calendar::Event.on_day(d).count > 0 ? "day-with-events" : "")]
+    end
 
     month_names = (!defined?(I18n) || I18n.t("date.month_names").include?("missing")) ? Date::MONTHNAMES.dup : I18n.t("date.month_names")
 
