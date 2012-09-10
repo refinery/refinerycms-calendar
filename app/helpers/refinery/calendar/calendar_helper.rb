@@ -78,7 +78,11 @@ module Refinery::Calendar::CalendarHelper
     raise(ArgumentError, "No month given") unless options.has_key?(:month)
 
     block                        ||= Proc.new do |d|
-      [d, class: (Refinery::Calendar::Event.on_day(d).count > 0 ? "day-with-events" : "")]
+      if Refinery::Calendar::Event.on_day(d).count > 0
+      [link_to(d.day, refinery.calendar_events_path(date: d)), class: "day-with-events"]
+      else
+        d.day
+      end
     end
 
     month_names = (!defined?(I18n) || I18n.t("date.month_names").include?("missing")) ? Date::MONTHNAMES.dup : I18n.t("date.month_names")
