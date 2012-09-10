@@ -1,6 +1,9 @@
 module Refinery
   module Calendar
     class EventsController < ::ApplicationController
+
+      helper 'refinery/calendar/calendar'
+
       def index
         @events = Event.upcoming.order('refinery_calendar_events.from DESC')
 
