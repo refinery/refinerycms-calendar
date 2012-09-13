@@ -7,7 +7,9 @@ module Refinery
 
       belongs_to :venue
 
-      validates :title, :presence => true
+      validates :title, :start_at, :end_at, :presence => true
+
+      validate :ends_after_it_starts
 
       attr_accessible :title, :start_at, :end_at, :registration_link,
                       :venue_id, :excerpt, :description,
@@ -17,6 +19,12 @@ module Refinery
                 :to => :venue,
                 :prefix => true,
                 :allow_nil => true
+
+      def ends_after_it_starts
+        if start_at && end_at && start_at > end_at
+          errors.add(:start_at, 'must come before the end date')
+        end
+      end
 
       class << self
         def upcoming

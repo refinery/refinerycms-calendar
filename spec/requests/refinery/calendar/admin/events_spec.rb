@@ -30,6 +30,8 @@ describe Refinery do
           context "valid data" do
             it "should succeed" do
               fill_in "Title", :with => "This is a test of the first string field"
+              fill_in "From", :with => "2011-01-01 12:00:00"
+              fill_in "To", :with => "2011-01-01 15:00:00"
               click_button "Save"
 
               page.should have_content("'This is a test of the first string field' was successfully added.")
@@ -38,12 +40,30 @@ describe Refinery do
           end
 
           context "invalid data" do
-            it "should fail" do
+            it "should fail with no title" do
               click_button "Save"
 
               page.should have_content("Title can't be blank")
               Refinery::Calendar::Event.count.should == 0
             end
+
+            it "should fail with no start date" do
+              fill_in "Title", :with => "My Birthday"
+              click_button "Save"
+
+              page.should have_content("From can't be blank")
+              Refinery::Calendar::Event.count.should == 0
+            end
+
+            it "should fail with no end date" do
+              fill_in "Title", :with => "My Birthday"
+              fill_in "From", :with => "2011-08-18 00:00:00"
+              click_button "Save"
+
+              page.should have_content("To can't be blank")
+              Refinery::Calendar::Event.count.should == 0
+            end
+
           end
 
         end
