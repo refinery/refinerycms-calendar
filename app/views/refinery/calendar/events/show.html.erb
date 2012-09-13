@@ -1,20 +1,28 @@
-<% content_for :body_content_title do %>
+<% content_for :title do %>
   <%= @event.title %>
 <% end %>
 
 <% content_for :body_content_left do %>
-  <h4>Event details</h4>
+  <h4><%= t('event_details', :scope => 'refinery.calendar.events.show') %></h4>
   <h5><%= @event.venue_name %></h5>
 
-  <p>From <%= @event.from.strftime('%B %d, %Y %I:%M%p') %> to
-      <br><%= @event.to.strftime('%B %d, %Y %I:%M%p') %></p>
+  <p>
+    <time datetime="<%=l @event.start_at, :format => :default %>" class='posted_at'>
+      <%= t('start', :scope => 'refinery.calendar.events.show', :when => l(@event.start_at.to_datetime, :format => :long)) %>
+    </time>
+  </p>
+  <p>
+    <time datetime="<%=l @event.start_at, :format => :default %>" class='posted_at'>
+    <%= t('end', :scope => 'refinery.calendar.events.show', :when => l(@event.end_at.to_datetime, :format => :long)) %>
+    </time>
+  </p>
 
   <% if @event.registration_link.present? %>
-    <p><%= link_to 'Register for this event', @event.registration_link %></p>
+    <p><%= link_to t('register', :scope => 'refinery.calendar.events.show'), @event.registration_link %></p>
   <% end -%>
 
   <% if @event.venue_address.present? %>
-    <p><%= link_to 'View it on a map', "http://maps.google.com/maps?f=q&source=s_q&hl=en&geocode=&q=#{CGI::escape(@event.venue.address)}&ie=UTF8&z=16" %></p>
+    <p><%= link_to t('view_on_map', :scope => 'refinery.calendar.events.show'), "http://maps.google.com/maps?f=q&source=s_q&hl=en&geocode=&q=#{CGI::escape(@event.venue.address)}&ie=UTF8&z=16" %></p>
   <% end -%>
 
   <div class="event_description">

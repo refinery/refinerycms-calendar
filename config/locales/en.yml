@@ -45,6 +45,11 @@ en:
       events:
         show:
           other: Other Events
+          event_details: Details
+          start: 'From %{when}'
+          end: 'To %{when}'
+          view_on_map: View on Map
+          register: Register for this Event
   activerecord:
     attributes:
       refinery/calendar/venue:
@@ -54,8 +59,8 @@ en:
         phone: Phone
       refinery/calendar/event:
         title: Title
-        from: From
-        to: To
+        start_at: From
+        end_at: To
         registration_link: Registration Link
         excerpt: Excerpt
         description: Description

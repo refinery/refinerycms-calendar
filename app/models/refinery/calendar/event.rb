@@ -7,9 +7,11 @@ module Refinery
 
       belongs_to :venue
 
-      validates :title, :presence => true, :uniqueness => true
+      validates :title, :start_at, :end_at, :presence => true
 
-      attr_accessible :title, :from, :to, :registration_link,
+      validate :ends_after_it_starts
+
+      attr_accessible :title, :start_at, :end_at, :registration_link,
                       :venue_id, :excerpt, :description,
                       :featured, :position
 
@@ -18,9 +20,15 @@ module Refinery
                 :prefix => true,
                 :allow_nil => true
 
+      def ends_after_it_starts
+        if start_at && end_at && start_at > end_at
+          errors.add(:start_at, 'must come before the end date')
+        end
+      end
+
       class << self
         def upcoming
-          where('refinery_calendar_events.from >= ?', Time.now)
+          where('refinery_calendar_events.start_at >= ?', Time.now)
         end
 
         def featured
@@ -28,7 +36,7 @@ module Refinery
         end
 
         def archive
-          where('refinery_calendar_events.from < ?', Time.now)
+          where('refinery_calendar_events.start_at < ?', Time.now)
         end
       end
     end
