@@ -1,7 +1,15 @@
 <li class='clearfix record <%= cycle("on", "on-hover") %>' id="<%= dom_id(venue) -%>">
   <span class='title'>
-    <%= venue.name %>
-
+    <%= venue.name.presence || venue.translations.detect {|t| t.name.present?}.name %>
+    <% if Refinery.i18n_enabled? and Refinery::I18n.frontend_locales.many? %>
+      <span class='preview'>
+        <% venue.translations.each do |translation| %>
+          <%= link_to refinery_icon_tag("flags/#{translation.locale}.png", :size => '16x11'),
+                      refinery.edit_calendar_admin_venue_path(venue, :switch_locale => translation.locale),
+                      :class => 'locale' if translation.name.present? %>
+        <% end %>
+      </span>
+    <% end %>
   </span>
   <span class='actions'>
     <%= link_to refinery_icon_tag("application_edit.png"), refinery.edit_calendar_admin_venue_path(venue),

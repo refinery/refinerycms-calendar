@@ -3,6 +3,7 @@ source "http://rubygems.org"
 gemspec
 
 gem 'refinerycms', '~> 2.0.0'
+gem 'refinerycms-i18n', :git => 'git://github.com/parndt/refinerycms-i18n.git'
 
 # Refinery/rails should pull in the proper versions of these
 group :assets do
