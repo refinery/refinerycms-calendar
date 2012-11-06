@@ -13,6 +13,11 @@ module Refinery
                       :venue_id, :excerpt, :description,
                       :featured, :position
 
+      attr_accessor :locale
+
+      alias_attribute :from, :starts_at
+      alias_attribute :to, :ends_at
+
       delegate :name, :address,
                 :to => :venue,
                 :prefix => true,
