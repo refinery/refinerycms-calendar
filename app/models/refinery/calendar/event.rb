@@ -13,8 +13,6 @@ module Refinery
                       :venue_id, :excerpt, :description,
                       :featured, :position
 
-      attr_accessor :locale
-
       alias_attribute :from, :starts_at
       alias_attribute :to, :ends_at
 
@@ -23,9 +21,11 @@ module Refinery
                 :prefix => true,
                 :allow_nil => true
 
+      scope :on_day, lambda {|day| where('(refinery_calendar_events.starts_at = ?) OR (refinery_calendar_events.ends_at = ?) OR (refinery_calendar_events.starts_at < ? AND (refinery_calendar_events.ends_at > ?))', day, day, day, day) }
+
       class << self
         def upcoming
-          where('refinery_calendar_events.from >= ?', Time.now)
+          where('refinery_calendar_events.starts_at >= ?', Time.now).with_globalize
         end
 
         def featured
@@ -33,8 +33,9 @@ module Refinery
         end
 
         def archive
-          where('refinery_calendar_events.from < ?', Time.now)
+          where('refinery_calendar_events.starts_at < ?', Time.now).with_globalize
         end
+
       end
     end
   end
