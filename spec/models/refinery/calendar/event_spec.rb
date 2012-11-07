@@ -36,6 +36,7 @@ module Refinery
         before :each do
 
           FactoryGirl.create(:event, starts_at: Date.tomorrow - 2.hours)
+          FactoryGirl.create(:event, starts_at: Date.tomorrow.beginning_of_day)
           FactoryGirl.create(:event, starts_at: Date.tomorrow + 2.hours)
           FactoryGirl.create(:event, starts_at: Date.tomorrow + 6.hours)
           FactoryGirl.create(:event, starts_at: Date.tomorrow + 12.hours)
@@ -46,7 +47,7 @@ module Refinery
 
         subject { Event.on_day(Date.tomorrow) }
 
-        its(:length) { should == 4 }
+        its(:length) { should == 5 }
 
       end
 
