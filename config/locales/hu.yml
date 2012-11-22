@@ -1,0 +1,64 @@
+hu:
+  refinery:
+    plugins:
+      venues:
+        title: Helyek
+      calendar:
+        title: Naptár
+    calendar:
+      admin:
+        shared:
+          links:
+            manage_Események: Események kezelése
+            manage_Helyek: Helyek kezelése
+        venues:
+          actions:
+            create_new: Új hely hozzáadása
+            reorder: Helyek átrendezése
+            reorder_done: Helyek átrendezésének befejezése
+          records:
+            title: Helyek
+            sorry_no_results: Sajnáljuk! Nincs találat.
+            no_items_yet: 'Még nincsenek helyek. Kattints az "Új hely hozzáadásá"-ra, hogy létrehozd az elsőt.'
+          venue:
+            view_live_html: Tekintsd meg élőben <br/><em>(új ablakban nyílik meg)</em>
+            edit: Hely szerkesztése
+            delete: Hely végleges eltávolítása
+        events:
+          actions:
+            create_new: Új esemény hozzáadása
+            reorder: Események átrendezése
+            reorder_done: Események átrendezésének befejezése
+          records:
+            title: Események
+            sorry_no_results: Sajnáljuk! Nincs találat.
+            no_items_yet: 'Még nincsenek események. Kattints az "Új esemény hozzáadásá"-ra, hogy létrehozd az elsőt.'
+          Esemény:
+            view_live_html: Tekintsd meg élőben <br/><em>(új ablakban nyílik meg)</em>
+            edit: Esemény szerkesztése
+            delete: Esemény végleges eltávolítása
+      venues:
+        show:
+          other: További Helyek
+      events:
+        show:
+          details: 'Esemény Adatai'
+          from: 'Kezdete:'
+          to: 'Vége:'
+          register: 'Regisztráció az eseményre'
+          view_on_map: 'Megtekintés térképen'
+          other: További Események
+  activerecord:
+    attributes:
+      refinery/calendar/venue:
+        name: 'Név'
+        address: 'Cím'
+        url: Url
+        phone: Telefon
+      refinery/calendar/events:
+        title: 'Elnevezés'
+        from: Kezdete
+        to: 'Vége'
+        registration_link: Regisztrációs link
+        excerpt: 'Ízelítő'
+        description: 'Leírás'
