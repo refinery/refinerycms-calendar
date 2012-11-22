@@ -42,6 +42,11 @@ hu:
           other: További Helyek
       events:
         show:
+          details: 'Esemény Adatai'
+          from: 'Kezdete:'
+          to: 'Vége:'
+          register: 'Regisztráció az eseményre'
+          view_on_map: 'Megtekintés térképen'
           other: További Események
   activerecord:
     attributes:
