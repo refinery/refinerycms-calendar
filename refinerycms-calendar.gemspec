@@ -3,10 +3,10 @@
 Gem::Specification.new do |s|
   s.platform          = Gem::Platform::RUBY
   s.name              = 'refinerycms-calendar'
-  s.version           = '2.0.2'
+  s.version           = '2.0.3'
   s.authors           = ['Philip Arndt', 'Joe Sak']
   s.description       = 'Ruby on Rails Calendar extension for Refinery CMS'
-  s.date              = '2012-04-23'
+  s.date              = '2013-02-05'
   s.summary           = 'Calendar extension for Refinery CMS'
   s.require_paths     = %w(lib)
   s.files             = Dir["{app,config,db,lib,vendor}/**/*"] + ["readme.md"]
