@@ -24,7 +24,7 @@ module Refinery
 
       protected
       def find_page
-        @page = ::Refinery::Page.where(:link_url => "/connect/events").first
+        @page = ::Refinery::Page.where(:link_url => "/calendar/events").first
       end
 
     end
