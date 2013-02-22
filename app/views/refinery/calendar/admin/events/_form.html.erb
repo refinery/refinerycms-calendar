@@ -18,12 +18,12 @@
 
   <div class='field'>
     <%= f.label :from -%>
-    <%= text_field_tag "event[from]", l(@event.starts_at || Time.now, :format => "%Y-%m-%d %I:%M %p"), :class => 'datetime_range'  -%>
+    <%= text_field_tag "event[from]", l(@event.from || Time.now, :format => "%Y-%m-%d %I:%M %p"), :class => 'datetime_range'  -%>
   </div>
 
   <div class='field'>
     <%= f.label :to -%>
-    <%= text_field_tag "event[to]", l(@event.ends_at || Time.now, :format => "%Y-%m-%d %I:%M %p"), :class => 'datetime_range'  -%>
+    <%= text_field_tag "event[to]", l(@event.to || Time.now, :format => "%Y-%m-%d %I:%M %p"), :class => 'datetime_range'  -%>
   </div>
 
   <div class='field'>
