@@ -34,7 +34,7 @@ module Refinery
 
       class << self
         def upcoming
-          where('refinery_calendar_events.starts_at >= ?', Time.now).with_globalize
+          where('refinery_calendar_events.starts_at >= ?', Time.now)
         end
 
         def featured
@@ -42,7 +42,7 @@ module Refinery
         end
 
         def archive
-          where('refinery_calendar_events.starts_at < ?', Time.now).with_globalize
+          where('refinery_calendar_events.starts_at < ?', Time.now)
         end
 
       end
