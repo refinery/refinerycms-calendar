@@ -18,6 +18,8 @@ module Refinery
                 :prefix => true,
                 :allow_nil => true
 
+      scope :on_day, lambda {|day| where('(refinery_calendar_events.`from` = ?) OR (refinery_calendar_events.`to` = ?) OR (refinery_calendar_events.`from` < ? AND (refinery_calendar_events.`to` > ?))', day, day, day, day) }
+
       class << self
         def upcoming
           where('refinery_calendar_events.from >= ?', Time.now)

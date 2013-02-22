@@ -2,6 +2,12 @@
   <section id="events">
     <%= render @events %>
   </section>
+  <section id="calendar">
+    <% date = Date.today %>
+    <%= calendar(:year => date.year,
+             :month => date.month,
+             :table_id  => 'tcalendar') %>
+  </section>
 <% end %>
 
 <% content_for :stylesheets, stylesheet_link_tag('events') %>
