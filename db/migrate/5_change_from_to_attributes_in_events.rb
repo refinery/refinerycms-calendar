@@ -4,7 +4,8 @@ class ChangeFromToAttributesInEvents < ActiveRecord::Migration
     add_column :refinery_calendar_events, :starts_at, :datetime
     add_column :refinery_calendar_events, :ends_at, :datetime
 
-    Refinery::Calendar::Event.update_all '`starts_at` = `from`, `ends_at` = `to`'
+    Refinery::Calendar::Event.update_all "%s = %s" % [connection.quote_column_name(:starts_at), connection.quote_column_name(:from)]
+    Refinery::Calendar::Event.update_all "%s = %s" % [connection.quote_column_name(:ends_at), connection.quote_column_name(:to)]
 
     remove_column :refinery_calendar_events, :from
     remove_column :refinery_calendar_events, :to
@@ -16,7 +17,8 @@ class ChangeFromToAttributesInEvents < ActiveRecord::Migration
     add_column :refinery_calendar_events, :from, :date
     add_column :refinery_calendar_events, :to, :date
 
-    Refinery::Calendar::Event.update_all '`from` = `starts_at`, `to` = `ends_at`'
+    Refinery::Calendar::Event.update_all "%s = %s" % [connection.quote_column_name(:from), connection.quote_column_name(:starts_at)]
+    Refinery::Calendar::Event.update_all "%s = %s" % [connection.quote_column_name(:to), connection.quote_column_name(:ends_at)]
 
     remove_column :refinery_calendar_events, :starts_at
     remove_column :refinery_calendar_events, :ends_at
