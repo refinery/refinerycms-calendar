@@ -37,6 +37,12 @@
   </div>
 
   <div class='field'>
+    <%= f.label :category_id, 'Category' %>
+    <% @categories = Refinery::Calendar::Category.order('name') # FIXME %>
+    <%= f.collection_select :category_id, @categories, :id, :name, { :include_blank => 'None' }, :class => 'chzn-select', :'data-placeholder' => 'Search Categories', :style => 'width: 300px;' %>
+  </div>
+
+  <div class='field'>
     <%= f.label :excerpt -%>
     <%= f.text_area :excerpt, :size => '65x5'  -%>
   </div>
@@ -76,7 +82,7 @@
     $(document).ready(function(){
       page_options.init(false, '', '');
 
-      $('#event_venue_id').chosen({
+      $('#event_venue_id,#event_category_id').chosen({
         no_results_text: "No results matched",
         allow_single_deselect: true
       });
