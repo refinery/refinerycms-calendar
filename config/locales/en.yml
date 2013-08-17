@@ -25,6 +25,20 @@ en:
             view_live_html: View this venue live <br/><em>(opens in a new window)</em>
             edit: Edit this venue
             delete: Remove this venue forever
+        categories:
+          actions:
+            create_new: Add New Category
+            reorder: Reorder Categories
+            reorder_done: Done Reordering Categories
+          records:
+            title: Categories
+            sorry_no_results: Sorry! There are no results found.
+            no_items_yet: There are no Categories yet. Click "Add New Category" to add your
+              first category.
+          category:
+            view_live_html: View this category live <br/><em>(opens in a new window)</em>
+            edit: Edit this category
+            delete: Remove this category forever
         events:
           actions:
             create_new: Add New Event
