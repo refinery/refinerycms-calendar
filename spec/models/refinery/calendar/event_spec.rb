@@ -54,17 +54,19 @@ module Refinery
     end
   end
 
-  describe "category" do
-    it "belongs to a category" do
-      event = Factory(:event)
-      event.should respond_to :category
-    end
-    it "can be assigned a category" do
-      event          = Factory(:event)
-      category       = Factory(:category)
-      event.category = category
-      event.category.should be category
-    end
-  end
+      describe "categories" do
+        it "has many categories" do
+          event = Factory(:event)
+          event.should respond_to :categories
+        end
+        it "can be assigned events" do
+          event     = Factory(:event)
+          category1 = Factory(:category)
+          category2 = Factory(:category)
+          event.categories << category1
+          event.categories << category2
+          event.categories.should match_array [category1, category2]
+        end
+      end
 
 end

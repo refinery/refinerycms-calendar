@@ -36,11 +36,24 @@
     <%= f.collection_select :venue_id, @venues, :id, :name, { :include_blank => 'None' }, :class => 'chzn-select', :'data-placeholder' => 'Search Venues', :style => 'width: 300px;' %>
   </div>
 
-  <div class='field'>
-    <%= f.label :category_id, 'Category' %>
-    <% @categories = Refinery::Calendar::Category.order('name') # FIXME %>
-    <%= f.collection_select :category_id, @categories, :id, :name, { :include_blank => 'None' }, :class => 'chzn-select', :'data-placeholder' => 'Search Categories', :style => 'width: 300px;' %>
-  </div>
+  <% if @categories.any? -%>
+    <div class='field'>
+      <label for='event[category_ids][]'>Categories</label>
+      <ul class="check_box_list">
+        <% @categories.each do |category| -%>
+          <li>
+            <%= check_box_tag 'event[category_ids][]', category.id,
+                               @event.categories.include?(category),
+                              :id => (id="event_category_ids_#{category.id}") %>
+            <%= label_tag 'event[category_ids][]', category.name,
+                          :class => 'stripped',
+                          :for => id %>
+          </li>
+        <% end -%>
+      </ul>
+    </div>
+  <% end -%>
+
 
   <div class='field'>
     <%= f.label :excerpt -%>

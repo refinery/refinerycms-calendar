@@ -6,12 +6,13 @@ module Refinery
       friendly_id :title, :use => :slugged
 
       belongs_to :venue
-      belongs_to :category
+      has_and_belongs_to_many :categories
+
 
       validates :title, :presence => true, :uniqueness => true
 
       attr_accessible :title, :from, :to, :registration_link,
-                      :venue_id, :category_id, :excerpt, :description,
+                      :venue_id, :category_ids, :excerpt, :description,
                       :featured, :position
 
       alias_attribute :from, :starts_at
@@ -19,11 +20,6 @@ module Refinery
 
       delegate :name, :address,
                 :to => :venue,
-                :prefix => true,
-                :allow_nil => true
-
-      delegate :name,
-                :to => :category,
                 :prefix => true,
                 :allow_nil => true
 

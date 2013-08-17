@@ -4,13 +4,10 @@ module Refinery
 
       def index
         @categories = Category.order('refinery_calendar_categories.name')
-        render text: @categories.map(&:name)
       end
 
       def show
         @category = Category.find(params[:id])
-        render text: @category.name
-        # present(@page)
       end
       # before_filter :find_page, :except => :archive
 
