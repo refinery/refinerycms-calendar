@@ -4,14 +4,24 @@
 <% end %>
 
 <% content_for :body_content_left do %>
-  <h4><%= t('.details', default: 'Events listed under this category') %></h4>
+  <h4><%= t('.details', default: @category.name ) %></h4>
 
   <% if @category.events.any?%>
-    <% @category.events.each do |event|%>
-      <li><%= link_to event.title, refinery.calendar_event_path(event) %></li>
-    <% end %>
+    <ul class="events-list">
+      <% @category.events.each do |event|%>
+        <li><%= render event %></li>
+      <% end %>
+    </ul>
   <% end %>
 
+<% end %>
+
+<% content_for :body_content_right do %>
+  <ul class="categories-list">
+    <% @categories.each do |category| %>
+      <li><%= link_to category.name, refinery.calendar_category_path(category) %> </li>
+    <% end %>
+  </ul>
 <% end %>
 
 <% content_for :stylesheets, stylesheet_link_tag('categories') %>

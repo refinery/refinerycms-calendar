@@ -7,7 +7,8 @@ module Refinery
       end
 
       def show
-        @category = Category.find(params[:id])
+        @categories = Category.order('refinery_calendar_categories.name')
+        @category   = Category.find(params[:id])
       end
       # before_filter :find_page, :except => :archive
 
