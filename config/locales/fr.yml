@@ -6,7 +6,6 @@ fr:
       events:
         title: Events
     calendar:
-    calendar:
       categories:
         show:
           no_upcoming_events: Aucun événement à venir pour cette catégorie
@@ -47,6 +46,7 @@ fr:
       events:
         show:
           other: Autres Events
+          categories: Catégories
   activerecord:
     attributes:
       refinery/calendar/venue:

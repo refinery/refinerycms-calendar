@@ -64,6 +64,7 @@ en:
           other: Other Venues
       events:
         show:
+          categories: Categories
           details: 'Event Details'
           from: 'From'
           to: 'To'

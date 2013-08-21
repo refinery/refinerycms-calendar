@@ -9,9 +9,10 @@
 
   <% if @event.categories.any?%>
     <p>
-      <% @event.categories.each do |category|%>
-      <%= link_to category.name, refinery.calendar_category_path(category) %>
-      <% end %>
+      <%= t ('.categories') %>:
+      <%= @event.categories.map do |category|%>
+      <% link_to( category.name, refinery.calendar_category_path(category)) %>
+      <% end.join(', ').html_safe %>
     </p>
   <% end %>
 
