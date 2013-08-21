@@ -4,7 +4,8 @@
 
 <% categories = capture do %>
   <% if event.categories.any?%>
-    <p class='categories'>
+    <hr />
+    <p class='event_categories'>
       <%= t ('.categories') %>:
       <%= event.categories.map do |category|%>
       <% link_to( category.name, refinery.calendar_category_path(category)) %>
@@ -18,25 +19,16 @@
 <%= content_tag_for content_tag, event do -%>
 
   <% if state == :short %>
-
-    <time class="date" datetime="<%= event.from %>">
+    <time class="event_date" datetime="<%= event.from %>">
       <%= l(event.from, format: :calendar_simple) %>
     </time>
     <h1><%= link_to event.title, refinery.calendar_event_path(event) %></h1>
-    <%= categories %>
-    <p><%= event.excerpt %></p>
+    <p class="event_excerpt"><%= event.excerpt %></p>
 
   <% else %>
 
-      <h4><%= t('.details', default: 'Event Details') %></h4>
-      <h5><%= @event.venue_name %></h5>
+      <h1><%= event.title %></h4>
 
-      <%= categories %>
-
-      <p>
-          <%= t('.from', default: 'From') %> <%= @event.from.strftime('%B %d, %Y %I:%M%p') %><br>
-          <%= t('.to', default: 'To') %> <%= @event.to.strftime('%B %d, %Y %I:%M%p') %>
-      </p>
 
       <% if @event.registration_link.present? %>
         <p><%= link_to t('.register', default: 'Register for this event'), @event.registration_link %></p>
@@ -46,10 +38,40 @@
         <p><%= link_to t('.view_on_map', default: 'View it on a map'), "http://maps.google.com/maps?f=q&source=s_q&hl=en&geocode=&q=#{CGI::escape(@event.venue.address)}&ie=UTF8&z=16" %></p>
       <% end -%>
 
-      <div class="event_description">
-        <h4><%= @event.excerpt %></h4>
-        <%=raw @event.description %>
-      </div>
+      <% if @event.excerpt %>
+        <div class="event_excerpt">
+          <p><%= @event.excerpt %></p>
+        </div>
+      <% end %>
+
+      <% if @event.description %>
+        <div class="event_description">
+          <%= raw @event.description %>
+        </div>
+      <% end %>
+
+
+      <% if @event.venue_name %>
+        <hr />
+        <p><%= t('.venue') %>: <%= @event.venue_name %></p>
+      <% end %>
+
+      <% if @event.from  %>
+        <hr />
+        <p class="event_date">
+            <% is_period = event.from && event.to && event.from != event.to %>
+            <% if is_period %>
+              <%= t('.from', default: 'From') %>:
+            <% end %>
+            <%= l(@event.from, format: :calendar_detailed) %>
+            <% if is_period %>
+              <br>
+              <%= t('.to', default: 'To') %>: <%= l(@event.to, format: :calendar_detailed) %>
+            <% end %>
+        </p>
+      <% end %>
+
+      <%= categories %>
 
   <% end %>
 

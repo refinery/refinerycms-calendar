@@ -2,6 +2,7 @@ fr:
   time:
     formats:
       calendar_simple: "%a %d %B %Y"
+      calendar_detailed: "%a %d %B %Y %Hh%M"
   refinery:
     plugins:
       venues:
@@ -51,6 +52,9 @@ fr:
           other: Autres Events
         event:
           categories: Catégories
+          from: Du
+          to: Au
+          venue: Lieu
   activerecord:
     attributes:
       refinery/calendar/venue:
