@@ -6,6 +6,10 @@ fr:
       events:
         title: Events
     calendar:
+    calendar:
+      categories:
+        categories_list:
+          title: Catégories
       admin:
         venues:
           actions:

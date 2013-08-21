@@ -17,11 +17,7 @@
 <% end %>
 
 <% content_for :body_content_right do %>
-  <ul class="categories-list">
-    <% @categories.each do |category| %>
-      <li><%= link_to category.name, refinery.calendar_category_path(category) %> </li>
-    <% end %>
-  </ul>
+  <% render 'categories_list' %>
 <% end %>
 
 <% content_for :stylesheets, stylesheet_link_tag('categories') %>

@@ -6,11 +6,15 @@ en:
       calendar:
         title: Calendar
     calendar:
+      categories:
+        categories_list:
+          title: Categories
       admin:
         shared:
           links:
             manage_events: Manage Events
             manage_venues: Manage Venues
+            manage_categories: Manage Categories
         venues:
           actions:
             create_new: Add New Venue
