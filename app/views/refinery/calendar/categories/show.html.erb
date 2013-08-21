@@ -6,12 +6,15 @@
 <% content_for :body_content_left do %>
   <h4><%= t('.details', default: @category.name ) %></h4>
 
-  <% if @category.events.any?%>
+
+  <% if @upcoming_events.any?%>
     <ul class="events-list">
-      <% @category.events.each do |event|%>
+      <% @upcoming_events.each do |event|%>
         <li><%= render event %></li>
       <% end %>
     </ul>
+    <% else %>
+    <p><%= t('.no_upcoming_events') %></p>
   <% end %>
 
 <% end %>

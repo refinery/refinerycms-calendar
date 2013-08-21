@@ -9,6 +9,7 @@ module Refinery
       def show
         @categories = Category.order('refinery_calendar_categories.name')
         @category   = Category.find(params[:id])
+        @upcoming_events = @category.events.upcoming
       end
       # before_filter :find_page, :except => :archive
 

@@ -8,6 +8,8 @@ fr:
     calendar:
     calendar:
       categories:
+        show:
+          no_upcoming_events: Aucun événement à venir pour cette catégorie
         categories_list:
           title: Catégories
       admin:
