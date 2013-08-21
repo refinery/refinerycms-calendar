@@ -1,14 +1,10 @@
 module Refinery
   module Calendar
     class CategoriesController < ::ApplicationController
-
-      def index
-        @categories = Category.order('refinery_calendar_categories.name')
-      end
+      before_filter :find_categories
 
       def show
-        @categories = Category.order('refinery_calendar_categories.name')
-        @category   = Category.find(params[:id])
+        @category        = Category.find(params[:id])
         @upcoming_events = @category.events.upcoming.order('refinery_calendar_events.starts_at')
       end
       # before_filter :find_page, :except => :archive
@@ -38,7 +34,10 @@ module Refinery
       # def find_page
       #   @page = ::Refinery::Page.where(:link_url => "/calendar/events").first
       # end
-
+      protected
+      def find_categories
+        @categories ||= Refinery::Calendar::Category.order('refinery_calendar_categories.name')
+      end
     end
   end
 end

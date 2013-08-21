@@ -2,6 +2,7 @@ module Refinery
   module Calendar
     class EventsController < ::ApplicationController
       before_filter :find_page, :except => :archive
+      before_filter :find_categories
 
       def index
         @events = Event.upcoming.order('refinery_calendar_events.starts_at DESC')
@@ -13,7 +14,6 @@ module Refinery
 
       def show
         @event = Event.find(params[:id])
-
         # you can use meta fields from your model instead (e.g. browser_title)
         # by swapping @page for @event in the line below:
         present(@page)
@@ -27,6 +27,9 @@ module Refinery
       protected
       def find_page
         @page = ::Refinery::Page.where(:link_url => "/calendar/events").first
+      end
+      def find_categories
+        @categories ||= Refinery::Calendar::Category.order( 'refinery_calendar_categories.name')
       end
 
     end

@@ -32,6 +32,11 @@
   </div>
 <% end %>
 
+<% content_for :body_content_right do %>
+  <% render 'refinery/calendar/categories/categories_list' %>
+<% end %>
+
+
 <% content_for :stylesheets, stylesheet_link_tag('events') %>
 
 <%= render '/refinery/content_page' %>

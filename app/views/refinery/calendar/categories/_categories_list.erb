@@ -1,8 +1,10 @@
+<% if @categories.presence %>
 
-<h3 class="list-title"><%= t( '.title' )%></h3>
+  <h3 class="list-title"><%= t( '.title' )%></h3>
+  <ul class="categories-list">
+    <% @categories.each do |category| %>
+    <li><%= link_to t(category.name, default: category.name), refinery.calendar_category_path(category) %></li>
+    <% end %>
+  </ul>
 
-<ul class="categories-list">
-  <% Refinery::Calendar::Category.all.each do |category| %>
-  <li><%= link_to t(category.name, default: category.name), refinery.calendar_category_path(category) %></li>
-  <% end %>
-</ul>
+<% end %>
