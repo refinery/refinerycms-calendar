@@ -1,4 +1,7 @@
 en:
+  time:
+    formats:
+      calendar_simple: "%d %B %Y"
   refinery:
     plugins:
       venues:
@@ -64,13 +67,14 @@ en:
           other: Other Venues
       events:
         show:
-          categories: Categories
           details: 'Event Details'
           from: 'From'
           to: 'To'
           register: 'Register for this event'
           view_on_map: 'View it on a map'
           other: Other Events
+        event:
+          categories: Categories
   activerecord:
     attributes:
       refinery/calendar/venue:

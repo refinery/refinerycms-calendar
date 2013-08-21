@@ -4,33 +4,9 @@
 <% end %>
 
 <% content_for :body_content_left do %>
-  <h4><%= t('.details', default: 'Event Details') %></h4>
-  <h5><%= @event.venue_name %></h5>
 
-  <% if @event.categories.any?%>
-    <p>
-      <%= t ('.categories') %>:
-      <%= @event.categories.map do |category|%>
-      <% link_to( category.name, refinery.calendar_category_path(category)) %>
-      <% end.join(', ').html_safe %>
-    </p>
-  <% end %>
+  <%= render @event, state: :full %>
 
-  <p><%= t('.from', default: 'From') %> <%= @event.from.strftime('%B %d, %Y %I:%M%p') %><br>
-      <%= t('.to', default: 'To') %> <%= @event.to.strftime('%B %d, %Y %I:%M%p') %></p>
-
-  <% if @event.registration_link.present? %>
-    <p><%= link_to t('.register', default: 'Register for this event'), @event.registration_link %></p>
-  <% end -%>
-
-  <% if @event.venue_address.present? %>
-    <p><%= link_to t('.view_on_map', default: 'View it on a map'), "http://maps.google.com/maps?f=q&source=s_q&hl=en&geocode=&q=#{CGI::escape(@event.venue.address)}&ie=UTF8&z=16" %></p>
-  <% end -%>
-
-  <div class="event_description">
-    <h4><%= @event.excerpt %></h4>
-    <%=raw @event.description %>
-  </div>
 <% end %>
 
 <% content_for :body_content_right do %>
