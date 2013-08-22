@@ -48,6 +48,10 @@ fr:
         show:
           other: Autres Venues
       events:
+        index:
+          featured_events: Événements spéciaux
+          upcoming_events: Tous les événements à venir
+          past_events: Événements passés
         show:
           other: Autres Events
         event:
