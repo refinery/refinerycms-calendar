@@ -29,6 +29,11 @@
 
       <h1><%= event.title %></h1>
 
+      <% if @event.excerpt %>
+        <div class="event_excerpt">
+          <p><%= @event.excerpt %></p>
+        </div>
+      <% end %>
 
       <% if @event.registration_link.present? %>
         <p><%= link_to t('.register', default: 'Register for this event'), @event.registration_link %></p>
@@ -37,12 +42,6 @@
       <% if @event.venue_address.present? %>
         <p><%= link_to t('.view_on_map', default: 'View it on a map'), "http://maps.google.com/maps?f=q&source=s_q&hl=en&geocode=&q=#{CGI::escape(@event.venue.address)}&ie=UTF8&z=16" %></p>
       <% end -%>
-
-      <% if @event.excerpt %>
-        <div class="event_excerpt">
-          <p><%= @event.excerpt %></p>
-        </div>
-      <% end %>
 
       <% if @event.description %>
         <div class="event_description">
