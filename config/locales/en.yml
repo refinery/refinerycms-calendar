@@ -75,12 +75,13 @@ en:
           details: 'Event Details'
           from: 'From'
           to: 'To'
-          register: 'Register for this event'
-          view_on_map: 'View it on a map'
           other: Other Events
         event:
+          register: 'Register for this event'
+          view_on_map: 'View it on a map'
           categories: Categories
           venue: Venue
+          address: Address
   activerecord:
     attributes:
       refinery/calendar/venue:

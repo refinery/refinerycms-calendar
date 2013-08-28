@@ -53,12 +53,15 @@ fr:
           upcoming_events: Tous les événements à venir
           past_events: Événements passés
         show:
-          other: Autres Events
+          other: Autres événements
         event:
+          register: Inscription
+          view_on_map: Visualiser sur une carte
           categories: Catégories
           from: Du
           to: Au
           venue: Lieu
+          address: Adresse
   activerecord:
     attributes:
       refinery/calendar/venue:
