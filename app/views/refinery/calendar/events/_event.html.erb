@@ -56,6 +56,11 @@
         <p><%= t('.venue') %>: <%= @event.venue_name %></p>
       <% end %>
 
+      <% if @event.venue_address %>
+        <hr />
+        <p><%= t('.address') %>: <%= @event.venue_address %></p>
+      <% end %>
+
       <% if @event.from  %>
         <hr />
         <p class="event_date">
