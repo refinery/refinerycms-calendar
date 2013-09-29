@@ -8,6 +8,7 @@ module Refinery
         @events          = Event.upcoming.order('refinery_calendar_events.starts_at DESC')
         @featured_events = Event.upcoming.featured.order('refinery_calendar_events.starts_at')
         @upcoming_events = Event.upcoming.order('refinery_calendar_events.starts_at')
+        @current_events  = Event.current.order('refinery_calendar_events.starts_at')
         @past_events     = Event.archive.order('refinery_calendar_events.starts_at DESC')
 
         # you can use meta fields from your model instead (e.g. browser_title)

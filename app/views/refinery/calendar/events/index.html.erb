@@ -6,6 +6,11 @@
           <%= render "events_list", events: @featured_events %>
         <% end %>
 
+        <% if @current_events.present? %>
+          <h2><%= t('.current_events') %></h2>
+          <%= render "events_list", events: @current_events %>
+        <% end %>
+
         <% if @upcoming_events.present? %>
           <h2><%= t('.upcoming_events') %></h2>
           <%= render "events_list", events: @upcoming_events %>
