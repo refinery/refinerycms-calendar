@@ -35,6 +35,11 @@ module Refinery
       }
 
       class << self
+        def current
+          where('refinery_calendar_events.starts_at < ?', Time.now)
+            .where('refinery_calendar_events.ends_at >= ?', Time.now)
+        end
+
         def upcoming
           where('refinery_calendar_events.starts_at >= ?', Time.now)
         end
@@ -44,7 +49,7 @@ module Refinery
         end
 
         def archive
-          where('refinery_calendar_events.starts_at < ?', Time.now)
+          where('refinery_calendar_events.ends_at < ?', Time.now)
         end
 
       end
