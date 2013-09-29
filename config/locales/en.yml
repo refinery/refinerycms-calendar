@@ -71,6 +71,7 @@ en:
           featured_events: Featured events
           upcoming_events: Upcoming events
           past_events: Past events
+          current_events: Current events
         show:
           details: 'Event Details'
           from: 'From'

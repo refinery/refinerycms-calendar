@@ -50,8 +50,9 @@ fr:
       events:
         index:
           featured_events: Événements spéciaux
-          upcoming_events: Tous les événements à venir
+          upcoming_events: Événements à venir
           past_events: Événements passés
+          current_events: Événements en cours
         show:
           other: Autres événements
         event:
