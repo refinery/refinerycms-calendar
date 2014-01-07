@@ -3,6 +3,14 @@ module Refinery
     class Event < Refinery::Core::BaseModel
       extend FriendlyId
 
+
+      translates :title, :excerpt, :description
+      class Translation
+        attr_accessible :locale
+      end
+      acts_as_indexed :fields => [:title, :excerpt, :description]
+
+
       friendly_id :title, :use => :slugged
 
       belongs_to :venue
