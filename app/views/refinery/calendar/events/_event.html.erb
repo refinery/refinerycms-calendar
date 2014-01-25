@@ -14,22 +14,29 @@
   <% end %>
 <% end %>
 
-  <% if @event.image.present? %>
-    <%= image_fu( @event.image, '400x400>') %>
-  <% end %>
 
-<%= content_tag_for content_tag, event do -%>
+<%= content_tag_for content_tag, event, class: ( event.image.present? ? "with-image" : "without-image" ) do -%>
 
   <% if state == :short %>
+
+    <% if event.image.present? %>
+      <p class="event_image"><%= image_fu( event.image, '100x100#') %></p>
+    <% end %>
+
     <time class="event_date" datetime="<%= event.from %>">
       <%= l(event.from, format: :calendar_simple) %>
     </time>
     <h1><%= link_to event.title, refinery.calendar_event_path(event) %></h1>
     <p class="event_excerpt"><%= event.excerpt %></p>
 
+
   <% else %>
 
       <h1><%= event.title %></h1>
+
+      <% if @event.image.present? %>
+        <p class="event_image"><%= image_fu( @event.image, '300x600') %></p>
+      <% end %>
 
       <% if @event.excerpt %>
         <div class="event_excerpt">
