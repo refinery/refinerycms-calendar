@@ -14,7 +14,9 @@
   <% end %>
 <% end %>
 
-
+  <% if @event.image.present? %>
+    <%= image_fu( @event.image, '400x400>') %>
+  <% end %>
 
 <%= content_tag_for content_tag, event do -%>
 

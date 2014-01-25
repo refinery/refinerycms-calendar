@@ -7,6 +7,17 @@
               :current_locale => Thread.current[:globalize_locale] if Refinery.i18n_enabled? %>
 
 
+  <div class="field">
+    <%= f.label :image %>
+    <%= render :partial => "/refinery/admin/image_picker", :locals => {
+      :f => f,
+      :field => :image_id,
+      :image => f.object.image,
+      :toggle_image_display => false
+    }
+    %>
+  </div>
+
   <div class='field'>
     <%= f.label :title -%>
     <%= f.text_field :title, :class => 'larger widest'  -%>

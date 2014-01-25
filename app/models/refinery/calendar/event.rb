@@ -11,6 +11,9 @@ module Refinery
       acts_as_indexed :fields => [:title, :excerpt, :description]
 
 
+      attr_accessible :image_id
+      belongs_to :image, :class_name => '::Refinery::Image'
+
       friendly_id :title, :use => :slugged
 
       belongs_to :venue
