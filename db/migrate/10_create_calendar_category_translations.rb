@@ -11,6 +11,7 @@ class CreateCalendarCategoryTranslations < ActiveRecord::Migration
   def self.down
     add_column :refinery_calendar_categories, :name, :string
 
-    CalendarCategorys.drop_translation_table! migrate_data: true
+    Refinery::Calendar::Category.drop_translation_table! migrate_data: true
+
   end
 end
