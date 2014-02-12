@@ -34,14 +34,15 @@
 
       <h1><%= event.title %></h1>
 
-      <% if @event.image.present? %>
-        <p class="event_image"><%= image_fu( @event.image, '220x600') %></p>
-      <% end %>
 
       <% if @event.excerpt %>
         <div class="event_excerpt">
           <p><%= @event.excerpt %></p>
         </div>
+      <% end %>
+
+      <% if @event.image.present? %>
+        <p class="event_image"><%= image_fu( @event.image, '220x600') %></p>
       <% end %>
 
       <% if @event.registration_link.present? %>
