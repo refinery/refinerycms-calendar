@@ -1,8 +1,8 @@
 en:
   time:
     formats:
-      calendar_simple: "%d %B %Y"
-      calendar_detailed: "%a %d %B %Y %H:%M"
+      calendar_simple: "%B %d %Y"
+      calendar_detailed: "%a, %B %d %Y - %H:%M"
   refinery:
     plugins:
       venues:
