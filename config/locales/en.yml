@@ -1,7 +1,7 @@
 en:
   time:
     formats:
-      calendar_simple: "%B %d %Y"
+      calendar_simple: "%B %d, %Y"
       calendar_detailed: "%a, %B %d %Y - %H:%M"
   refinery:
     plugins:
