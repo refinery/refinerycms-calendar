@@ -1,0 +1,28 @@
+
+<% content_for :body_content_title do %>
+  <%= @category.name %>
+<% end %>
+
+<% content_for :body_content_left do %>
+  <h1><%= t('.details', default: @category.name ) %></h1>
+
+
+  <% if @upcoming_events.any?%>
+    <ul class="events-list">
+      <% @upcoming_events.each do |event|%>
+        <li><%= render event %></li>
+      <% end %>
+    </ul>
+    <% else %>
+    <p><%= t('.no_upcoming_events') %></p>
+  <% end %>
+
+<% end %>
+
+<% content_for :body_content_right do %>
+  <% render 'categories_list' %>
+<% end %>
+
+<% content_for :stylesheets, stylesheet_link_tag('categories') %>
+
+<%= render '/refinery/content_page' %>

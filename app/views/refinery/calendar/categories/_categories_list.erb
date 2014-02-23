@@ -1,0 +1,12 @@
+<% if @categories.present? %>
+
+  <section class="sidenav">
+    <h3 class="list-title"><%= t( '.title' )%></h3>
+    <ul class="categories-list">
+      <% @categories.each do |category| %>
+      <li><%= link_to t(category.name, default: category.name), refinery.calendar_category_path(category) %></li>
+      <% end %>
+    </ul>
+  </section>
+
+<% end %>

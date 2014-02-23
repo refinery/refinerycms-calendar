@@ -3,14 +3,27 @@ module Refinery
     class Event < Refinery::Core::BaseModel
       extend FriendlyId
 
+
+      translates :title, :excerpt, :description
+      class Translation
+        attr_accessible :locale
+      end
+      acts_as_indexed :fields => [:title, :excerpt, :description]
+
+
+      attr_accessible :image_id
+      belongs_to :image, :class_name => '::Refinery::Image'
+
       friendly_id :title, :use => :slugged
 
       belongs_to :venue
+      has_and_belongs_to_many :categories
+
 
       validates :title, :presence => true, :uniqueness => true
 
       attr_accessible :title, :from, :to, :registration_link,
-                      :venue_id, :excerpt, :description,
+                      :venue_id, :category_ids, :excerpt, :description,
                       :featured, :position
 
       alias_attribute :from, :starts_at
@@ -33,6 +46,11 @@ module Refinery
       }
 
       class << self
+        def current
+          where('refinery_calendar_events.starts_at < ?', Time.now)
+            .where('refinery_calendar_events.ends_at >= ?', Time.now)
+        end
+
         def upcoming
           where('refinery_calendar_events.starts_at >= ?', Time.now)
         end
@@ -42,7 +60,7 @@ module Refinery
         end
 
         def archive
-          where('refinery_calendar_events.starts_at < ?', Time.now)
+          where('refinery_calendar_events.ends_at < ?', Time.now)
         end
 
       end

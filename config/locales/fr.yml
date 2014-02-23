@@ -1,4 +1,8 @@
 fr:
+  time:
+    formats:
+      calendar_simple: "%a %d %B %Y"
+      calendar_detailed: "%a %d %B %Y %Hh%M"
   refinery:
     plugins:
       venues:
@@ -6,6 +10,11 @@ fr:
       events:
         title: Events
     calendar:
+      categories:
+        show:
+          no_upcoming_events: Aucun événement à venir pour cette catégorie
+        categories_list:
+          title: Catégories
       admin:
         venues:
           actions:
@@ -39,8 +48,21 @@ fr:
         show:
           other: Autres Venues
       events:
+        index:
+          featured_events: Événements spéciaux
+          upcoming_events: Événements à venir
+          past_events: Événements passés
+          current_events: Événements en cours
         show:
-          other: Autres Events
+          other: Autres événements
+        event:
+          register: Inscription
+          view_on_map: Visualiser sur une carte
+          categories: Catégories
+          from: Du
+          to: Au
+          venue: Lieu
+          address: Adresse
   activerecord:
     attributes:
       refinery/calendar/venue:

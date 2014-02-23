@@ -1,8 +1,32 @@
-<% content_for :body_content_left do %>
-  <section id="events">
-    <%= render @events %>
-  </section>
-<% end %>
+
+      <% content_for :body_content_left do %>
+
+        <% if @featured_events.present? %>
+          <h2><%= t('.featured_events') %></h2>
+          <%= render "events_list", events: @featured_events %>
+        <% end %>
+
+        <% if @current_events.present? %>
+          <h2><%= t('.current_events') %></h2>
+          <%= render "events_list", events: @current_events %>
+        <% end %>
+
+        <% if @upcoming_events.present? %>
+          <h2><%= t('.upcoming_events') %></h2>
+          <%= render "events_list", events: @upcoming_events %>
+        <% end %>
+
+        <% if @past_events.present? %>
+          <h2><%= t('.past_events') %></h2>
+          <%= render "events_list", events: @past_events %>
+        <% end %>
+
+      <% end %>
+
+      <% content_for :body_content_right do %>
+        <%= render "refinery/calendar/categories/categories_list" %>
+      <% end %>
+
 
 <% content_for :stylesheets, stylesheet_link_tag('events') %>
 

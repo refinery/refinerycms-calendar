@@ -1,0 +1,26 @@
+<ul>
+  <% if ::Refinery::Calendar::Admin::CategoriesController.searchable? %>
+    <li>
+      <%= render '/refinery/admin/search', :url => refinery.calendar_admin_categories_path %>
+    </li>
+  <% end %>
+  <li>
+    <%= link_to t('.create_new'), refinery.new_calendar_admin_category_path,
+                 :class => "add_icon" %>
+  </li>
+  <%= render 'refinery/calendar/admin/shared/links' %>
+<% if !searching? && ::Refinery::Calendar::Admin::CategoriesController.sortable? && ::Refinery::Calendar::Category.any? %>
+  <li>
+    <%= link_to t('.reorder', :what => "Categories"),
+                 refinery.calendar_admin_category_path,
+                 :id => "reorder_action",
+                 :class => "reorder_icon" %>
+
+    <%= link_to t('.reorder_done', :what => "Categories"),
+                 refinery.calendar_admin_categories_path,
+                 :id => "reorder_action_done",
+                 :style => "display: none;",
+                 :class => "reorder_icon" %>
+  </li>
+<% end %>
+</ul>

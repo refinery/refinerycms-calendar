@@ -3,6 +3,20 @@
               :object => @event,
               :include_object_name => true %>
 
+  <%= render "locale_picker",
+              :current_locale => Thread.current[:globalize_locale] %>
+
+
+  <div class="field">
+    <%= f.label :image %>
+    <%= render :partial => "/refinery/admin/image_picker", :locals => {
+      :f => f,
+      :field => :image_id,
+      :image => f.object.image,
+      :toggle_image_display => false
+    }
+    %>
+  </div>
 
   <div class='field'>
     <%= f.label :title -%>
@@ -35,6 +49,25 @@
     <%= f.label :venue_id, 'Venue' %>
     <%= f.collection_select :venue_id, @venues, :id, :name, { :include_blank => 'None' }, :class => 'chzn-select', :'data-placeholder' => 'Search Venues', :style => 'width: 300px;' %>
   </div>
+
+  <% if @categories.any? -%>
+    <div class='field'>
+      <label for='event[category_ids][]'>Categories</label>
+      <ul class="check_box_list">
+        <% @categories.each do |category| -%>
+          <li>
+            <%= check_box_tag 'event[category_ids][]', category.id,
+                               @event.categories.include?(category),
+                              :id => (id="event_category_ids_#{category.id}") %>
+            <%= label_tag 'event[category_ids][]', category.name,
+                          :class => 'stripped',
+                          :for => id %>
+          </li>
+        <% end -%>
+      </ul>
+    </div>
+  <% end -%>
+
 
   <div class='field'>
     <%= f.label :excerpt -%>
@@ -76,7 +109,7 @@
     $(document).ready(function(){
       page_options.init(false, '', '');
 
-      $('#event_venue_id').chosen({
+      $('#event_venue_id,#event_category_id').chosen({
         no_results_text: "No results matched",
         allow_single_deselect: true
       });
