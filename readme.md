@@ -6,7 +6,7 @@
 
 ```ruby
 # in Gemfile:
-gem 'refinerycms-calendar', '~>2.0.0'
+gem 'refinerycms-calendar', '~> 2.1.0'
 ```
 
 ```

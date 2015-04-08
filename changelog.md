@@ -1,3 +1,6 @@
+## 2.1.0 [UNRELEASED]
+* Supports Refinery 2.1.x
+
 ## 2.0.2 [21 June 2012]
 * Fix bug; add vendor path to gemspec for assets to be packaged up
 
