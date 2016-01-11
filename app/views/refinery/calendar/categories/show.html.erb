@@ -7,9 +7,9 @@
   <h1><%= t('.details', default: @category.name ) %></h1>
 
 
-  <% if @upcoming_events.any?%>
+  <% if @events.any?%>
     <ul class="events-list">
-      <% @upcoming_events.each do |event|%>
+      <% @events.each do |event|%>
         <li><%= render event %></li>
       <% end %>
     </ul>
