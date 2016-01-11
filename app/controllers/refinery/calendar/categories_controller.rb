@@ -6,6 +6,8 @@ module Refinery
       def show
         @category        = Category.find(params[:id])
         @upcoming_events = @category.events.upcoming.order('refinery_calendar_events.starts_at')
+        @current_events = @category.events.current.order('refinery_calendar_events.starts_at')
+        @events = (@current_events + @upcoming_events).uniq
       end
       # before_filter :find_page, :except => :archive
 
