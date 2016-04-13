@@ -3,7 +3,7 @@
 Gem::Specification.new do |s|
   s.platform          = Gem::Platform::RUBY
   s.name              = 'refinerycms-calendar'
-  s.version           = '2.1.0'
+  s.version           = %q{3.0.0}
   s.authors           = ['Philip Arndt', 'Joe Sak']
   s.description       = 'Ruby on Rails Calendar extension for Refinery CMS'
   s.date              = '2012-04-23'
