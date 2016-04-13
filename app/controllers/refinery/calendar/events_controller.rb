@@ -1,7 +1,7 @@
 module Refinery
   module Calendar
     class EventsController < ::ApplicationController
-      before_filter :find_page, :except => :archive
+      before_action :find_page, except: :archive
 
       def index
         @events = Event.upcoming.order('refinery_calendar_events.starts_at DESC')

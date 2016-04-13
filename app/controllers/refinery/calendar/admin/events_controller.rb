@@ -2,7 +2,7 @@ module Refinery
   module Calendar
     module Admin
       class EventsController < ::Refinery::AdminController
-        before_filter :find_venues, :except => [:index, :destroy]
+        before_action :find_venues, except: [:index, :destroy]
 
         crudify :'refinery/calendar/event',
                 :xhr_paging => true,
