@@ -6,8 +6,8 @@
   <h4><%= t('.details', default: 'Event Details') %></h4>
   <h5><%= @event.venue_name %></h5>
 
-  <p><%= t('.from', default: 'From') %> <%= @event.from.strftime('%B %d, %Y %I:%M%p') %><br>
-      <%= t('.to', default: 'To') %> <%= @event.to.strftime('%B %d, %Y %I:%M%p') %></p>
+  <p><%= t('.from', default: 'From') %> <%= @event.from %><br>
+      <%= t('.to', default: 'To') %> <%= @event.to %></p>
 
   <% if @event.registration_link.present? %>
     <p><%= link_to t('.register', default: 'Register for this event'), @event.registration_link %></p>
