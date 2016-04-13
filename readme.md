@@ -1,6 +1,7 @@
 # Calendar extension for Refinery CMS.
 
-[![Build Status](https://secure.travis-ci.org/resolve/refinerycms-calendar.png?branch=master)](http://travis-ci.org/resolve/refinerycms-calendar)
+[![Build Status](https://travis-ci.org/refinery/refinerycms-calendar.svg?branch=master)](https://travis-ci.org/refinery/refinerycms-calendar)
+
 
 ## Installation
 
