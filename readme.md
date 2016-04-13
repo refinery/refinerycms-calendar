@@ -1,21 +1,22 @@
-# Calendar extension for Refinery CMS.
+# Refinery CMS Calendar extension
 
 [![Build Status](https://travis-ci.org/refinery/refinerycms-calendar.svg?branch=master)](https://travis-ci.org/refinery/refinerycms-calendar)
 
+## Install
 
-## Installation
+Add this line to your application's `Gemfile`
 
 ```ruby
-# in Gemfile:
-gem 'refinerycms-calendar', '~> 2.1.0'
+gem 'refinerycms-calendar', '~> 3.0.0'
 ```
 
-```
-# in console:
+Next run
 
-bundle
-rails g refinery:calendar
-rake db:migrate db:seed db:test:prepare
+```bash
+bundle install
+rails generate refinery:calendar
+rake db:migrate
+rake db:seed
 ```
 
-Restart the server
+Now when you start up your Refinery application.
