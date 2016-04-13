@@ -20,7 +20,7 @@ class CreateCalendarEvents < ActiveRecord::Migration
 
   def down
     if defined?(::Refinery::UserPlugin)
-      ::Refinery::UserPlugin.destroy_all({:name => "refinerycms-calendar"})
+      ::Refinery::UserPlugin.destroy_all({:name => "refinery_calendar"})
     end
 
     if defined?(::Refinery::Page)

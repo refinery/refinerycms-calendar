@@ -3,7 +3,7 @@ hu:
     plugins:
       venues:
         title: Helyek
-      calendar:
+      refinery_calendar:
         title: Naptár
     calendar:
       admin:
