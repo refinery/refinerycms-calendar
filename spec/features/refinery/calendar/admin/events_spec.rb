@@ -1,11 +1,11 @@
 # encoding: utf-8
 require "spec_helper"
 
-describe Refinery do
-  describe "Calendar" do
-    describe "Admin" do
-      describe "events" do
-        refinery_login_with :refinery_user
+module Refinery
+  module Calendar
+    module Admin
+      describe Event, type: :feature do
+        refinery_login
 
         describe "events list" do
           before(:each) do
@@ -15,8 +15,8 @@ describe Refinery do
 
           it "shows two items" do
             visit refinery.calendar_admin_events_path
-            page.should have_content("UniqueTitleOne")
-            page.should have_content("UniqueTitleTwo")
+            expect(page).to have_content("UniqueTitleOne")
+            expect(page).to have_content("UniqueTitleTwo")
           end
         end
 
@@ -32,8 +32,8 @@ describe Refinery do
               fill_in "Title", :with => "This is a test of the first string field"
               click_button "Save"
 
-              page.should have_content("'This is a test of the first string field' was successfully added.")
-              Refinery::Calendar::Event.count.should == 1
+              expect(page).to have_content("'This is a test of the first string field' was successfully added.")
+              expect(Refinery::Calendar::Event.count).to eq(1)
             end
           end
 
@@ -41,8 +41,8 @@ describe Refinery do
             it "should fail" do
               click_button "Save"
 
-              page.should have_content("Title can't be blank")
-              Refinery::Calendar::Event.count.should == 0
+              expect(page).to have_content("Title can't be blank")
+              expect(Refinery::Calendar::Event.count).to eq(0)
             end
           end
 
@@ -57,8 +57,8 @@ describe Refinery do
               fill_in "Title", :with => "UniqueTitle"
               click_button "Save"
 
-              page.should have_content("There were problems")
-              Refinery::Calendar::Event.count.should == 1
+              expect(page).to have_content("There were problems")
+              expect(Refinery::Calendar::Event.count).to eq(1)
             end
           end
 
@@ -77,8 +77,8 @@ describe Refinery do
             fill_in "Title", :with => "A different title"
             click_button "Save"
 
-            page.should have_content("'A different title' was successfully updated.")
-            page.should have_no_content("A title")
+            expect(page).to have_content("'A different title' was successfully updated.")
+            expect(page).to have_no_content("A title")
           end
         end
 
@@ -90,8 +90,8 @@ describe Refinery do
 
             click_link "Remove this event forever"
 
-            page.should have_content("'UniqueTitleOne' was successfully removed.")
-            Refinery::Calendar::Event.count.should == 0
+            expect(page).to have_content("'UniqueTitleOne' was successfully removed.")
+            expect(Refinery::Calendar::Event.count).to eq(0)
           end
         end
 
