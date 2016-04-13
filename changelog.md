@@ -1,3 +1,6 @@
+## 3.0.0 [UNRELEASED]
+* Supports Refinery CMS 3.0.x
+
 ## 2.1.0 [UNRELEASED]
 * Supports Refinery 2.1.x
 
