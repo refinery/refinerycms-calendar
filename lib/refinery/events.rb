@@ -1,4 +1,5 @@
 require 'refinerycms-core'
+require 'friendly_id'
 
 module Refinery
   autoload :CalendarGenerator, 'generators/refinery/calendar_generator'
