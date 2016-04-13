@@ -2,7 +2,7 @@ require 'spec_helper'
 
 module Refinery
   module Calendar
-    describe Event do
+    describe Event, type: :model do
       describe "validations" do
         subject do
           FactoryGirl.create(:event, :title => "Refinery CMS")

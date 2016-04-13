@@ -3,7 +3,7 @@ en:
     plugins:
       venues:
         title: Venues
-      calendar:
+      refinery_calendar:
         title: Calendar
     calendar:
       admin:

@@ -1,7 +1,7 @@
 if defined?(::Refinery::User)
   ::Refinery::User.all.each do |user|
-    if user.plugins.where(:name => 'refinerycms-calendar').blank?
-      user.plugins.create(:name => 'refinerycms-calendar',
+    if user.plugins.where(:name => 'refinery_calendar').blank?
+      user.plugins.create(:name => 'refinery_calendar',
                           :position => (user.plugins.maximum(:position) || -1) +1)
     end
   end
