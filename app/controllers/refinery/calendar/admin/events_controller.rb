@@ -5,11 +5,11 @@ module Refinery
         before_action :find_venues, except: [:index, :destroy]
 
         crudify :'refinery/calendar/event',
-                :xhr_paging => true,
-                :sortable => false,
-                :order => "starts_at DESC"
+                sortable: false,
+                order: "starts_at DESC"
 
         private
+
         def find_venues
           @venues = Venue.order('name')
         end
