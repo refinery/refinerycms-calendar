@@ -1,0 +1,64 @@
+de:
+  refinery:
+    plugins:
+      venues:
+        title: Orte
+      refinery_calendar:
+        title: Kalender
+    calendar:
+      admin:
+        shared:
+          links:
+            manage_events: Veranstaltungen verwalten
+            manage_venues: Orte verwalten
+        venues:
+          actions:
+            create_new: Neuen Ort anlegen
+            reorder: Orte umsortieren
+            reorder_done: Fertig
+          records:
+            title: Orte
+            sorry_no_results: Leider keine Ergebnisse.
+            no_items_yet: Es gibt noch keine Orte. "Neuen Ort anlegen" klicken, um einen anzulegen.
+          venue:
+            view_live_html: Ort anzeigen <br/><em>(in neuem Fenster)</em>
+            edit: Ort verwalten
+            delete: Ort permanent löschen
+        events:
+          actions:
+            create_new: Veranstaltung anlegen
+            reorder: Veranstaltungen umsortieren
+            reorder_done: Fertig
+          records:
+            title: Veranstaltungen
+            sorry_no_results: Leider keine Ergebnisse.
+            no_items_yet: Es gibt noch keine Veranstaltungen. "Neue Veranstaltung anlegen" klicken, um eine anzulegen.
+          event:
+            view_live_html: Veranstaltung anzeigen <br/><em>(in neuem Fenster)</em>
+            edit: Veranstaltung verwalten
+            delete: Veranstaltung permanent löschen
+      venues:
+        show:
+          other: Andere Orte
+      events:
+        show:
+          details: 'Veranstaltungsdetails'
+          from: 'Von'
+          to: 'Bis'
+          register: 'Für diese Veranstaltung anmelden'
+          view_on_map: 'Auf Karte anzeigen'
+          other: Andere Veranstaltungen
+  activerecord:
+    attributes:
+      refinery/calendar/venue:
+        name: Name
+        address: Anschrift
+        url: URL
+        phone: Telefon
+      refinery/calendar/event:
+        title: Titel
+        from: Von
+        to: Bis
+        registration_link: Anmeldungslink
+        excerpt: Auszug
+        description: Beschreibung
