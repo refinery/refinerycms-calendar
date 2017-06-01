@@ -5,6 +5,8 @@ fr:
         title: Lieux
       events:
         title: Evènements
+      refinery_calendar:
+        title: Calendrier       
     calendar:
       admin:
         venues:
