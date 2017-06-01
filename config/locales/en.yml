@@ -59,6 +59,7 @@ en:
         phone: Phone
       refinery/calendar/event:
         title: Title
+        featured: Featured
         from: From
         to: To
         registration_link: Registration Link

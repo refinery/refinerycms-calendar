@@ -50,6 +50,7 @@ fr:
         phone: Téléphone
       refinery/calendar/event:
         title: Titre
+        featured: à afficher
         from: Date de début
         to: Date de fin
         registration_link: Lien pour inscription
