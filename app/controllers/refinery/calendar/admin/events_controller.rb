@@ -25,7 +25,7 @@ module Refinery
           [
             :title, :from, :to, :registration_link,
             :venue_id, :excerpt, :description,
-            :featured, :position
+            :featured, :position, :picture_id
           ]
         end
       end

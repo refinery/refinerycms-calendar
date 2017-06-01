@@ -7,6 +7,8 @@ module Refinery
 
       belongs_to :venue
 
+      belongs_to :picture, :class_name => '::Refinery::Image'
+
       validates :title, :presence => true, :uniqueness => true
 
       alias_attribute :from, :starts_at
