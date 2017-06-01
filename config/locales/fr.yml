@@ -46,11 +46,11 @@ fr:
           other: Autres lieux
       events:
         show:
-          details: 'Détails de l'évènement
-          from: 'Du'
-          to: 'Au'
-          register: 'S'inscrire à cet évènement
-          view_on_map: 'Afficher sur une carte'
+          details: Détails de l'évènement
+          from: Du
+          to: Au
+          register: S'inscrire à cet évènement
+          view_on_map: Afficher sur une carte
           other: Autres évènements
   activerecord:
     attributes:
