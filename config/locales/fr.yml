@@ -2,56 +2,56 @@ fr:
   refinery:
     plugins:
       venues:
-        title: Venues
+        title: Lieux
       events:
-        title: Events
+        title: Evènements
     calendar:
       admin:
         venues:
           actions:
-            create_new: Créer un(e) nouve(au/l/lle) Venue
-            reorder: Réordonner les Venues
-            reorder_done: Fin de réordonnancement des Venues
+            create_new: Créer un nouveau lieu
+            reorder: Réordonner les lieux
+            reorder_done: Fin de réordonnancement des lieux
           records:
-            title: Venues
+            title: Lieux
             sorry_no_results: Désolé ! Aucun résultat.
-            no_items_yet: Il n'y a actuellement aucun(e) Venue. Cliquer sur "Créer
-              un(e) nouve(au/l/lle) Venue" pour créer votre premi(er/ère) venue.
+            no_items_yet: Il n'y a actuellement aucun lieu. Cliquer sur "Créer
+              un nouveau lieu" pour créer votre premier lieu.
           venue:
-            view_live_html: Voir ce(t/tte) venue <br/><em>(Ouvre une nouvelle fenêtre)</em>
-            edit: Modifier ce(t/tte) venue
-            delete: Supprimer définitivement ce(t/tte) venue
+            view_live_html: Voir ce lieu <br/><em>(Ouvre une nouvelle fenêtre)</em>
+            edit: Modifier ce lieu
+            delete: Supprimer définitivement ce lieu
         events:
           actions:
-            create_new: Créer un(e) nouve(au/l/lle) Event
-            reorder: Réordonner les Events
-            reorder_done: Fin de réordonnancement des Events
+            create_new: Créer un nouvel évènement
+            reorder: Réordonner les évènements
+            reorder_done: Fin de réordonnancement des évènements
           records:
             title: Events
             sorry_no_results: Désolé ! Aucun résultat.
-            no_items_yet: Il n'y a actuellement aucun(e) Event. Cliquer sur "Créer
-              un(e) nouve(au/l/lle) Event" pour créer votre premi(er/ère) event.
+            no_items_yet: Il n'y a actuellement aucun évènement. Cliquer sur "Créer
+              un nouvel évènement" pour créer votre premier évènement.
           event:
-            view_live_html: Voir ce(t/tte) event <br/><em>(Ouvre une nouvelle fenêtre)</em>
-            edit: Modifier ce(t/tte) event
-            delete: Supprimer définitivement ce(t/tte) event
+            view_live_html: Voir cet évènement <br/><em>(Ouvre une nouvelle fenêtre)</em>
+            edit: Modifier cet évènement
+            delete: Supprimer définitivement cet évènement
       venues:
         show:
-          other: Autres Venues
+          other: Autres lieux
       events:
         show:
-          other: Autres Events
+          other: Autres évènements
   activerecord:
     attributes:
       refinery/calendar/venue:
-        name: Name
-        address: Address
+        name: Nom
+        address: Adresse
         url: Url
-        phone: Phone
+        phone: Téléphone
       refinery/calendar/event:
-        title: Title
-        from: From
-        to: To
-        registration_link: Registration Link
-        excerpt: Excerpt
+        title: Titre
+        from: Date de début
+        to: Date de fin
+        registration_link: Lien pour inscription
+        excerpt: Résumé
         description: Description
