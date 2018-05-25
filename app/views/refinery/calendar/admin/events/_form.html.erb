@@ -41,6 +41,16 @@
     <%= f.text_area :excerpt, :size => '65x5'  -%>
   </div>
 
+
+  <div class='field'>
+    <%= f.label :picture -%>
+    <%= render '/refinery/admin/image_picker',
+               :f => f,
+               :field => :picture_id,
+               :image => @event.picture,
+               :toggle_image_display => false -%>
+  </div>
+
   <div class='field'>
     <div id='page-tabs' class='clearfix ui-tabs ui-widget ui-widget-content ui-corner-all'>
       <ul id='page_parts'>
