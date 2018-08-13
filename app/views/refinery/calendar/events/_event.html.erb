@@ -1,8 +1,9 @@
 <%= div_for event do -%>
   <time class="date" datetime="<%= event.from %>">
-    <%= event.from %>
+    <%= l event.from %>
   </time>
 
   <h1><%= link_to event.title, refinery.calendar_event_path(event) %></h1>
+
   <p><%= event.excerpt %></p>
 <% end -%>
