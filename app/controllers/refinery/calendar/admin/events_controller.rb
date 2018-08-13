@@ -7,7 +7,8 @@ module Refinery
 
         crudify :'refinery/calendar/event',
                 sortable: false,
-                order: "starts_at DESC"
+                order: 'starts_at DESC'
+
 
         protected
 

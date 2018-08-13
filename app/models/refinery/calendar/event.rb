@@ -1,6 +1,6 @@
 module Refinery
   module Calendar
-    class Event < Refinery::Core::BaseModel
+    class Event < ActiveRecord::Base
       extend FriendlyId
 
       friendly_id :title, :use => :slugged
@@ -28,20 +28,11 @@ module Refinery
         )
       }
 
-      class << self
-        def upcoming
-          where('refinery_calendar_events.starts_at >= ?', Time.now)
-        end
+      scope :upcoming, -> { where arel_table[:starts_at].gteq Time.now }
 
-        def featured
-          where(:featured => true)
-        end
+      scope :featured, -> { where featured: true }
 
-        def archive
-          where('refinery_calendar_events.starts_at < ?', Time.now)
-        end
-
-      end
+      scope :archive, -> { where arel_table[:starts_at].lt Time.now }
     end
   end
 end

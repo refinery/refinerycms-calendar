@@ -1,30 +1,37 @@
+require 'responders'
+
 module Refinery
   module Calendar
     class EventsController < ::ApplicationController
       before_action :find_page, except: :archive
 
-      def index
-        @events = Event.upcoming.order('refinery_calendar_events.starts_at DESC')
+      respond_to :html
 
-        # you can use meta fields from your model instead (e.g. browser_title)
-        # by swapping @page for @event in the line below:
-        present(@page)
+      def index
+        @events = Event.upcoming.order(starts_at: :desc)
+
+        respond_with (@events) do |format|
+          format.html
+#           format.rss { render layout: false }
+        end
       end
 
       def show
         @event = Event.friendly.find(params[:id])
 
-        # you can use meta fields from your model instead (e.g. browser_title)
-        # by swapping @page for @event in the line below:
-        present(@page)
+        respond_with (@event) do |format|
+          format.html { present(@event) }
+#           format.js { render partial: 'post', layout: false }
+        end
       end
 
       def archive
-        @events = Event.archive.order('refinery_calendar_events.starts_at DESC')
+        @events = Event.archive.order(starts_at: :desc)
         render :template => 'refinery/calendar/events/index'
       end
 
       protected
+
       def find_page
         @page = ::Refinery::Page.where(:link_url => "/calendar/events").first
       end
