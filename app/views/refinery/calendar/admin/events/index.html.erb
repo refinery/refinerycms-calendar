@@ -1,8 +1,10 @@
-<section id='records'>
-    <h2><%= t('title', :scope => 'refinery.plugins.refinery_calendar') %> : <%= t('title', :scope => 'refinery.plugins.events') %></h2>
+<section id="records">
+  <h2><%= t('refinery.plugins.refinery_calendar.title') %>: <%= t('refinery.plugins.events.title') %></h2>
   <%= render 'records' %>
 </section>
-<aside id='actions'>
+
+<aside id="actions">
   <%= render 'actions' %>
 </aside>
+
 <%= render '/refinery/admin/make_sortable', :tree => false if !searching? and ::Refinery::Calendar::Admin::EventsController.sortable? and ::Refinery::Calendar::Event.count > 1 %>
