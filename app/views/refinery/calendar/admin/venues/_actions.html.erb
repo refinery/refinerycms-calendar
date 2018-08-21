@@ -5,8 +5,7 @@
     </li>
   <% end %>
   <li>
-    <%= link_to t('.create_new'), refinery.new_calendar_admin_venue_path,
-                 :class => "add_icon" %>
+    <%= link_to t('.create_new'), refinery.new_calendar_admin_venue_path, :class => "add_icon" %>
   </li>
   <%= render 'refinery/calendar/admin/shared/links' %>
 <% if !searching? && ::Refinery::Calendar::Admin::VenuesController.sortable? && ::Refinery::Calendar::Venue.any? %>

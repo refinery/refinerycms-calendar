@@ -7,7 +7,7 @@
 Add this line to your application's `Gemfile`
 
 ```ruby
-gem 'refinerycms-calendar', '~> 3.0.0'
+gem 'refinerycms-calendar', '~> 4.0.0'
 ```
 
 Next run

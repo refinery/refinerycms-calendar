@@ -9,8 +9,8 @@ module Refinery
 
         describe "events list" do
           before(:each) do
-            FactoryGirl.create(:event, :title => "UniqueTitleOne")
-            FactoryGirl.create(:event, :title => "UniqueTitleTwo")
+            FactoryBot.create(:event, :title => "UniqueTitleOne")
+            FactoryBot.create(:event, :title => "UniqueTitleTwo")
           end
 
           it "shows two items" do
@@ -47,7 +47,7 @@ module Refinery
           end
 
           context "duplicate" do
-            before(:each) { FactoryGirl.create(:event, :title => "UniqueTitle") }
+            before(:each) { FactoryBot.create(:event, :title => "UniqueTitle") }
 
             it "should fail" do
               visit refinery.calendar_admin_events_path
@@ -65,7 +65,7 @@ module Refinery
         end
 
         describe "edit" do
-          before(:each) { FactoryGirl.create(:event, :title => "A title") }
+          before(:each) { FactoryBot.create(:event, :title => "A title") }
 
           it "should succeed" do
             visit refinery.calendar_admin_events_path
@@ -83,7 +83,7 @@ module Refinery
         end
 
         describe "destroy" do
-          before(:each) { FactoryGirl.create(:event, :title => "UniqueTitleOne") }
+          before(:each) { FactoryBot.create(:event, :title => "UniqueTitleOne") }
 
           it "should succeed" do
             visit refinery.calendar_admin_events_path

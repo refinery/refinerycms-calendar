@@ -1,10 +1,7 @@
 <%= form_for [refinery, :calendar_admin, @event] do |f| -%>
-  <%= render '/refinery/admin/error_messages',
-              :object => @event,
-              :include_object_name => true %>
+  <%= render '/refinery/admin/error_messages', :object => @event, :include_object_name => true %>
 
-
-  <div class='field'>
+  <div class="field">
     <%= f.label :title -%>
     <%= f.text_field :title, :class => 'larger widest'  -%>
   </div>
@@ -16,32 +13,32 @@
     </p>
   </div>
 
-  <div class='field'>
+  <div class="field">
     <%= f.label :from -%>
     <%= f.date_field :from, :class => 'datetime_range'  -%>
   </div>
 
-  <div class='field'>
+  <div class="field">
     <%= f.label :to -%>
     <%= f.date_field :to, :class => 'datetime_range'  -%>
   </div>
 
-  <div class='field'>
+  <div class="field">
     <%= f.label :registration_link -%>
-    <%= f.text_field :registration_link, :class => 'larger'  -%>
+    <%= f.text_field :registration_link, :class => 'larger widest'  -%>
   </div>
 
-  <div class='field'>
-    <%= f.label :venue_id, 'Venue' %>
+  <div class="field">
+    <%= f.label :venue_id %>
     <%= f.collection_select :venue_id, @venues, :id, :name, { :include_blank => 'None' }, :class => 'chzn-select', :'data-placeholder' => 'Search Venues', :style => 'width: 300px;' %>
   </div>
 
-  <div class='field'>
+  <div class="field">
     <%= f.label :excerpt -%>
-    <%= f.text_area :excerpt, :size => '65x5'  -%>
+    <%= f.text_area :excerpt, :size => '65x5' -%>
   </div>
 
-  <div class='field'>
+  <div class="field">
     <div id='page-tabs' class='clearfix ui-tabs ui-widget ui-widget-content ui-corner-all'>
       <ul id='page_parts'>
         <% [:description].each_with_index do |part, part_index| %>
@@ -63,8 +60,8 @@
 
   <%= render '/refinery/admin/form_actions', :f => f,
              :continue_editing => false,
-             :delete_title => t('delete', :scope => 'refinery.events.admin.events.event'),
-             :delete_confirmation => t('message', :scope => 'refinery.admin.delete', :title => @event.title) %>
+             :delete_title => t('refinery.calendar.admin.events.event.delete'),
+             :delete_confirmation => t('refinery.admin.delete.message', :title => @event.title) %>
 <% end -%>
 <% content_for :stylesheets do %>
   <%= stylesheet_link_tag 'chosen' %>

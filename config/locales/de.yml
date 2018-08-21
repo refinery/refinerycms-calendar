@@ -1,10 +1,12 @@
 de:
   refinery:
     plugins:
-      venues:
-        title: Orte
       refinery_calendar:
         title: Kalender
+      venues:
+        title: Orte
+      events:
+        title: Veranstaltungen
     calendar:
       admin:
         shared:

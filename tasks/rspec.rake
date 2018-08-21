@@ -1,4 +1,4 @@
 require 'rspec/core/rake_task'
 
-desc "Run specs"
+desc 'Run specs'
 RSpec::Core::RakeTask.new

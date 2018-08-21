@@ -1,28 +1,30 @@
-Refinery::Core::Engine.routes.append do
+Refinery::Core::Engine.routes.draw do
+  namespace :calendar, :path => Refinery::Calendar.page_url do
+    root :to => 'events#index'
 
-  # Frontend routes
-  namespace :calendar do
     get 'events/archive' => 'events#archive'
+
     resources :events, :only => [:index, :show]
+
+    resources :venues, :only => [:index, :show]
   end
 
-  # Admin routes
+
   namespace :calendar, :path => '' do
-    namespace :admin, :path => 'refinery/calendar' do
-      resources :events, :except => :show do
-        collection do
-          post :update_positions
+    namespace :admin, :path => Refinery::Core.backend_route do
+      scope :path => Refinery::Calendar.page_url do
+        root :to => 'events#index'
+
+        resources :events, except: :show do
+          collection do
+            post :update_positions
+          end
         end
-      end
-    end
-  end
 
-  # Admin routes
-  namespace :calendar, :path => '' do
-    namespace :admin, :path => 'refinery/calendar' do
-      resources :venues, :except => :show do
-        collection do
-          post :update_positions
+        resources :venues, except: :show do
+          collection do
+            post :update_positions
+          end
         end
       end
     end

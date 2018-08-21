@@ -2,7 +2,7 @@ module Refinery
   class CalendarGenerator < Rails::Generators::Base
 
     def rake_db
-      rake("refinery_calendar:install:migrations")
+      rake 'refinery_calendar:install:migrations'
     end
 
     def append_load_seed_data
@@ -10,7 +10,7 @@ module Refinery
       append_file 'db/seeds.rb', :verbose => true do
         <<-EOH
 
-# Added by Refinery CMS Venues extension
+# Added by Refinery CMS Calendar extension
 Refinery::Calendar::Engine.load_seed
         EOH
       end

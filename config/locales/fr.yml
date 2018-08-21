@@ -6,7 +6,7 @@ fr:
       events:
         title: Evènements
       refinery_calendar:
-        title: Calendrier       
+        title: Calendrier
     calendar:
       admin:
         shared:
