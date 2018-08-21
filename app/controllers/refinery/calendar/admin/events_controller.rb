@@ -9,7 +9,6 @@ module Refinery
                 sortable: false,
                 order: 'starts_at DESC'
 
-
         protected
 
         def event_params
