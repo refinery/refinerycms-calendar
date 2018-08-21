@@ -5,7 +5,7 @@ module Refinery
     describe Event, type: :model do
       describe "validations" do
         subject do
-          FactoryGirl.create(:event, :title => "Refinery CMS")
+          FactoryBot.create(:event, :title => "Refinery CMS")
         end
 
         it { should be_valid }
@@ -18,10 +18,10 @@ module Refinery
 
         before :each do
 
-          FactoryGirl.create(:event, starts_at: 2.hours.ago)
-          FactoryGirl.create(:event, starts_at: 2.hours.from_now)
-          FactoryGirl.create(:event, starts_at: 2.days.from_now)
-          FactoryGirl.create(:event, starts_at: 2.weeks.from_now)
+          FactoryBot.create(:event, starts_at: 2.hours.ago)
+          FactoryBot.create(:event, starts_at: 2.hours.from_now)
+          FactoryBot.create(:event, starts_at: 2.days.from_now)
+          FactoryBot.create(:event, starts_at: 2.weeks.from_now)
 
         end
 
@@ -35,13 +35,13 @@ module Refinery
 
         before :each do
 
-          FactoryGirl.create(:event, starts_at: Date.tomorrow - 2.hours)
-          FactoryGirl.create(:event, starts_at: Date.tomorrow.beginning_of_day)
-          FactoryGirl.create(:event, starts_at: Date.tomorrow + 2.hours)
-          FactoryGirl.create(:event, starts_at: Date.tomorrow + 6.hours)
-          FactoryGirl.create(:event, starts_at: Date.tomorrow + 12.hours)
-          FactoryGirl.create(:event, starts_at: Date.yesterday, ends_at: 2.days.from_now)
-          FactoryGirl.create(:event, starts_at: Date.tomorrow + 2.days)
+          FactoryBot.create(:event, starts_at: Date.tomorrow - 2.hours)
+          FactoryBot.create(:event, starts_at: Date.tomorrow.beginning_of_day)
+          FactoryBot.create(:event, starts_at: Date.tomorrow + 2.hours)
+          FactoryBot.create(:event, starts_at: Date.tomorrow + 6.hours)
+          FactoryBot.create(:event, starts_at: Date.tomorrow + 12.hours)
+          FactoryBot.create(:event, starts_at: Date.yesterday, ends_at: 2.days.from_now)
+          FactoryBot.create(:event, starts_at: Date.tomorrow + 2.days)
 
         end
 

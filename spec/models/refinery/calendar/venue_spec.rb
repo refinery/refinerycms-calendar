@@ -5,7 +5,7 @@ module Refinery
     describe Venue, type: :model do
       describe "validations" do
         subject do
-          FactoryGirl.create(:venue,
+          FactoryBot.create(:venue,
           :name => "Refinery CMS")
         end
 

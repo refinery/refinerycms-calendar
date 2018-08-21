@@ -29,23 +29,12 @@ end
 
 gem "jruby-openssl", :platform => :jruby
 
-# Refinery/rails should pull in the proper versions of these
-group :assets do
-  gem "sass-rails"
-  gem "coffee-rails"
-  gem "uglifier"
-end
-
-group :development do
-  gem 'quiet_assets'
-end
-
 group :development, :test do
   gem 'rspec-its'
 end
 
 group :test do
-  gem "launchy"
+  gem 'launchy'
 end
 
 # Load local gems according to Refinery developer preference.

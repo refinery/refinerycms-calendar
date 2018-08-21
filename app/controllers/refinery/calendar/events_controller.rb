@@ -10,30 +10,24 @@ module Refinery
       def index
         @events = Event.upcoming.order(starts_at: :desc)
 
-        respond_with (@events) do |format|
-          format.html
-#           format.rss { render layout: false }
-        end
+        present @page
       end
 
       def show
         @event = Event.friendly.find(params[:id])
 
-        respond_with (@event) do |format|
-          format.html { present(@event) }
-#           format.js { render partial: 'post', layout: false }
-        end
+        present @page
       end
 
       def archive
         @events = Event.archive.order(starts_at: :desc)
-        render :template => 'refinery/calendar/events/index'
+        render template: 'refinery/calendar/events/index'
       end
 
       protected
 
       def find_page
-        @page = ::Refinery::Page.where(:link_url => "/calendar/events").first
+        @page = ::Refinery::Page.where(link_url: '/calendar/events').first
       end
 
     end

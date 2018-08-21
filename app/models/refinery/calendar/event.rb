@@ -13,9 +13,9 @@ module Refinery
       alias_attribute :to, :ends_at
 
       delegate :name, :address,
-                :to => :venue,
-                :prefix => true,
-                :allow_nil => true
+                to: :venue,
+                prefix: true,
+                allow_nil: true
 
       scope :starting_on_day, ->(day) { where(starts_at: day.beginning_of_day..day.tomorrow.beginning_of_day) }
       scope :ending_on_day, ->(day) { where(ends_at: day.beginning_of_day..day.tomorrow.beginning_of_day) }

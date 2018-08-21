@@ -10,7 +10,7 @@ module Refinery
       append_file 'db/seeds.rb', :verbose => true do
         <<-EOH
 
-# Added by Refinery CMS Venues extension
+# Added by Refinery CMS Calendar extension
 Refinery::Calendar::Engine.load_seed
         EOH
       end
